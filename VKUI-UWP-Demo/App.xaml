@@ -1,0 +1,16 @@
+﻿<Application
+    x:Class="VKUI_UWP_Demo.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VKUI_UWP_Demo">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///VK.UI.UWP/Colors.xaml"/>
+                <ResourceDictionary Source="ms-appx:///VK.UI.UWP/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+    
+</Application>
