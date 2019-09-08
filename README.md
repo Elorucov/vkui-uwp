@@ -14,3 +14,5 @@
   </ResourceDictionary>
 </Application.Resources>
 ```
+
+** Библиотека всё-ещё находится в рзаработке. Иконки будут позже. **
