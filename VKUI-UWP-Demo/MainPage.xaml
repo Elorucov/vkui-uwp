@@ -83,12 +83,22 @@
                         <Button Margin="0,6,6,0" Style="{StaticResource VKButtonCommerceExtraLarge}" Content="Commerce"/>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel x:Name="TextBoxes" Margin="0,12,0,0">
+                <StackPanel x:Name="Fields" Margin="0,12,0,0">
                     <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="Поля ввода"/>
                     <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="0,6,0,0" Text="Обычное поле"/>
                     <TextBox Margin="0,6,0,0" Style="{StaticResource VKTextBox}" PlaceholderText="Type here..."/>
-                    <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="0,6,0,0" Text="Многострочное поле"/>
-                    <TextBox Margin="0,12,0,0" Style="{StaticResource VKTextBox}" TextWrapping="Wrap" PlaceholderText="Long text." Text="Lorem ipsum dolor sit amet, the quick brown fox jumps over the lazy dog."/>
+                    <PasswordBox Margin="0,6,0,0" Style="{StaticResource VKPasswordBox}" PlaceholderText="Password"/>
+                    <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,0" Text="Многострочное поле"/>
+                    <TextBox Margin="0,6,0,0" Style="{StaticResource VKTextBox}" TextWrapping="Wrap" PlaceholderText="Long text." Text="Lorem ipsum dolor sit amet, the quick brown fox jumps over the lazy dog."/>
+                    <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,0" Text="Dropdown-меню (a.k.a. ComboBox)"/>
+                    <ComboBox Style="{StaticResource VKComboBox}" Margin="0,6,0,0" SelectedIndex="0">
+                        <ComboBoxItem Content="Anna"/>
+                        <ComboBoxItem Content="Belle"/>
+                        <ComboBoxItem Content="Carla"/>
+                        <ComboBoxItem Content="Donna"/>
+                        <ComboBoxItem Content="Elnara"/>
+                        <ComboBoxItem Content="Flora"/>
+                    </ComboBox>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
