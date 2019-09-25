@@ -9,6 +9,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="ms-appx:///VK.UI.UWP/Colors.xaml"/>
                 <ResourceDictionary Source="ms-appx:///VK.UI.UWP/Styles.xaml"/>
+                <ResourceDictionary Source="ms-appx:///VK.UI.UWP/Icons.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

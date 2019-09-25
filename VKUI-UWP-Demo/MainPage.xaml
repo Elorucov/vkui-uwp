@@ -49,7 +49,7 @@
                         <LineBreak/>
                         <Run FontWeight="SemiBold" Text="Styles version: "/><Run Text="{StaticResource VKUIStylesVersion}"/><LineBreak/>
                         <Run FontWeight="SemiBold" Text="Colors version: "/><Run Text="{StaticResource VKUIColorsVersion}"/><LineBreak/>
-                        <Run FontWeight="SemiBold" Text="Icons version: "/><Run Text="soon!"/><LineBreak/>
+                        <Run FontWeight="SemiBold" Text="Icons version: "/><Run Text="{StaticResource VKUIIconsVersion}"/><LineBreak/>
                     </TextBlock>
                     <TextBlock Margin="0,12,0,0" TextWrapping="Wrap">
                     <Run FontWeight="SemiBold" Text="Как подключить VKUI к своему UWP-приложению?"/>
@@ -99,6 +99,38 @@
                         <ComboBoxItem Content="Elnara"/>
                         <ComboBoxItem Content="Flora"/>
                     </ComboBox>
+                </StackPanel>
+                <StackPanel x:Name="Icons" Margin="0,12,0,0">
+                    <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="Icons"/>
+                    <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="0,6,0,0" Text="12px"/>
+                    <GridView SelectionMode="None">
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="12" Height="12" ContentTemplate="{StaticResource Icon12Fire}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="12" Height="12" ContentTemplate="{StaticResource Icon12FireVerified}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="12" Height="12" ContentTemplate="{StaticResource Icon12Lock}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="12" Height="12" ContentTemplate="{StaticResource Icon12OnlineMobile}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="12" Height="12" ContentTemplate="{StaticResource Icon12OnlineVKMobile}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="12" Height="12" ContentTemplate="{StaticResource Icon12Verified}"/>
+                    </GridView>
+                    <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="0,6,0,0" Text="16px"/>
+                    <GridView SelectionMode="None">
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Add}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Cancel}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16CancelCircleOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16CheckCircle}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16CheckCircleOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Chevron}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Clear}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Done}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Down}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Dropdown}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Fire}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16FireVerified}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Gift}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Headphones}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Like}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16LikeOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Lock}"/>
+                    </GridView>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
