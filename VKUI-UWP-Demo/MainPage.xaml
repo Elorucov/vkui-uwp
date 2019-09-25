@@ -130,6 +130,23 @@
                         <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Like}"/>
                         <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16LikeOutline}"/>
                         <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Lock}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16MoreHorizontal}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16MoreVertical}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Muted}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Pin}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Place}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Play}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Recent}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16ReplyOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Search}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16SearchOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Smile}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Spinner}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Up}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16User}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16UserAdd}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Users}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Verified}"/>
                     </GridView>
                 </StackPanel>
             </StackPanel>
