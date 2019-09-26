@@ -170,6 +170,278 @@
                         <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20UserOutline}"/>
                         <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20WorkOutline}"/>
                     </GridView>
+                    <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="0,6,0,0" Text="24px"/>
+                    <GridView SelectionMode="None">
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Add}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24AddOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Airplay}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Article}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Artist}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Attach}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Attachments}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Back}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24BrowserBack}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24BrowserForward}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Bug}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Camera}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24CameraOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Cancel}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Chevron}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Coins}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Comment}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24CommentOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Copy}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Delete}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Discussions}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Dismiss}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24DoNotDisturb}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Document}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Done}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24DoneOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Download}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Dropdown}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Education}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Error}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Favorite}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24FavoriteOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Filter}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Flash}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Followers}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Forward10}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Forward}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Fullscreen}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24FullscreenExit}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Gallery}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Game}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Gift}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Globe}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Headphones}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Help}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Hide}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Home}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Info}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Like}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24LikeOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Link}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24LinkCircle}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Linked}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24List}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24ListAdd}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Live}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Locate}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24LogoFacebook}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24LogoGoogle}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24LogoInstagram}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24LogoLivejournal}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24LogoSkype}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24LogoTwitter}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24LogoVk}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Market}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24MarketOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="34" Height="34" ContentTemplate="{StaticResource Icon24Mention}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Message}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24MoneyCircle}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24MoneyTransfer}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24MoreHorizontal}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24MoreVertical}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Music}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Mute}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Newsfeed}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Note}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Notification}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24NotificationDisable}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24OpenIn}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Palette}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Pause}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Phone}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Pin}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Place}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Play}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24PlayNext}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24PlaySpeed}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Playlist}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Poll}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Privacy}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Qr}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Recent}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24RecentOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Reorder}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24ReorderIos}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Repeat}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24RepeatOne}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Replay10}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Replay}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Reply}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24ReplyOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Report}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Repost}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Search}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Send}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Services}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Settings}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Share}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24ShareExternal}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24ShareOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Shuffle}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Similar}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24SkipNext}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24SkipPrevious}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Smile}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24SmileOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Song}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Sort}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Spinner}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Story}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24ThumbDown}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24ThumbUp}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Unpin}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Up}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Upload}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24User}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24UserAdd}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24UserAddOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24UserAdded}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24UserAddedOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24UserIncoming}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24UserOutgoing}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24UserOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Users}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Video}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24VideoFill}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24VideoFillNone}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Videocam}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24View}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Voice}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Volume}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Work}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="24" Height="24" ContentTemplate="{StaticResource Icon24Write}"/>
+                    </GridView>
+                    <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="0,6,0,0" Text="28px"/>
+                    <GridView SelectionMode="None">
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28AddOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28ArticleOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28AttachOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Attachments}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Backspace}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Camera}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28CameraOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28CancelOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28CheckCircleOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28ChevronBack}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Delete}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Document}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28DoneOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28ErrorOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Favorite}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28FavoriteOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Game}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28HelpOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28InboxOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28InfoOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28KeyboardBotsOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28KeyboardOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28MarketOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Mention}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Menu}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Message}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Messages}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28MessagesOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28MoneyTransfer}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28More}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28MoreHorizontal}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Music}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Newsfeed}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Notification}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Notifications}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Pause}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Place}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Play}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Profile}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28RecentOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28ReportOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Search}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28SearchOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Send}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28ServicesOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Settings}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28SettingsOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28SkipNext}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28SkipPrevious}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28SmileOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28StickerOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Story}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28TagOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28UnfavoriteOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28User}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28UserAddOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Users}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28UsersOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Video}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28VideoOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Voice}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28VoiceOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="28" Height="28" ContentTemplate="{StaticResource Icon28Write}"/>
+                    </GridView>
+                    <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="0,6,0,0" Text="32px"/>
+                    <GridView SelectionMode="None">
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="32" Height="32" ContentTemplate="{StaticResource Icon32Camera}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="32" Height="32" ContentTemplate="{StaticResource Icon32Discussions}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="32" Height="32" ContentTemplate="{StaticResource Icon32Document}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="32" Height="32" ContentTemplate="{StaticResource Icon32Gallery}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="32" Height="32" ContentTemplate="{StaticResource Icon32Gift}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="32" Height="32" ContentTemplate="{StaticResource Icon32Graffiti}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="32" Height="32" ContentTemplate="{StaticResource Icon32MoneyTransfer}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="32" Height="32" ContentTemplate="{StaticResource Icon32Music}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="32" Height="32" ContentTemplate="{StaticResource Icon32Place}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="32" Height="32" ContentTemplate="{StaticResource Icon32Poll}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="32" Height="32" ContentTemplate="{StaticResource Icon32Spinner}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="32" Height="32" ContentTemplate="{StaticResource Icon32Videos}"/>
+                    </GridView>
+                    <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="0,6,0,0" Text="36px"/>
+                    <GridView SelectionMode="None">
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="36" Height="36" ContentTemplate="{StaticResource Icon36Add}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="36" Height="36" ContentTemplate="{StaticResource Icon36Article}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="36" Height="36" ContentTemplate="{StaticResource Icon36Cancel}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="36" Height="36" ContentTemplate="{StaticResource Icon36Delete}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="36" Height="36" ContentTemplate="{StaticResource Icon36Done}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="36" Height="36" ContentTemplate="{StaticResource Icon36Like}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="36" Height="36" ContentTemplate="{StaticResource Icon36LikeOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="36" Height="36" ContentTemplate="{StaticResource Icon36LogoVk}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="36" Height="36" ContentTemplate="{StaticResource Icon36Playlist}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="36" Height="36" ContentTemplate="{StaticResource Icon36PlaylistCached}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="36" Height="36" ContentTemplate="{StaticResource Icon36Replay}"/>
+                    </GridView>
+                    <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="0,6,0,0" Text="44px"/>
+                    <GridView SelectionMode="None">
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="44" Height="44" ContentTemplate="{StaticResource Icon44Spinner}"/>
+                    </GridView>
+                    <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="0,6,0,0" Text="48px"/>
+                    <GridView SelectionMode="None">
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="48" Height="48" ContentTemplate="{StaticResource Icon48Camera}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="48" Height="48" ContentTemplate="{StaticResource Icon48Pause}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="48" Height="48" ContentTemplate="{StaticResource Icon48Play}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="48" Height="48" ContentTemplate="{StaticResource Icon48Playlist}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="48" Height="48" ContentTemplate="{StaticResource Icon48SkipNext}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="48" Height="48" ContentTemplate="{StaticResource Icon48SkipPrevious}"/>
+                    </GridView>
+                    <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="0,6,0,0" Text="56px"/>
+                    <GridView SelectionMode="None">
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="56" Height="56" ContentTemplate="{StaticResource Icon56EventOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="56" Height="56" ContentTemplate="{StaticResource Icon56FavoriteOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="56" Height="56" ContentTemplate="{StaticResource Icon56HideOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="56" Height="56" ContentTemplate="{StaticResource Icon56LockOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="56" Height="56" ContentTemplate="{StaticResource Icon56MailOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="56" Height="56" ContentTemplate="{StaticResource Icon56MarketOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="56" Height="56" ContentTemplate="{StaticResource Icon56MentionOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="56" Height="56" ContentTemplate="{StaticResource Icon56MessageReadOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="56" Height="56" ContentTemplate="{StaticResource Icon56MoneyTransferOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="56" Height="56" ContentTemplate="{StaticResource Icon56NotificationOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="56" Height="56" ContentTemplate="{StaticResource Icon56PhoneOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="56" Height="56" ContentTemplate="{StaticResource Icon56PlaceOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="56" Height="56" ContentTemplate="{StaticResource Icon56UsersOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="56" Height="56" ContentTemplate="{StaticResource Icon56VideoOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="56" Height="56" ContentTemplate="{StaticResource Icon56WifiOutline}"/>
+                    </GridView>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
