@@ -148,6 +148,28 @@
                         <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Users}"/>
                         <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="16" Height="16" ContentTemplate="{StaticResource Icon16Verified}"/>
                     </GridView>
+                    <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="0,6,0,0" Text="20px"/>
+                    <GridView SelectionMode="None">
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20ArticleBoxOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20ArticleOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20CalendarOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20CommunityName}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20EducationOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20FollowersOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20GiftOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20GlobeOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20HomeOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20Info}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20LikeOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20MentionOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20MessageOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20NewsfeedOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20PhoneOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20PlaceOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20RecentOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20UserOutline}"/>
+                        <ContentPresenter Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" Width="20" Height="20" ContentTemplate="{StaticResource Icon20WorkOutline}"/>
+                    </GridView>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
