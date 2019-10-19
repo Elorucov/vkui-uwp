@@ -40,9 +40,9 @@
         <Grid Height="48" Background="{ThemeResource VKHeaderBackgroundBrush}" BorderBrush="{ThemeResource VKSeparatorAlphaBrush}" BorderThickness="0,0,0,1">
             <TextBlock Foreground="{ThemeResource VKHeaderTextBrush}" VerticalAlignment="Center" Margin="16,0" FontWeight="SemiBold" FontSize="16" Text="VKUI UWP DEMO"/>
         </Grid>
-        <ScrollViewer Grid.Row="1" MaxWidth="502">
+        <ScrollViewer Grid.Row="1" MaxWidth="540">
             <StackPanel Margin="12,0,12,12">
-                <StackPanel x:Name="Intro" Margin="0,12,0,0">
+                <StackPanel x:Name="Intro" Margin="0,12,0,0" Padding="12,6,12,12" Background="{ThemeResource VKBackgroundContentBrush}">
                     <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="Добро пожаловать!"/>
                     <TextBlock Margin="0,12,0,0" TextWrapping="Wrap">
                         Это приложение создано для демонстрации библиотеки VKUI на UWP. Пока не всё тут есть, т. к. сама библиотека пока что не до конца портирована.
@@ -59,7 +59,7 @@
                         <Hyperlink NavigateUri="https://github.com/elorucov/vkui-uwp/README.md">тут.</Hyperlink>
                     </TextBlock>
                 </StackPanel>
-                <StackPanel x:Name="Buttons" Margin="0,12,0,0">
+                <StackPanel x:Name="Buttons" Margin="0,12,0,0" Padding="12,6,12,12" Background="{ThemeResource VKBackgroundContentBrush}">
                     <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="Кнопки"/>
                     <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="0,6,0,0" Text="Medium"/>
                     <StackPanel x:Name="MediumButtons" Orientation="Horizontal">
@@ -86,7 +86,7 @@
                         <Button Margin="0,6,6,0" Style="{StaticResource VKButtonCommerceExtraLarge}" Content="Commerce"/>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel x:Name="Fields" Margin="0,12,0,0">
+                <StackPanel x:Name="Fields" Margin="0,12,0,0" Padding="12,6,12,12" Background="{ThemeResource VKBackgroundContentBrush}">
                     <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="Поля ввода"/>
                     <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="0,6,0,0" Text="Обычное поле"/>
                     <TextBox Margin="0,6,0,0" Style="{StaticResource VKTextBox}" PlaceholderText="Type here..."/>
@@ -103,7 +103,7 @@
                         <ComboBoxItem Content="Flora"/>
                     </ComboBox>
                 </StackPanel>
-                <StackPanel x:Name="Icons" Margin="0,12,0,0">
+                <StackPanel x:Name="Icons" Margin="0,12,0,0" Padding="12,6,12,12" Background="{ThemeResource VKBackgroundContentBrush}">
                     <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="Icons"/>
                     <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="0,6,0,0" Text="12px"/>
                     <GridView SelectionMode="None">
