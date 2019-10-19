@@ -29,10 +29,13 @@
 <Button Style="{StaticResource VKButtonPrimaryMedium}" Content="Hello!"/>
 ```
 Название стиля для кнопок имеют название в формате **VKButton<цвет><размер>**. 
+
 Доступные цвета: ```Primary```, ```Secondary```, ```Tertiary```, ```Outline```, ```Commerce```.
+
 Доступные размеры: ```Medium``` (32px), ```Large``` (36px), ```ExtraLarge``` (44px).
 
 * Поля ввода
+
 Стиль для TextBox задаётся вот так:
 ``` xaml
 <TextBox Style="{StaticResource VKTextBox}" PlaceholderText="Type here..."/>
@@ -43,6 +46,7 @@
 ```
 
 * Выпадающее меню
+
 Стиль для ComboBox задаётся вот так:
 ``` xaml
 <ComboBox Style="{StaticResource VKComboBox}" SelectedIndex="0"/>
