@@ -24,6 +24,7 @@
 
 # Стили для элементов управления
 * Кнопки
+
 Стиль для кнопок задаётся вот так:
 ``` xaml
 <Button Style="{StaticResource VKButtonPrimaryMedium}" Content="Hello!"/>
