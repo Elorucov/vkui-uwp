@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource VKBackgroundContentBrush}">
+    Background="{ThemeResource VKBackgroundPageBrush}">
 
     <Grid>
         <VisualStateManager.VisualStateGroups>
@@ -37,7 +37,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid Height="48" Background="{ThemeResource VKHeaderBackgroundBrush}">
+        <Grid Height="48" Background="{ThemeResource VKHeaderBackgroundBrush}" BorderBrush="{ThemeResource VKSeparatorAlphaBrush}" BorderThickness="0,0,0,1">
             <TextBlock Foreground="{ThemeResource VKHeaderTextBrush}" VerticalAlignment="Center" Margin="16,0" FontWeight="SemiBold" FontSize="16" Text="VKUI UWP DEMO"/>
         </Grid>
         <ScrollViewer Grid.Row="1" MaxWidth="502">
@@ -47,13 +47,16 @@
                     <TextBlock Margin="0,12,0,0" TextWrapping="Wrap">
                         Это приложение создано для демонстрации библиотеки VKUI на UWP. Пока не всё тут есть, т. к. сама библиотека пока что не до конца портирована.
                         <LineBreak/>
-                        <Run FontWeight="SemiBold" Text="Styles version: "/><Run Text="{StaticResource VKUIStylesVersion}"/><LineBreak/>
-                        <Run FontWeight="SemiBold" Text="Colors version: "/><Run Text="{StaticResource VKUIColorsVersion}"/><LineBreak/>
+                        <Run FontWeight="SemiBold" Text="Control styles version: "/><Run Text="{StaticResource VKUIStylesVersion}"/><LineBreak/>
+                        <Run FontWeight="SemiBold" Text="Palette version: "/><Run Text="{StaticResource VKUIPaletteVersion}"/><LineBreak/>
+                        <Run FontWeight="SemiBold" Text="Scheme name: "/><Run Text="{StaticResource VKUISchemeName}"/><LineBreak/>
+                        <Run FontWeight="SemiBold" Text="Scheme version: "/><Run Text="{StaticResource VKUISchemeVersion}"/><LineBreak/>
                         <Run FontWeight="SemiBold" Text="Icons version: "/><Run Text="{StaticResource VKUIIconsVersion}"/><LineBreak/>
                     </TextBlock>
                     <TextBlock Margin="0,12,0,0" TextWrapping="Wrap">
                     <Run FontWeight="SemiBold" Text="Как подключить VKUI к своему UWP-приложению?"/>
-                    <LineBreak/>Тут будет инструкция по подключению либы в свой проект.
+                    <LineBreak/>Прочтите инструкцию
+                        <Hyperlink NavigateUri="https://github.com/elorucov/vkui-uwp/README.md">тут.</Hyperlink>
                     </TextBlock>
                 </StackPanel>
                 <StackPanel x:Name="Buttons" Margin="0,12,0,0">

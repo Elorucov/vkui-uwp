@@ -7,9 +7,10 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="ms-appx:///VK.UI.UWP/Colors.xaml"/>
-                <ResourceDictionary Source="ms-appx:///VK.UI.UWP/Styles.xaml"/>
-                <ResourceDictionary Source="ms-appx:///VK.UI.UWP/Icons.xaml"/>
+                <ResourceDictionary Source="ms-appx:///VK.UI.UWP/VKPalette.xaml"/>
+                <ResourceDictionary Source="ms-appx:///VK.UI.UWP/VKSchemeMilkshake.xaml"/>
+                <ResourceDictionary Source="ms-appx:///VK.UI.UWP/VKControlStyles.xaml"/>
+                <ResourceDictionary Source="ms-appx:///VK.UI.UWP/VKIcons.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
