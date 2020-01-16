@@ -4,6 +4,7 @@
     xmlns:local="using:VK.UI.UWP">
 
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ms-appx:///VK.UI.UWP/Controls/Progress.xaml"/>
         <ResourceDictionary Source="ms-appx:///VK.UI.UWP/Controls/Spinner.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

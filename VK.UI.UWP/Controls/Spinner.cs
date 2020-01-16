@@ -41,7 +41,7 @@ namespace VK.UI.UWP.Controls {
             SpinnerContainer.ContentTemplate = Application.Current.Resources[$"Icon{ss}Spinner"] as DataTemplate;
         }
 
-        private int GetSpinnerSize(double s) {
+        private double GetSpinnerSize(double s) {
             if (s >= 38) return 44;
             if (s >= 28) return 32;
             if (s >= 20) return 24;

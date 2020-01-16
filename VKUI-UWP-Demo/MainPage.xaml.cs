@@ -26,5 +26,9 @@ namespace VKUI_UWP_Demo
         {
             this.InitializeComponent();
         }
+
+        private void IncrementProgress(object sender, RoutedEventArgs e) {
+            progress1.Value = progress1.Value > progress1.Maximum - 10 ? 0 : progress1.Value + 10;
+        }
     }
 }

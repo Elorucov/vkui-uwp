@@ -62,16 +62,17 @@ namespace VKUI_UWP_Demo
 
             if (e.PrelaunchActivated == false)
             {
+                ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(320, 480));
+
+                // Обеспечение активности текущего окна
+                Window.Current.Activate();
                 if (rootFrame.Content == null)
                 {
-                    ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(320, 480));
                     // Если стек навигации не восстанавливается для перехода к первой странице,
                     // настройка новой страницы путем передачи необходимой информации в качестве параметра
                     // параметр
                     rootFrame.Navigate(typeof(MainPage), e.Arguments);
                 }
-                // Обеспечение активности текущего окна
-                Window.Current.Activate();
             }
         }
 

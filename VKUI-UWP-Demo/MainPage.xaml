@@ -106,7 +106,7 @@
                     <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,0" Text="Многострочное поле"/>
                     <TextBox Margin="0,6,0,0" Style="{StaticResource VKTextBox}" TextWrapping="Wrap" PlaceholderText="Long text." Text="Lorem ipsum dolor sit amet, the quick brown fox jumps over the lazy dog."/>
                     <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,0" Text="Dropdown-меню (a.k.a. ComboBox)"/>
-                    <ComboBox Style="{StaticResource VKComboBox}" Margin="0,6,0,0" SelectedIndex="0">
+                    <ComboBox Style="{StaticResource VKComboBox}" Margin="0,6,0,0" SelectedIndex="0" HorizontalAlignment="Stretch">
                         <ComboBoxItem Content="Anna"/>
                         <ComboBoxItem Content="Belle"/>
                         <ComboBoxItem Content="Carla" IsEnabled="False"/>
@@ -123,6 +123,13 @@
                         <vkc:Spinner Margin="0,6,12,0" ToolTipService.ToolTip="32" Width="32" Height="32"/>
                         <vkc:Spinner Margin="0,6,12,0" ToolTipService.ToolTip="24" Width="24" Height="24"/>
                         <vkc:Spinner Margin="0,6,12,0" ToolTipService.ToolTip="16" Width="16" Height="16"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel x:Name="ProgressBars" Margin="0,12,0,0" Padding="12,6,12,12" Background="{ThemeResource VKBackgroundContentBrush}">
+                    <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="Прогресс-бар"/>
+                    <vkc:Progress x:Name="progress1" Margin="0,12,0,0" Value="30"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Style="{StaticResource VKButtonSecondaryMedium}" Margin="0,12,12,0" Content="Increment" Click="IncrementProgress"/>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel x:Name="Icons" Margin="0,12,0,0" Padding="12,6,12,12" Background="{ThemeResource VKBackgroundContentBrush}">

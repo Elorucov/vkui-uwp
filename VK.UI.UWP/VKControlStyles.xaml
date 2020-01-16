@@ -730,7 +730,7 @@
                     <Setter Property="Foreground" Value="{ThemeResource VKTextPrimaryBrush}" />
                     <Setter Property="Background" Value="Transparent" />
                     <Setter Property="TabNavigation" Value="Local" />
-                    <Setter Property="Padding" Value="17,7,32,9" />
+                    <Setter Property="Padding" Value="17,7,40,9" />
                     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                     <Setter Property="UseSystemFocusVisuals" Value="True" />
                     <Setter Property="Template">
@@ -866,14 +866,14 @@
                                             <VisualState x:Name="TouchInputMode">
                                                 <Storyboard>
                                                     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Margin">
-                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="17,11,32,13" />
+                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="17,11,40,13" />
                                                     </ObjectAnimationUsingKeyFrames>
                                                 </Storyboard>
                                             </VisualState>
                                             <VisualState x:Name="GameControllerInputMode">
                                                 <Storyboard>
                                                     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Margin">
-                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="17,11,32,13" />
+                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="17,11,40,13" />
                                                     </ObjectAnimationUsingKeyFrames>
                                                 </Storyboard>
                                             </VisualState>
@@ -918,7 +918,7 @@
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="32" />
+                            <ColumnDefinition Width="40" />
                         </Grid.ColumnDefinitions>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
@@ -1051,9 +1051,9 @@
                             IsHitTestVisible="False"
                             Margin="0,10,10,10"
                             Foreground="{ThemeResource VKFieldTextPlaceholderBrush}"
-                            Width="16"
-                            Height="16"
-                            ContentTemplate="{StaticResource Icon16Dropdown}"
+                            Width="24"
+                            Height="24"
+                            ContentTemplate="{StaticResource Icon24Dropdown}"
                             HorizontalAlignment="Right"
                             VerticalAlignment="Center"
                             AutomationProperties.AccessibilityView="Raw" />
@@ -1657,5 +1657,4 @@
             </Setter.Value>
         </Setter>
     </Style>
-
 </ResourceDictionary>
