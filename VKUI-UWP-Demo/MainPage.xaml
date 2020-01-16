@@ -109,7 +109,7 @@
                     <ComboBox Style="{StaticResource VKComboBox}" Margin="0,6,0,0" SelectedIndex="0">
                         <ComboBoxItem Content="Anna"/>
                         <ComboBoxItem Content="Belle"/>
-                        <ComboBoxItem Content="Carla"/>
+                        <ComboBoxItem Content="Carla" IsEnabled="False"/>
                         <ComboBoxItem Content="Donna"/>
                         <ComboBoxItem Content="Elnara"/>
                         <ComboBoxItem Content="Flora"/>
