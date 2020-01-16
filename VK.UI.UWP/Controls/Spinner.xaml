@@ -1,0 +1,35 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VK.UI.UWP.Controls">
+    <Style TargetType="local:Spinner">
+        <Setter Property="Foreground" Value="{ThemeResource VKAccentBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:Spinner">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter x:Name="SpinnerContainer" Foreground="{TemplateBinding Foreground}">
+                            <ContentPresenter.RenderTransform>
+                                <RotateTransform x:Name="SpinnerRotator" CenterX="12" CenterY="12"/>
+                            </ContentPresenter.RenderTransform>
+                            <ContentPresenter.Triggers>
+                                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                    <EventTrigger.Actions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="SpinnerRotator" Storyboard.TargetProperty="Angle" From="0" To="360" Duration="0:0:0.7" RepeatBehavior="Forever"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger.Actions>
+                                </EventTrigger>
+                            </ContentPresenter.Triggers>
+                        </ContentPresenter>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

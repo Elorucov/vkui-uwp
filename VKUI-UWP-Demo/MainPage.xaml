@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:VKUI_UWP_Demo"
+    xmlns:vkc="using:VK.UI.UWP.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -113,6 +114,16 @@
                         <ComboBoxItem Content="Elnara"/>
                         <ComboBoxItem Content="Flora"/>
                     </ComboBox>
+                </StackPanel>
+                <StackPanel x:Name="Spinners" Margin="0,12,0,0" Padding="12,6,12,12" Background="{ThemeResource VKBackgroundContentBrush}">
+                    <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="Спиннер"/>
+                    <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="0,6,0,0" Text="44px, 32px, 24px, 16px"/>
+                    <StackPanel Orientation="Horizontal">
+                        <vkc:Spinner Margin="0,6,12,0" ToolTipService.ToolTip="44" Width="44" Height="44"/>
+                        <vkc:Spinner Margin="0,6,12,0" ToolTipService.ToolTip="32" Width="32" Height="32"/>
+                        <vkc:Spinner Margin="0,6,12,0" ToolTipService.ToolTip="24" Width="24" Height="24"/>
+                        <vkc:Spinner Margin="0,6,12,0" ToolTipService.ToolTip="16" Width="16" Height="16"/>
+                    </StackPanel>
                 </StackPanel>
                 <StackPanel x:Name="Icons" Margin="0,12,0,0" Padding="12,6,12,12" Background="{ThemeResource VKBackgroundContentBrush}">
                     <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="Icons"/>
