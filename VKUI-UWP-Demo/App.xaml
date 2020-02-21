@@ -8,7 +8,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="ms-appx:///VK.UI.UWP/VKPalette.xaml"/>
-                <ResourceDictionary Source="ms-appx:///VK.UI.UWP/VKSchemeMilkshake.xaml"/>
+                <ResourceDictionary Source="ms-appx:///VK.UI.UWP/VKScheme.xaml"/>
                 <ResourceDictionary Source="ms-appx:///VK.UI.UWP/VKControlStyles.xaml"/>
                 <ResourceDictionary Source="ms-appx:///VK.UI.UWP/VKIcons.xaml"/>
             </ResourceDictionary.MergedDictionaries>
