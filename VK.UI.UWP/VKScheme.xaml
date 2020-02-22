@@ -246,7 +246,7 @@
             <SolidColorBrush x:Key="VKButtonOutlineForegroundBrush" Color="{StaticResource VKAzure300Color}" />
             <SolidColorBrush x:Key="VKButtonPrimaryBackgroundBrush" Color="{StaticResource VKAzureA400Color}" />
             <SolidColorBrush x:Key="VKButtonPrimaryForegroundBrush" Color="{StaticResource VKWhiteColor}" />
-            <SolidColorBrush x:Key="VKButtonSecondaryBackgroundBrush" Color="{StaticResource VKBlackBlue24Color}" />
+            <SolidColorBrush x:Key="VKButtonSecondaryBackgroundBrush" Color="{StaticResource VKBlackBlue45Alpha10Color}" />
             <SolidColorBrush x:Key="VKButtonSecondaryForegroundBrush" Color="{StaticResource VKAzure300Color}" />
             <SolidColorBrush x:Key="VKButtonTertiaryBackgroundBrush" Color="{StaticResource VKClearColor}" />
             <SolidColorBrush x:Key="VKButtonTertiaryForegroundBrush" Color="{StaticResource VKAzureA400Color}" />
