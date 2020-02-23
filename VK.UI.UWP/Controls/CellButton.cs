@@ -5,7 +5,6 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Documents;
 using Windows.UI.Xaml.Input;
@@ -19,15 +18,53 @@ namespace VK.UI.UWP.Controls {
     [TemplateVisualState(Name = ButtonStates.PointerOver, GroupName = ButtonStates.Name)]
     [TemplateVisualState(Name = ButtonStates.Pressed, GroupName = ButtonStates.Name)]
     [TemplateVisualState(Name = ButtonStates.Disabled, GroupName = ButtonStates.Name)]
-    public sealed class PageHeaderButton : ButtonBase {
-        public PageHeaderButton() {
-            this.DefaultStyleKey = typeof(PageHeaderButton);
-            RegisterPropertyChangedCallback(ContentProperty, (c, d) =>
-            throw new ArgumentException("Please use ContentTemplate property instead of Content property.", nameof(Content)));
-            long ieid = RegisterPropertyChangedCallback(IsEnabledProperty, (a, b) => CheckIsEnabled());
+    public sealed class CellButton : Control {
 
+        #region Properties
+
+        public static readonly DependencyProperty IconTemplateProperty =
+        DependencyProperty.Register(nameof(IconTemplate), typeof(DataTemplate), typeof(CellButton), new PropertyMetadata(default(DataTemplate)));
+
+        public DataTemplate IconTemplate {
+            get { return (DataTemplate)GetValue(IconTemplateProperty); }
+            set { SetValue(IconTemplateProperty, value); }
+        }
+
+        public static readonly DependencyProperty IconBrushProperty =
+        DependencyProperty.Register(nameof(IconBrush), typeof(Brush), typeof(CellButton), new PropertyMetadata(default(Brush)));
+
+        public Brush IconBrush {
+            get { return (Brush)GetValue(IconBrushProperty); }
+            set { SetValue(IconBrushProperty, value); }
+        }
+
+        public static readonly DependencyProperty TextProperty =
+        DependencyProperty.Register(nameof(Text), typeof(string), typeof(CellButton), new PropertyMetadata(default(string)));
+
+        public string Text {
+            get { return (string)GetValue(TextProperty); }
+            set { SetValue(TextProperty, value); }
+        }
+
+        #endregion
+
+        public CellButton() {
+            this.DefaultStyleKey = typeof(CellButton);
+        }
+
+        #region Template elements
+
+        Grid LayoutRoot;
+        ContentPresenter IconPresenter;
+
+        protected override void OnApplyTemplate() {
+            base.OnApplyTemplate();
+            LayoutRoot = (Grid)GetTemplateChild(nameof(LayoutRoot));
+            IconPresenter = (ContentPresenter)GetTemplateChild(nameof(IconPresenter));
+            long itid = RegisterPropertyChangedCallback(IconTemplateProperty, (a, b) => ShowHideIcon());
+            long ieid = RegisterPropertyChangedCallback(IsEnabledProperty, (a, b) => CheckIsEnabled());
             Loaded += (a, b) => {
-                CheckIsEnabled();
+                ShowHideIcon();
                 AddHandler(UIElement.PointerEnteredEvent, new PointerEventHandler(Entered), true);
                 AddHandler(UIElement.PointerExitedEvent, new PointerEventHandler(Exited), true);
                 AddHandler(UIElement.PointerPressedEvent, new PointerEventHandler(Pressed), true);
@@ -46,7 +83,14 @@ namespace VK.UI.UWP.Controls {
             };
         }
 
+        #endregion
+
         #region Internal
+
+        private void ShowHideIcon() {
+            if(IconPresenter != null)
+                IconPresenter.Visibility = IconTemplate == null ? Visibility.Collapsed : Visibility.Visible;
+        }
 
         private void CheckIsEnabled() {
             VisualStateManager.GoToState(this, IsEnabled ? ButtonStates.Normal : ButtonStates.Disabled, true);
@@ -83,7 +127,7 @@ namespace VK.UI.UWP.Controls {
         }
 
         private void KbdDown(object sender, KeyRoutedEventArgs e) {
-            if (e.Key == Windows.System.VirtualKey.Enter || e.Key == Windows.System.VirtualKey.Space)
+            if(e.Key == Windows.System.VirtualKey.Enter || e.Key == Windows.System.VirtualKey.Space)
                 VisualStateManager.GoToState(this, ButtonStates.Pressed, true);
         }
 

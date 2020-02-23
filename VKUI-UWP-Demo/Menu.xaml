@@ -34,9 +34,9 @@
                 </StackPanel>
                 <StackPanel x:Name="Infos" Margin="8,0" Padding="0,2,0,8" BorderBrush="{ThemeResource VKSeparatorCommonBrush}" BorderThickness="0,0,0,1">
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Основы"/>
-                    <StackPanel Margin="0,8">
-                        <Button Style="{StaticResource VKButtonSecondaryMedium}" Content="Как подключить"/>
-                        <Button Style="{StaticResource VKButtonSecondaryMedium}" Content="Иконки"/>
+                    <StackPanel Margin="0,8,0,0">
+                        <vkui:CellButton Padding="0" IconTemplate="{StaticResource Icon24Info}" Text="Как подключить"/>
+                        <vkui:CellButton Padding="0" IconTemplate="{StaticResource Icon24SmileOutline}" Text="Иконки"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>

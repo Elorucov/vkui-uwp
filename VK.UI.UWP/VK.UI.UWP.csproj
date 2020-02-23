@@ -120,6 +120,8 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Controls\ButtonStates.cs" />
+    <Compile Include="Controls\CellButton.cs" />
     <Compile Include="Controls\PageHeader.cs" />
     <Compile Include="Controls\PageHeaderButton.cs" />
     <Compile Include="Controls\Progress.cs" />
@@ -133,6 +135,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\CellButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\PageHeader.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
