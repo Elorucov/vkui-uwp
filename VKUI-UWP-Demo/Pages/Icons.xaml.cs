@@ -7,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using VKUI_UWP_Demo.Utils;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -92,6 +93,11 @@ namespace VKUI_UWP_Demo.Pages {
 
         private void GoBack(object sender, RoutedEventArgs e) {
             Frame.GoBack();
+        }
+
+        private async void ShowIconInfo(object sender, ItemClickEventArgs e) {
+            IconItem icon = e.ClickedItem as IconItem;
+            await new MessageDialog("", icon.Name).ShowAsync();
         }
     }
 }

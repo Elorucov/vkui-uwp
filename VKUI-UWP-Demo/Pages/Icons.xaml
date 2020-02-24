@@ -20,14 +20,14 @@
         </Grid.RowDefinitions>
         <vkui:PageHeader Content="Иконки">
             <vkui:PageHeader.LeftButtons>
-                <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28HomeOutline}" Click="GoBack"/>
+                <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28ArrowLeftOutline}" Click="GoBack"/>
             </vkui:PageHeader.LeftButtons>
         </vkui:PageHeader>
-        <GridView x:Name="IconsGrid" Grid.Row="1" MaxWidth="576" ItemsSource="{Binding Source={StaticResource GroupedIcons}}">
+        <GridView x:Name="IconsGrid" Grid.Row="1" MaxWidth="576" SelectionMode="None" IsItemClickEnabled="True" ItemsSource="{Binding Source={StaticResource GroupedIcons}}" ItemClick="ShowIconInfo">
             <GridView.ItemTemplate>
                 <DataTemplate x:DataType="local:IconItem">
                     <Grid Background="Transparent" ToolTipService.ToolTip="{x:Bind Name}" Width="{x:Bind Size}" Height="{x:Bind Size}">
-                        <ContentPresenter ContentTemplate="{x:Bind IconTemplate}"/>
+                        <ContentPresenter ContentTemplate="{x:Bind IconTemplate}" Foreground="{ThemeResource VKHeaderTintBrush}"/>
                     </Grid>
                 </DataTemplate>
             </GridView.ItemTemplate>
