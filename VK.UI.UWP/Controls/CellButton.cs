@@ -5,6 +5,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Documents;
 using Windows.UI.Xaml.Input;
@@ -18,7 +19,7 @@ namespace VK.UI.UWP.Controls {
     [TemplateVisualState(Name = ButtonStates.PointerOver, GroupName = ButtonStates.Name)]
     [TemplateVisualState(Name = ButtonStates.Pressed, GroupName = ButtonStates.Name)]
     [TemplateVisualState(Name = ButtonStates.Disabled, GroupName = ButtonStates.Name)]
-    public sealed class CellButton : Control {
+    public sealed class CellButton : ButtonBase {
 
         #region Properties
 

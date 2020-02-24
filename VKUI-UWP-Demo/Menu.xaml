@@ -7,21 +7,21 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vkui="using:VK.UI.UWP.Controls"
     mc:Ignorable="d"
-    Background="{ThemeResource VKBackgroundContentBrush}" Loaded="OnLoad">
+    Loaded="OnLoad">
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <vkui:PageHeader DetectNonSafeArea="True" Content="VKUI UWP Demo">
+        <vkui:PageHeader Content="VKUI UWP Demo">
             <vkui:PageHeader.RightButtons>
                 <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28MoreHorizontal}"/>
             </vkui:PageHeader.RightButtons>
         </vkui:PageHeader>
         <ScrollViewer Grid.Row="1" MaxWidth="576">
             <StackPanel Margin="8">
-                <StackPanel x:Name="Intro" Margin="8,0" Padding="0,2,0,8" BorderBrush="{ThemeResource VKSeparatorCommonBrush}" BorderThickness="0,0,0,1">
+                <StackPanel x:Name="Intro" Margin="8,0" Padding="0,4,0,8" BorderBrush="{ThemeResource VKSeparatorCommonBrush}" BorderThickness="0,0,0,1">
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Добро пожаловать!"/>
                     <TextBlock Margin="0,8" TextWrapping="Wrap">
                         Это приложение создано для демонстрации библиотеки VKUI на UWP. Пока не всё тут есть, т. к. сама библиотека пока что не до конца портирована.
@@ -32,11 +32,11 @@
                         <Run FontWeight="SemiBold" Text="Icons version: "/><Run Text="{StaticResource VKUIIconsVersion}"/>
                     </TextBlock>
                 </StackPanel>
-                <StackPanel x:Name="Infos" Margin="8,0" Padding="0,2,0,8" BorderBrush="{ThemeResource VKSeparatorCommonBrush}" BorderThickness="0,0,0,1">
+                <StackPanel x:Name="Infos" Margin="8,0" Padding="0,4,0,8" BorderBrush="{ThemeResource VKSeparatorCommonBrush}" BorderThickness="0,0,0,1">
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Основы"/>
                     <StackPanel Margin="0,8,0,0">
-                        <vkui:CellButton Padding="0" IconTemplate="{StaticResource Icon24Info}" Text="Как подключить"/>
-                        <vkui:CellButton Padding="0" IconTemplate="{StaticResource Icon24SmileOutline}" Text="Иконки"/>
+                        <vkui:CellButton Padding="0" IconTemplate="{StaticResource Icon24Info}" Text="Как подключить" Tag="https://github.com/Elorucov/vkui-uwp/blob/master/README.md" Click="OpenLink" />
+                        <vkui:CellButton Padding="0" IconTemplate="{StaticResource Icon24SmileOutline}" Text="Иконки" Tag="1" Click="OpenPage" />
                     </StackPanel>
                 </StackPanel>
             </StackPanel>

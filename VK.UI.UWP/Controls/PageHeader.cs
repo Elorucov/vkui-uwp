@@ -23,7 +23,7 @@ namespace VK.UI.UWP.Controls {
         #region Properties
 
         public static readonly DependencyProperty DetectNonSafeAreaProperty =
-        DependencyProperty.Register(nameof(DetectNonSafeArea), typeof(bool), typeof(PageHeader), new PropertyMetadata(false));
+        DependencyProperty.Register(nameof(DetectNonSafeArea), typeof(bool), typeof(PageHeader), new PropertyMetadata(default(bool)));
 
         public bool DetectNonSafeArea {
             get { return (bool)GetValue(DetectNonSafeAreaProperty); }
