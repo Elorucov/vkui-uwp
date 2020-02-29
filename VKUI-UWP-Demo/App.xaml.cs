@@ -7,6 +7,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -64,8 +65,6 @@ namespace VKUI_UWP_Demo
             {
                 ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(320, 480));
 
-                // Обеспечение активности текущего окна
-                Window.Current.Activate();
                 if (rootFrame.Content == null)
                 {
                     // Если стек навигации не восстанавливается для перехода к первой странице,
@@ -73,6 +72,16 @@ namespace VKUI_UWP_Demo
                     // параметр
                     rootFrame.Navigate(typeof(Menu), e.Arguments);
                 }
+
+                // Обеспечение активности текущего окна
+                Window.Current.Activate();
+
+                SystemNavigationManager.GetForCurrentView().BackRequested += (a, b) => {
+                    if(rootFrame.CanGoBack) {
+                        b.Handled = true;
+                        rootFrame.GoBack();
+                    }
+                };
             }
         }
 

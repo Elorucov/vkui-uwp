@@ -19,9 +19,10 @@ using Windows.UI.Xaml.Media;
 
 namespace VK.UI.UWP.Controls {
     public sealed class PageHeader : ContentControl {
-
         #region Properties
 
+        long dnsaid = 0;
+        bool cachedDetectNonSafeArea = false;
         public static readonly DependencyProperty DetectNonSafeAreaProperty =
         DependencyProperty.Register(nameof(DetectNonSafeArea), typeof(bool), typeof(PageHeader), new PropertyMetadata(default(bool)));
 
@@ -40,6 +41,7 @@ namespace VK.UI.UWP.Controls {
 
         public PageHeader() {
             this.DefaultStyleKey = typeof(PageHeader);
+            dnsaid = RegisterPropertyChangedCallback(DetectNonSafeAreaProperty, FixMarginCallback);
         }
 
         #region Template elements
@@ -54,9 +56,8 @@ namespace VK.UI.UWP.Controls {
             HeaderLeft = (StackPanel)GetTemplateChild(nameof(HeaderLeft));
             HeaderRight = (StackPanel)GetTemplateChild(nameof(HeaderRight));
 
-            long dnsaid = RegisterPropertyChangedCallback(DetectNonSafeAreaProperty, FixMarginCallback);
             Loaded += (a, b) => {
-                FixMarginCallback(this, DetectNonSafeAreaProperty);
+                FixMargin();
                 AddButtonsInStackPanel(HeaderLeft, _leftButtons);
                 AddButtonsInStackPanel(HeaderRight, _rightButtons);
                 LeftButtons.CollectionChanged += LeftButtons_CollectionChanged;
@@ -75,13 +76,25 @@ namespace VK.UI.UWP.Controls {
         #region Internal
 
         // Margin for non-safe areas
-
         private void FixMarginCallback(DependencyObject sender, DependencyProperty dp) {
-            bool isEnabled = (bool)GetValue(dp);
+            cachedDetectNonSafeArea = (bool)GetValue(dp);
+            FixMargin();
+        }
+
+        private void TitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args) {
+            bool isTabletMode = UIViewSettings.GetForCurrentView().UserInteractionMode == UserInteractionMode.Touch;
+            FixMargin(isTabletMode ? 0 : sender.Height);
+        }
+
+        private void View_VisibleBoundsChanged(ApplicationView sender, object args) {
+            FixMargin(sender.VisibleBounds.Top);
+        }
+
+        private void FixMargin(double margin = 0) {
+            if(LayoutRoot == null) return;
             CoreApplicationViewTitleBar titleBar = null;
             ApplicationView view = ApplicationView.GetForCurrentView();
-            double margin = 0;
-            if (isEnabled) {
+            if(cachedDetectNonSafeArea) {
                 switch(AnalyticsInfo.VersionInfo.DeviceFamily) {
                     case "Windows.Desktop":
                         titleBar = CoreApplication.GetCurrentView().TitleBar;
@@ -103,21 +116,7 @@ namespace VK.UI.UWP.Controls {
                         break;
                 }
             }
-            FixMargin(margin);
-        }
-
-        private void TitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args) {
-            bool isTabletMode = UIViewSettings.GetForCurrentView().UserInteractionMode == UserInteractionMode.Touch;
-            FixMargin(isTabletMode ? 0 : sender.Height);
-        }
-
-        private void View_VisibleBoundsChanged(ApplicationView sender, object args) {
-            FixMargin(sender.VisibleBounds.Top);
-        }
-
-        private void FixMargin(double margin = 0) {
             LayoutRoot.Margin = new Thickness(0, margin, 0, 0);
-            Debug.WriteLine($"Margin: {margin} px");
         }
 
         // Buttons

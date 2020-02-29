@@ -5,6 +5,7 @@
     <Style TargetType="local:PageHeader">
         <Setter Property="BorderBrush" Value="{ThemeResource VKSeparatorCommonBrush}"/>
         <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="0,5,0,0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="local:PageHeader">
@@ -15,7 +16,6 @@
                                 <Setter Property="FontSize" Value="19"/>
                                 <Setter Property="LineHeight" Value="19"/>
                                 <Setter Property="LineStackingStrategy" Value="BlockLineHeight"/>
-                                <Setter Property="Padding" Value="0,5,0,0"/>
                                 <Setter Property="VerticalAlignment" Value="Center"/>
                                 <Setter Property="Foreground" Value="{ThemeResource VKHeaderTextBrush}"/>
                             </Style>
@@ -25,7 +25,7 @@
                             <ColumnDefinition/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <ContentPresenter x:Name="PageHeaderContent" Grid.Column="1" Style="{StaticResource PageHeaderContentStyle}"/>
+                        <ContentPresenter x:Name="PageHeaderContent" Grid.Column="1" Padding="{TemplateBinding Padding}" Style="{StaticResource PageHeaderContentStyle}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
                         <StackPanel x:Name="HeaderLeft" Grid.Column="0" Orientation="Horizontal" MinWidth="16"/>
                         <StackPanel x:Name="HeaderRight" Grid.Column="2" Orientation="Horizontal" MinWidth="16"/>
                         <Border Grid.ColumnSpan="3" Height="1" Margin="16,0" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Background="{TemplateBinding BorderBrush}">

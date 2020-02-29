@@ -26,7 +26,7 @@
                     <TextBlock Margin="0,8" TextWrapping="Wrap">
                         Это приложение создано для демонстрации библиотеки VKUI на UWP. Пока не всё тут есть, т. к. сама библиотека пока что не до конца портирована.
                         <LineBreak/>
-                        <Run FontWeight="SemiBold" Text="Control styles version: "/><Run Text="{StaticResource VKUIStylesVersion}"/><LineBreak/>
+                        <Run FontWeight="SemiBold" Text="Version: "/><Run x:Name="LibVersion"/><LineBreak/>
                         <Run FontWeight="SemiBold" Text="Palette version: "/><Run Text="{StaticResource VKUIPaletteVersion}"/><LineBreak/>
                         <Run FontWeight="SemiBold" Text="Scheme version: "/><Run Text="{StaticResource VKUISchemeVersion}"/><LineBreak/>
                         <Run FontWeight="SemiBold" Text="Icons version: "/><Run Text="{StaticResource VKUIIconsVersion}"/>

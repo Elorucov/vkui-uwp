@@ -19,6 +19,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using VKUI_UWP_Demo.Utils;
+using VK.UI.UWP;
 
 // Документацию по шаблону элемента "Пустая страница" см. по адресу https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -30,6 +31,7 @@ namespace VKUI_UWP_Demo {
         public Menu() {
             this.InitializeComponent();
             this.InitNavigationTransition();
+            NavigationCacheMode = NavigationCacheMode.Required;
         }
 
         private void OnLoad(object sender, RoutedEventArgs e) {
@@ -42,6 +44,8 @@ namespace VKUI_UWP_Demo {
                     ApplicationView.GetForCurrentView().SetDesiredBoundsMode(ApplicationViewBoundsMode.UseCoreWindow);
                     break;
             }
+
+            LibVersion.Text = VKUILibrary.Version.ToString();
         }
 
         private async void OpenLink(object sender, RoutedEventArgs e) {

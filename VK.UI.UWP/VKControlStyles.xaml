@@ -3,8 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:VK.UI.UWP">
 
-    <x:String x:Key="VKUIStylesVersion">2.34</x:String>
-
     <!-- Button -->
     <ControlTemplate x:Key="VKButton" TargetType="Button">
         <Grid x:Name="RootGrid" CornerRadius="8" Background="{TemplateBinding Background}">
