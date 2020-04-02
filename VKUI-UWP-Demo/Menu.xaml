@@ -32,11 +32,17 @@
                         <Run FontWeight="SemiBold" Text="Icons version: "/><Run Text="{StaticResource VKUIIconsVersion}"/>
                     </TextBlock>
                 </StackPanel>
-                <StackPanel x:Name="Infos" Margin="8,0" Padding="0,4,0,8" BorderBrush="{ThemeResource VKSeparatorCommonBrush}" BorderThickness="0,0,0,1">
+                <StackPanel x:Name="Basics" Margin="8,0" Padding="0,4,0,8" BorderBrush="{ThemeResource VKSeparatorCommonBrush}" BorderThickness="0,0,0,1">
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Основы"/>
                     <StackPanel Margin="0,8,0,0">
                         <vkui:CellButton Padding="0" IconTemplate="{StaticResource Icon24Info}" Text="Как подключить" Tag="https://github.com/Elorucov/vkui-uwp/blob/master/README.md" Click="OpenLink" />
                         <vkui:CellButton Padding="0" IconTemplate="{StaticResource Icon24SmileOutline}" Text="Иконки" Tag="1" Click="OpenPage" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel x:Name="Controls" Margin="8,0" Padding="0,4,0,8" BorderBrush="{ThemeResource VKSeparatorCommonBrush}" BorderThickness="0,0,0,1">
+                    <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Элементы управления"/>
+                    <StackPanel Margin="0,8,0,0">
+                        <vkui:CellButton Padding="0" IconTemplate="{StaticResource Icon24Filter}" Text="PageHeader" Tag="11" Click="OpenPage" />
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
