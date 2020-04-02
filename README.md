@@ -9,17 +9,17 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="ms-appx:///VK.UI.UWP/VKPalette.xaml"/>
-                <ResourceDictionary Source="ms-appx:///VK.UI.UWP/VKSchemeMilkshake.xaml"/>
+                <ResourceDictionary Source="ms-appx:///VK.UI.UWP/VKScheme.xaml"/>
                 <ResourceDictionary Source="ms-appx:///VK.UI.UWP/VKControlStyles.xaml"/>
                 <ResourceDictionary Source="ms-appx:///VK.UI.UWP/VKIcons.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
 ```
-Код выше добавляет ссылки на словари ресурсов vkui. Не меняйте порядок подключаемых словарей ресурсов, палитра (VKPalette.xaml) и схема (VKSchemeMilkshake.xaml) должны быть первым и вторым соответственно.
+Код выше добавляет ссылки на словари ресурсов vkui. Не меняйте порядок подключаемых словарей ресурсов, палитра (VKPalette.xaml) и схема (VKScheme.xaml) должны быть первым и вторым соответственно.
 
 # Палитра и цветовые схемы.
-Доступны две цветовые схемы: VKSchemeDefault.xaml на основе "client_light" и "client_dark", и VKSchemeMilkshake.xaml на основе "bright_light" и "space_gray". Из-за редизайна мобильных клиентов ВК рекомендуется использовать схему VKSchemeMilkshake.xaml.
+В VKPalette.xaml содержится цвета (ресурсы Color), а в VKScheme.xaml  схемы (ресурсы Brush) на основе "bright_light" и "space_gray". Также есть VKPaletteMessages.xaml и VKSchemeMessages.xaml, в них находятся цвета, используемые (в будущем?) в сообщениях в официальных мобильных клиентах VK.
 Палитра и схемы взяты и сконвертированы [отсюда](https://github.com/VKCOM/Appearance "Appearance").
 
 # Стили для элементов управления
@@ -74,3 +74,59 @@
 
 Название ресурсов иконок имеют название в формате **Icon<размер><название>**. Например, ```Icon24Locate```,  ```Icon56MoneyTransferOutline```. Размер и название иконок вы можете узнать [тут](https://vkcom.github.io/icons "VK Icons").
 Рекомендуется задавать размер элемента, в котором вы размещаете иконку, такой же, как в иконке.
+
+# Элементы управления
+Для использовании элементов управления пропишите в теге Page следующую строку:
+``` xaml
+xmlns:vkui="using:VK.UI.UWP.Controls"
+```
+Пример:
+``` xaml
+<Page
+    x:Class="VKUI_UWP_Demo.Pages.PageHeaderDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VKUI_UWP_Demo.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vkui="using:VK.UI.UWP.Controls"
+    mc:Ignorable="d">
+</Page>
+```
+
+## PageHeader
+Шапка для страниц. Должна находится в верхней части страницы. Пример:
+``` xaml
+<vkui:PageHeader Content="Sample header">
+    <vkui:PageHeader.LeftButtons>
+        <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28ArrowLeftOutline}"/>
+    </vkui:PageHeader.LeftButtons>
+    <vkui:PageHeader.RightButtons>
+        <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28AddOutline}"/>
+        <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28MoreHorizontal}"/>
+    </vkui:PageHeader.RightButtons>
+</vkui:PageHeader>
+```
+*(тут должен быть скрин)*
+
+## CellButton
+Кнопка, занимающая всю ширину и содержащая в себе иконку слева и текст за ней. Пример:
+``` xaml
+<vkui:CellButton IconTemplate="{StaticResource Icon24SmileOutline}" Text="Иконки"/>
+```
+*(тут должен быть скрин)*
+
+## Progress
+Прогресс-бар `¯\_(ツ)_ /¯`. Пример:
+``` xaml
+<vkui:Progress Maximum="100" Value="50"/>
+```
+*(тут должен быть скрин)*
+
+## Spinner
+Используется для визуализации выполнения "долгого" процесса. Пример:
+``` xaml
+<vkui:Spinner Width="44" Height="44"/>
+```
+Размер спиннера равняется минимальному значению между Width и Height.
+*(тут должен быть скрин)*
