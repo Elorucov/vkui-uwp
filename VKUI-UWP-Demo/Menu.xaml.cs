@@ -61,9 +61,15 @@ namespace VKUI_UWP_Demo {
             if(!Int32.TryParse(el.Tag.ToString(), out id)) return;
             switch(id) {
                 case 1: page = typeof(Pages.Icons); break;
+                case 3: page = typeof(Pages.FlyoutsDemo); break;
                 case 11: page = typeof(Pages.PageHeaderDemo); break;
             }
             Frame.Navigate(page, null, new DrillInNavigationTransitionInfo());
+        }
+
+        private void ShowMoreMenu(object sender, RoutedEventArgs e) {
+            // FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
+            TestFlyout.ShowAt((FrameworkElement)sender);
         }
     }
 }

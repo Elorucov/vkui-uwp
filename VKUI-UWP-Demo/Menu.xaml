@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vkui="using:VK.UI.UWP.Controls"
+    xmlns:vkuif="using:VK.UI.UWP.Flyouts"
     mc:Ignorable="d"
     Loaded="OnLoad">
 
@@ -16,7 +17,15 @@
         </Grid.RowDefinitions>
         <vkui:PageHeader Content="VKUI UWP Demo">
             <vkui:PageHeader.RightButtons>
-                <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28MoreHorizontal}"/>
+                <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28MoreHorizontal}" Click="ShowMoreMenu">
+                    <FlyoutBase.AttachedFlyout>
+                        <vkuif:MenuFlyout x:Name="TestFlyout" Placement="Bottom">
+                            <vkuif:MenuFlyout.Items>
+                                <vkui:CellButton IconTemplate="{StaticResource Icon28LinkOutline}" Text="Link"/>
+                            </vkuif:MenuFlyout.Items>
+                        </vkuif:MenuFlyout>
+                    </FlyoutBase.AttachedFlyout>
+                </vkui:PageHeaderButton>
             </vkui:PageHeader.RightButtons>
         </vkui:PageHeader>
         <ScrollViewer Grid.Row="1" MaxWidth="576">
@@ -37,6 +46,7 @@
                     <StackPanel Margin="0,8,0,0">
                         <vkui:CellButton Padding="0" IconTemplate="{StaticResource Icon24Info}" Text="Как подключить" Tag="https://github.com/Elorucov/vkui-uwp/blob/master/README.md" Click="OpenLink" />
                         <vkui:CellButton Padding="0" IconTemplate="{StaticResource Icon24SmileOutline}" Text="Иконки" Tag="1" Click="OpenPage" />
+                        <vkui:CellButton Padding="0" IconTemplate="{StaticResource Icon24Filter}" Text="Всплывающие элементы" Tag="3" Click="OpenPage" />
                     </StackPanel>
                 </StackPanel>
                 <StackPanel x:Name="Controls" Margin="8,0" Padding="0,4,0,8" BorderBrush="{ThemeResource VKSeparatorCommonBrush}" BorderThickness="0,0,0,1">
