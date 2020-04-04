@@ -1658,15 +1658,15 @@
 
     <!-- MenuFlyout -->
     <Style x:Key="MenuFlyoutStyle" TargetType="local:FlyoutPresenter">
-        <Setter Property="Padding" Value="0,8"/>
+        <Setter Property="Padding" Value="0,2"/>
     </Style>
 
     <!-- Cell button style for MenuItem -->
     <Style x:Key="MenuFlyoutCellButtonStyle" TargetType="local:CellButton">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="IconBrush" Value="{ThemeResource VKHeaderTintBrush}"/>
-        <Setter Property="Padding" Value="18,0"/>
-        <Setter Property="MinWidth" Value="240"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="MinWidth" Value="160"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="local:CellButton">
@@ -1709,8 +1709,8 @@
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <ContentPresenter x:Name="IconPresenter" Margin="0,10,18,10" Width="28" Height="28" Foreground="{TemplateBinding IconBrush}" ContentTemplate="{TemplateBinding IconTemplate}"/>
-                            <TextBlock x:Name="Text" Grid.Column="1" Margin="0,12,0,14" FontSize="16" Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding Text}" TextTrimming="CharacterEllipsis"/>
+                            <ContentPresenter x:Name="IconPresenter" Margin="12,10" Width="28" Height="28" Foreground="{TemplateBinding IconBrush}" ContentTemplate="{TemplateBinding IconTemplate}"/>
+                            <TextBlock x:Name="Text" Grid.Column="1" Margin="0,12,10,14" FontSize="16" Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding Text}" TextTrimming="CharacterEllipsis"/>
                         </Grid>
                     </Grid>
                 </ControlTemplate>
