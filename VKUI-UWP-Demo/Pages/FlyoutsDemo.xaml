@@ -33,15 +33,18 @@
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="MenuFlyout"/>
                     <TextBlock Margin="0,8" TextWrapping="Wrap">
                         Всплывающее меню.
-                        В свойстве <Run FontWeight="SemiBold" FontFamily="Consolas">Items</Run> должны размещаться элементы следующих типов (пока один):
+                        В свойстве <Run FontWeight="SemiBold" FontFamily="Consolas">Items</Run> должны размещаться элементы следующих типов:
                         <LineBreak/>
-                        <Run FontWeight="SemiBold" FontFamily="Consolas">CellButton</Run>.
+                        <Run FontWeight="SemiBold" FontFamily="Consolas">CellButton</Run>,
+                        <Run FontWeight="SemiBold" FontFamily="Consolas">RadioButton</Run>,
+                        <Run FontWeight="SemiBold" FontFamily="Consolas">MenuFlyoutItem</Run> и
+                        <Run FontWeight="SemiBold" FontFamily="Consolas">MenuFlyoutSeparator</Run>.
                     </TextBlock>
                 </StackPanel>
                 <StackPanel x:Name="Demo" Margin="8,0" Padding="0,4,0,8" BorderBrush="{ThemeResource VKSeparatorCommonBrush}" BorderThickness="0,0,0,1">
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Примеры"/>
-                    <StackPanel Margin="0,8" Orientation="Horizontal">
-                        <Button Margin="0,0,8,0" Style="{StaticResource VKButtonSecondaryMedium}" Content="Flyout demo">
+                    <StackPanel Margin="0,8">
+                        <Button Margin="0,0,0,8" Style="{StaticResource VKButtonSecondaryMedium}" Content="Flyout demo">
                             <Button.Flyout>
                                 <vkuif:Flyout>
                                     <vkuif:Flyout.Content>
@@ -53,7 +56,7 @@
                                 </vkuif:Flyout>
                             </Button.Flyout>
                         </Button>
-                        <Button Margin="0,0,8,0" Style="{StaticResource VKButtonSecondaryMedium}" Content="MenuFlyout demo">
+                        <Button Margin="0,0,0,8" Style="{StaticResource VKButtonSecondaryMedium}" Content="MenuFlyout demo">
                             <Button.Flyout>
                                 <vkuif:MenuFlyout>
                                     <vkuif:MenuFlyout.Items>
@@ -61,6 +64,22 @@
                                         <vkui:CellButton IconTemplate="{StaticResource Icon28FavoriteOutline}" Text="Избранные"/>
                                         <vkui:CellButton IconTemplate="{StaticResource Icon28HelpOutline}" Text="Помощь"/>
                                         <vkui:CellButton IconTemplate="{StaticResource Icon28SettingsOutline}" Text="Настройки"/>
+                                        <MenuFlyoutSeparator/>
+                                        <RadioButton Content="Все" IsChecked="True"/>
+                                        <RadioButton Content="Непрочитанные"/>
+                                    </vkuif:MenuFlyout.Items>
+                                </vkuif:MenuFlyout>
+                            </Button.Flyout>
+                        </Button>
+                        <Button Margin="0,0,0,8" Style="{StaticResource VKButtonSecondaryMedium}" Content="MenuFlyout demo 2">
+                            <Button.Flyout>
+                                <vkuif:MenuFlyout>
+                                    <vkuif:MenuFlyout.Items>
+                                        <RadioButton Content="First"/>
+                                        <RadioButton Content="Second"/>
+                                        <MenuFlyoutSeparator/>
+                                        <MenuFlyoutItem Text="MenuFlyoutItem 1"/>
+                                        <MenuFlyoutItem Text="MenuFlyoutItem 2"/>
                                     </vkuif:MenuFlyout.Items>
                                 </vkuif:MenuFlyout>
                             </Button.Flyout>

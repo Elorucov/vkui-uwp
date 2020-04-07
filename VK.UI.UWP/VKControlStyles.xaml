@@ -1661,9 +1661,10 @@
         <Setter Property="Padding" Value="0,2"/>
     </Style>
 
-    <!-- Cell button style for MenuItem -->
+    <!-- Cell button style for MenuFlyoutItem -->
     <Style x:Key="MenuFlyoutCellButtonStyle" TargetType="local:CellButton">
         <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{ThemeResource VKTextPrimaryBrush}" />
         <Setter Property="IconBrush" Value="{ThemeResource VKHeaderTintBrush}"/>
         <Setter Property="Padding" Value="0"/>
         <Setter Property="MinWidth" Value="160"/>
@@ -1710,9 +1711,209 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <ContentPresenter x:Name="IconPresenter" Margin="12,10" Width="28" Height="28" Foreground="{TemplateBinding IconBrush}" ContentTemplate="{TemplateBinding IconTemplate}"/>
-                            <TextBlock x:Name="Text" Grid.Column="1" Margin="0,12,10,14" FontSize="16" Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding Text}" TextTrimming="CharacterEllipsis"/>
+                            <TextBlock x:Name="Text" Grid.Column="1" Margin="0,12,16,14" FontSize="16" Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding Text}" TextTrimming="CharacterEllipsis"/>
                         </Grid>
                     </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- MenuFlyoutItem style for VKUI's MenuFlyout -->
+    <Style x:Key="VKUIMenuFlyoutItemStyle" TargetType="MenuFlyoutItem">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{ThemeResource VKTextPrimaryBrush}" />
+        <Setter Property="Padding" Value="16,13,16,15" />
+        <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="UseSystemFocusVisuals" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuFlyoutItem">
+                    <Grid x:Name="LayoutRoot"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <Storyboard>
+                                        <PointerUpThemeAnimation Storyboard.TargetName="LayoutRoot" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="PointerOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="BorderBrush">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource VKSeparatorCommonBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <PointerUpThemeAnimation Storyboard.TargetName="LayoutRoot" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource VKSeparatorCommonBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <PointerDownThemeAnimation Storyboard.TargetName="LayoutRoot" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="LayoutRoot" Storyboard.TargetProperty="Opacity">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="0.6" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="CheckPlaceholderStates">
+                                <VisualState x:Name="NoPlaceholder" />
+                                <VisualState x:Name="CheckPlaceholder">
+                                    <VisualState.Setters>
+                                        <Setter Target="TextBlock.Margin" Value="{ThemeResource MenuFlyoutItemPlaceholderThemeThickness}" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="IconPlaceholder">
+                                    <VisualState.Setters>
+                                        <Setter Target="TextBlock.Margin" Value="{ThemeResource MenuFlyoutItemPlaceholderThemeThickness}" />
+                                        <Setter Target="IconRoot.Visibility" Value="Visible" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="CheckAndIconPlaceholder">
+                                    <VisualState.Setters>
+                                        <Setter Target="TextBlock.Margin" Value="{ThemeResource MenuFlyoutItemDoublePlaceholderThemeThickness}" />
+                                        <Setter Target="IconRoot.Margin" Value="{ThemeResource MenuFlyoutItemPlaceholderThemeThickness}" />
+                                        <Setter Target="IconRoot.Visibility" Value="Visible" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="PaddingSizeStates">
+                                <VisualState x:Name="DefaultPadding" />
+                                <VisualState x:Name="NarrowPadding" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="HoverBorder" Grid.ColumnSpan="2" VerticalAlignment="Stretch" BorderThickness="0,1"/>
+                        <Grid Padding="{TemplateBinding Padding}">
+                            <Viewbox x:Name="IconRoot" 
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Width="28" 
+                            Height="28"
+                            Visibility="Collapsed">
+                                <ContentPresenter x:Name="IconContent"
+                                Content="{TemplateBinding Icon}"/>
+                            </Viewbox>
+                            <TextBlock x:Name="TextBlock"
+                            Text="{TemplateBinding Text}"
+                            TextTrimming="Clip"
+                            Foreground="{TemplateBinding Foreground}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- RadioButton style for VKUI's MenuFlyout -->
+    <Style x:Key="VKUIRadioButtonForFlyoutStyle" TargetType="RadioButton">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{ThemeResource VKTextPrimaryBrush}" />
+        <Setter Property="Padding" Value="16,10,10,10" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="MinWidth" Value="120" />
+        <Setter Property="UseSystemFocusVisuals" Value="True" />
+        <Setter Property="FocusVisualMargin" Value="-7,-3,-7,-3" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Grid x:Name="LayoutRoot" 
+                        Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="PointerOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="BorderBrush">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource VKSeparatorCommonBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <PointerUpThemeAnimation Storyboard.TargetName="LayoutRoot" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource VKSeparatorCommonBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <PointerDownThemeAnimation Storyboard.TargetName="LayoutRoot" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="LayoutRoot" Storyboard.TargetProperty="Opacity">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="0.6" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="CheckStates">
+                                <VisualState x:Name="Checked">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="CheckIcon"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="1"
+                                            Duration="0" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unchecked" />
+                                <VisualState x:Name="Indeterminate" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="HoverBorder" Grid.ColumnSpan="2" VerticalAlignment="Stretch" BorderThickness="0,1"/>
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="28" />
+                            </Grid.ColumnDefinitions>
+                            <ContentPresenter x:Name="CheckIcon" 
+                                              Grid.Column="1"
+                                              ContentTemplate="{StaticResource Icon28DoneOutline}"
+                                              Width="28"
+                                              Height="28"
+                                              Foreground="{ThemeResource VKAccentBrush}"
+                                              Opacity="0"/>
+                            <ContentPresenter x:Name="ContentPresenter"
+                            Content="{TemplateBinding Content}"
+                            ContentTransitions="{TemplateBinding ContentTransitions}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            Foreground="{TemplateBinding Foreground}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Grid.Column="0"
+                            Margin="0,4,10,0"
+                            AutomationProperties.AccessibilityView="Raw"
+                            TextWrapping="Wrap" />
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- MenuFlyoutSeparator style for VKUI's MenuFlyout -->
+    <Style x:Key="VKUIMenuFlyoutSeparatorStyle" TargetType="MenuFlyoutSeparator">
+        <Setter Property="Background" Value="{ThemeResource VKActionSheetSeparatorBrush}" />
+        <Setter Property="Padding" Value="16,8" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuFlyoutSeparator">
+                    <Rectangle Fill="{TemplateBinding Background}" Margin="{TemplateBinding Padding}" Height="1" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
