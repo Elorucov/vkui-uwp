@@ -1,14 +1,14 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:VK.UI.UWP.Controls">
+    xmlns:local="using:VK.VKUI.Controls">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="ms-appx:///VK.UI.UWP/Controls/CellButton.xaml"/>
-        <ResourceDictionary Source="ms-appx:///VK.UI.UWP/Controls/FlyoutPresenter.xaml"/>
-        <ResourceDictionary Source="ms-appx:///VK.UI.UWP/Controls/PageHeader.xaml"/>
-        <ResourceDictionary Source="ms-appx:///VK.UI.UWP/Controls/PageHeaderButton.xaml"/>
-        <ResourceDictionary Source="ms-appx:///VK.UI.UWP/Controls/Progress.xaml"/>
-        <ResourceDictionary Source="ms-appx:///VK.UI.UWP/Controls/Spinner.xaml"/>
+        <ResourceDictionary Source="ms-appx:///VK.VKUI/Controls/CellButton.xaml"/>
+        <ResourceDictionary Source="ms-appx:///VK.VKUI/Controls/FlyoutPresenter.xaml"/>
+        <ResourceDictionary Source="ms-appx:///VK.VKUI/Controls/PageHeader.xaml"/>
+        <ResourceDictionary Source="ms-appx:///VK.VKUI/Controls/PageHeaderButton.xaml"/>
+        <ResourceDictionary Source="ms-appx:///VK.VKUI/Controls/Progress.xaml"/>
+        <ResourceDictionary Source="ms-appx:///VK.VKUI/Controls/Spinner.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VK.UI.UWP.Controls {
+namespace VK.VKUI.Controls {
     static class ButtonStates {
         internal const string Name = "CommonStates";
         internal const string Normal = "Normal";

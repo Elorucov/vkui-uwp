@@ -4,12 +4,12 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VK.UI.UWP.Controls;
+using VK.VKUI.Controls;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 
-namespace VK.UI.UWP.Flyouts {
+namespace VK.VKUI.Flyouts {
     public class MenuFlyout : FlyoutBase {
         public ObservableCollection<Control> Items { get; set; } = new ObservableCollection<Control>();
 

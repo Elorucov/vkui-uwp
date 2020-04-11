@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using VK.UI.UWP.Helpers;
+using VK.VKUI.Helpers;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Data;
@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Shapes;
 
 // The Templated Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234235
 
-namespace VK.UI.UWP.Controls {
+namespace VK.VKUI.Controls {
     public sealed class FlyoutPresenter : ContentControl {
         public FlyoutPresenter() {
             this.DefaultStyleKey = typeof(FlyoutPresenter);

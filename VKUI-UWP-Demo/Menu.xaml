@@ -5,8 +5,7 @@
     xmlns:local="using:VKUI_UWP_Demo"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:vkui="using:VK.UI.UWP.Controls"
-    xmlns:vkuif="using:VK.UI.UWP.Flyouts"
+    xmlns:vkui="using:VK.VKUI.Controls"
     mc:Ignorable="d"
     Loaded="OnLoad">
 
@@ -18,13 +17,6 @@
         <vkui:PageHeader Content="VKUI UWP Demo">
             <vkui:PageHeader.RightButtons>
                 <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28MoreHorizontal}" Click="ShowMoreMenu">
-                    <FlyoutBase.AttachedFlyout>
-                        <vkuif:MenuFlyout x:Name="TestFlyout" Placement="Bottom">
-                            <vkuif:MenuFlyout.Items>
-                                <vkui:CellButton IconTemplate="{StaticResource Icon28LinkOutline}" Text="Link"/>
-                            </vkuif:MenuFlyout.Items>
-                        </vkuif:MenuFlyout>
-                    </FlyoutBase.AttachedFlyout>
                 </vkui:PageHeaderButton>
             </vkui:PageHeader.RightButtons>
         </vkui:PageHeader>

@@ -7,8 +7,8 @@
     <ProjectGuid>{CA48097B-BF80-44C3-9CC0-989665C589D6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VK.UI.UWP</RootNamespace>
-    <AssemblyName>VK.UI.UWP</AssemblyName>
+    <RootNamespace>VK.VKUI</RootNamespace>
+    <AssemblyName>VK.VKUI</AssemblyName>
     <DefaultLanguage>ru-RU</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.15063.0</TargetPlatformVersion>
@@ -132,7 +132,7 @@
     <Compile Include="Helpers\Shadow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VKUILibrary.cs" />
-    <EmbeddedResource Include="Properties\VK.UI.UWP.rd.xml" />
+    <EmbeddedResource Include="Properties\VK.VKUI.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">

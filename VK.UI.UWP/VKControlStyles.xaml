@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:VK.UI.UWP.Controls">
+    xmlns:local="using:VK.VKUI.Controls">
 
     <!-- Button -->
     <ControlTemplate x:Key="VKButton" TargetType="Button">
@@ -1820,13 +1820,14 @@
     <Style x:Key="VKUIRadioButtonForFlyoutStyle" TargetType="RadioButton">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{ThemeResource VKTextPrimaryBrush}" />
-        <Setter Property="Padding" Value="16,10,10,10" />
+        <Setter Property="Padding" Value="16,12,10,12" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Top" />
         <Setter Property="MinWidth" Value="120" />
         <Setter Property="UseSystemFocusVisuals" Value="True" />
+        <Setter Property="FontSize" Value="16" />
         <Setter Property="FocusVisualMargin" Value="-7,-3,-7,-3" />
         <Setter Property="Template">
             <Setter.Value>
@@ -1883,9 +1884,9 @@
                             </Grid.ColumnDefinitions>
                             <ContentPresenter x:Name="CheckIcon" 
                                               Grid.Column="1"
-                                              ContentTemplate="{StaticResource Icon28DoneOutline}"
-                                              Width="28"
-                                              Height="28"
+                                              ContentTemplate="{StaticResource Icon24Done}"
+                                              Width="24"
+                                              Height="24"
                                               Foreground="{ThemeResource VKAccentBrush}"
                                               Opacity="0"/>
                             <ContentPresenter x:Name="ContentPresenter"
@@ -1893,10 +1894,11 @@
                             ContentTransitions="{TemplateBinding ContentTransitions}"
                             ContentTemplate="{TemplateBinding ContentTemplate}"
                             Foreground="{TemplateBinding Foreground}"
+                            FontSize="{TemplateBinding FontSize}"
                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                             Grid.Column="0"
-                            Margin="0,4,10,0"
+                            Margin="0,0,10,0"
                             AutomationProperties.AccessibilityView="Raw"
                             TextWrapping="Wrap" />
                         </Grid>

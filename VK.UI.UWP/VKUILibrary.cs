@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VK.UI.UWP {
+namespace VK.VKUI {
     public class VKUILibrary {
         public static Version Version { get { return GetVersion(); } }
 

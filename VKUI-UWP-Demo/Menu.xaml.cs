@@ -19,7 +19,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using VKUI_UWP_Demo.Utils;
-using VK.UI.UWP;
+using VK.VKUI;
 
 // Документацию по шаблону элемента "Пустая страница" см. по адресу https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -69,7 +69,7 @@ namespace VKUI_UWP_Demo {
 
         private void ShowMoreMenu(object sender, RoutedEventArgs e) {
             // FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
-            TestFlyout.ShowAt((FrameworkElement)sender);
+            // TestFlyout.ShowAt((FrameworkElement)sender);
         }
     }
 }

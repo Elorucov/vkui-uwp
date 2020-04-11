@@ -10,7 +10,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Hosting;
 using Windows.UI.Xaml.Shapes;
 
-namespace VK.UI.UWP.Helpers {
+namespace VK.VKUI.Helpers {
     internal class Shadow {
         public static void Draw(UIElement control, Rectangle shadowRectangle, float blurRadius, float opacity) {
             var compositor = ElementCompositionPreview.GetElementVisual(control).Compositor;
