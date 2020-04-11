@@ -2,16 +2,16 @@
 Стили и иконки VKUI для платформы UWP.
 
 # Подключение VKUI к проекту.
-Добавьте ссылку на проект VK.UI.UWP. Затем в файле **App.xaml** добавьте следующий код:
+Добавьте ссылку на проект VK.VKUI. Затем в файле **App.xaml** добавьте следующий код:
 
 ``` xaml
 <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="ms-appx:///VK.UI.UWP/VKPalette.xaml"/>
-                <ResourceDictionary Source="ms-appx:///VK.UI.UWP/VKScheme.xaml"/>
-                <ResourceDictionary Source="ms-appx:///VK.UI.UWP/VKControlStyles.xaml"/>
-                <ResourceDictionary Source="ms-appx:///VK.UI.UWP/VKIcons.xaml"/>
+                <ResourceDictionary Source="ms-appx:///VK.VKUI/VKPalette.xaml"/>
+                <ResourceDictionary Source="ms-appx:///VK.VKUI/VKScheme.xaml"/>
+                <ResourceDictionary Source="ms-appx:///VK.VKUI/VKControlStyles.xaml"/>
+                <ResourceDictionary Source="ms-appx:///VK.VKUI/VKIcons.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
@@ -89,7 +89,7 @@ xmlns:vkui="using:VK.UI.UWP.Controls"
     xmlns:local="using:VKUI_UWP_Demo.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:vkui="using:VK.UI.UWP.Controls"
+    xmlns:vkui="using:VK.VKU.Controls"
     mc:Ignorable="d">
 </Page>
 ```
