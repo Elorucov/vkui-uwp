@@ -4,6 +4,7 @@
     xmlns:local="using:VK.VKUI.Controls">
     <Style TargetType="local:CellButton">
         <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{ThemeResource VKTextPrimaryBrush}"/>
         <Setter Property="IconBrush" Value="{ThemeResource VKHeaderTintBrush}"/>
         <Setter Property="Padding" Value="12,0"/>
         <Setter Property="UseSystemFocusVisuals" Value="True" />

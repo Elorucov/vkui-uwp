@@ -1723,8 +1723,8 @@
     <Style x:Key="VKUIMenuFlyoutItemStyle" TargetType="MenuFlyoutItem">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{ThemeResource VKTextPrimaryBrush}" />
-        <Setter Property="Padding" Value="16,13,16,15" />
-        <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}" />
+        <Setter Property="Padding" Value="16,12,16,14" />
+        <Setter Property="FontSize" Value="16" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="UseSystemFocusVisuals" Value="True" />
