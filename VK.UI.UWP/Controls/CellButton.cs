@@ -47,6 +47,22 @@ namespace VK.VKUI.Controls {
             set { SetValue(TextProperty, value); }
         }
 
+        public static readonly DependencyProperty IndicatorProperty =
+        DependencyProperty.Register(nameof(Indicator), typeof(object), typeof(CellButton), new PropertyMetadata(default(object)));
+
+        public object Indicator {
+            get { return (object)GetValue(IndicatorProperty); }
+            set { SetValue(IndicatorProperty, value); }
+        }
+
+        public static readonly DependencyProperty IndicatorTemplateProperty =
+        DependencyProperty.Register(nameof(IndicatorTemplate), typeof(ControlTemplate), typeof(CellButton), new PropertyMetadata(default(ControlTemplate)));
+
+        public ControlTemplate IndicatorTemplate {
+            get { return (ControlTemplate)GetValue(IndicatorTemplateProperty); }
+            set { SetValue(IndicatorTemplateProperty, value); }
+        }
+
         #endregion
 
         public CellButton() {
@@ -57,11 +73,13 @@ namespace VK.VKUI.Controls {
 
         Grid LayoutRoot;
         ContentPresenter IconPresenter;
+        ContentControl IndicatorPresenter;
 
         protected override void OnApplyTemplate() {
             base.OnApplyTemplate();
             LayoutRoot = (Grid)GetTemplateChild(nameof(LayoutRoot));
             IconPresenter = (ContentPresenter)GetTemplateChild(nameof(IconPresenter));
+            IndicatorPresenter = (ContentControl)GetTemplateChild(nameof(IndicatorPresenter));
             long itid = RegisterPropertyChangedCallback(IconTemplateProperty, (a, b) => ShowHideIcon());
             long ieid = RegisterPropertyChangedCallback(IsEnabledProperty, (a, b) => CheckIsEnabled());
             Loaded += (a, b) => {
