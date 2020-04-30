@@ -1402,7 +1402,7 @@
                             <ColumnDefinition Width="20" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Grid VerticalAlignment="Top" Height="32">
+                        <Grid VerticalAlignment="Center" Height="20">
                             <Rectangle x:Name="NonFilledRectangle"
                                 Fill="Transparent"
                                 Stroke="{TemplateBinding BorderBrush}"
