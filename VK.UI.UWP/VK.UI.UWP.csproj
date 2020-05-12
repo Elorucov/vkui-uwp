@@ -125,6 +125,7 @@
     <Compile Include="Controls\FlyoutPresenter.cs" />
     <Compile Include="Controls\PageHeader.cs" />
     <Compile Include="Controls\PageHeaderButton.cs" />
+    <Compile Include="Controls\Placeholder.cs" />
     <Compile Include="Controls\Progress.cs" />
     <Compile Include="Controls\Spinner.cs" />
     <Compile Include="Flyouts\Flyout.cs" />
@@ -153,6 +154,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\PageHeaderButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Placeholder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

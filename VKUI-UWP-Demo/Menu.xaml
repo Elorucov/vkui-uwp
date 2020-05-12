@@ -45,6 +45,7 @@
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Элементы управления"/>
                     <StackPanel Margin="0,8,0,0">
                         <vkui:CellButton Padding="0" IconTemplate="{StaticResource Icon24Filter}" Text="PageHeader" Tag="11" Click="OpenPage" />
+                        <vkui:CellButton Padding="0" IconTemplate="{StaticResource Icon24Filter}" Text="Placeholder" Tag="12" Click="OpenPage" />
                     </StackPanel>
                 </StackPanel>
             </StackPanel>

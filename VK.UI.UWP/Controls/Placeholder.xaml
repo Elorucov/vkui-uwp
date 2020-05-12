@@ -1,0 +1,40 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VK.VKUI.Controls">
+    <Style TargetType="local:Placeholder">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Padding" Value="32,48"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:Placeholder">
+                    <Border Padding="{TemplateBinding Padding}"
+                            VerticalAlignment="Center"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <StackPanel>
+                            <ContentPresenter x:Name="IconPresenter" HorizontalAlignment="Center" 
+                                          Margin="0,0,0,12" Width="56" Height="56" 
+                                          Foreground="{ThemeResource VKPlaceholderIconForegroundSecondaryBrush}" 
+                                          ContentTemplate="{TemplateBinding IconTemplate}"/>
+                            <TextBlock x:Name="HeaderTextBlock" TextAlignment="Center"
+                                   FontSize="20" LineHeight="24" Margin="0,0,0,8" 
+                                   LineStackingStrategy="BlockLineHeight" TextWrapping="Wrap"
+                                   FontWeight="Medium" Foreground="{ThemeResource VKTextPrimaryBrush}" Text="{TemplateBinding Header}"/>
+                            <ContentPresenter x:Name="ContentPresenter" Content="{TemplateBinding Content}" 
+                                          FontSize="16" LineHeight="20" 
+                                          HorizontalAlignment="Center" TextWrapping="Wrap"
+                                          Foreground="{ThemeResource VKTextPlaceholderBrush}">
+                            </ContentPresenter>
+                            <Button x:Name="ActionButton" Margin="0,24,0,0" HorizontalAlignment="Center"
+                                Style="{TemplateBinding ActionButtonStyle}" 
+                                Command="{TemplateBinding ActionButtonCommand}" 
+                                Content="{TemplateBinding ActionButtonText}"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

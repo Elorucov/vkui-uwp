@@ -1,0 +1,80 @@
+﻿<Page
+    x:Class="VKUI_UWP_Demo.Pages.PlaceholderDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VKUI_UWP_Demo.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vkui="using:VK.VKUI.Controls"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <vkui:PageHeader Content="Placeholder">
+            <vkui:PageHeader.LeftButtons>
+                <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28ArrowLeftOutline}" Click="GoBack"/>
+            </vkui:PageHeader.LeftButtons>
+        </vkui:PageHeader>
+        <ScrollViewer x:Name="First" Grid.Row="1" MaxWidth="576">
+            <StackPanel Margin="8">
+                <StackPanel x:Name="Info" Margin="8,0" Padding="0,4,0,8">
+                    <TextBlock Margin="0,8" TextWrapping="Wrap">
+                        Placeholder используется для каких-либо заглушек: например, в случае отсутствия элементов в списке или ошибки. 
+                        <LineBreak/>
+                        Свойства:
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run FontWeight="SemiBold" FontFamily="Consolas">Content</Run> — контент.
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run FontWeight="SemiBold" FontFamily="Consolas">IconTemplate</Run> — иконка (желательно использовать иконки 56-го размера).
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run FontWeight="SemiBold" FontFamily="Consolas">Header</Run> — Заголовок (между иконкой и контентом).
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run FontWeight="SemiBold" FontFamily="Consolas">ActionButtonText</Run> — Текст на кнопке действия, которая отображается под контентом. 
+                        Если текст не задан — кнопка не отображается.
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run FontWeight="SemiBold" FontFamily="Consolas">ActionButtonStyle</Run> — Стиль кнопки действия 
+                        (желательно VKButtonPrimaryLarge или VKButtonTertiaryLarge, по умолчанию первый).
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run FontWeight="SemiBold" FontFamily="Consolas">ActionButtonCommand</Run> — Команда, которая будет выполнена 
+                        при нажатии на кнопку действия (для MVVM).
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run FontWeight="SemiBold" FontFamily="Consolas">ActionButtonClick</Run> — Событие, которое будет выполнено 
+                        при нажатии на кнопку.
+                    </TextBlock>
+                </StackPanel>
+                <vkui:Placeholder Margin="8,0" BorderBrush="{ThemeResource VKSeparatorCommonBrush}" BorderThickness="0,1,0,0"
+                                  IconTemplate="{StaticResource Icon56UsersOutline}" 
+                                  Header="Уведомления от сообществ" 
+                                  Content="Подключите сообщества, от которых Вы хотите получать уведомления" 
+                                  ActionButtonText="Подключить сообщества"/>
+                <vkui:Placeholder Margin="8,0" BorderBrush="{ThemeResource VKSeparatorCommonBrush}" BorderThickness="0,1,0,0"
+                                  IconTemplate="{StaticResource Icon56MentionOutline}" 
+                                  Content="Введите адрес страницы в поле поиска"/>
+                <vkui:Placeholder Margin="8,0" BorderBrush="{ThemeResource VKSeparatorCommonBrush}" BorderThickness="0,1,0,0"
+                                  Content="Доступ запрещён"/>
+                <vkui:Placeholder Margin="8,0" BorderBrush="{ThemeResource VKSeparatorCommonBrush}" BorderThickness="0,1,0,0"
+                                  Header="Находите друзей" 
+                                  Content="Здесь будут отображаться люди, которых вы добавите в друзья" 
+                                  ActionButtonText="Найти друзей"/>
+                <Button Style="{StaticResource VKButtonPrimaryExtraLarge}" HorizontalAlignment="Stretch" Content="Full-page placeholder" Click="Button_Click"/>
+            </StackPanel>
+        </ScrollViewer>
+        <vkui:Placeholder x:Name="Second" VerticalAlignment="Stretch" 
+                          Visibility="Collapsed" Grid.Row="1" MaxWidth="576"
+                          IconTemplate="{StaticResource Icon56MessageReadOutline}"
+                          ActionButtonText="Показать все сообщения"
+                          ActionButtonStyle="{StaticResource VKButtonTertiaryLarge}">
+            Нет непрочитанных сообщений
+        </vkui:Placeholder>
+    </Grid>
+</Page>
