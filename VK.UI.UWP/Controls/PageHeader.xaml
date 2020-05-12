@@ -13,8 +13,8 @@
                         <Grid.Resources>
                             <Style x:Key="PageHeaderContentStyle" TargetType="ContentPresenter">
                                 <Setter Property="FontFamily" Value="ms-appx:///VK.VKUI/Fonts/TT/DemiBold.otf#TT Commons"/>
-                                <Setter Property="FontSize" Value="19"/>
-                                <Setter Property="LineHeight" Value="19"/>
+                                <Setter Property="FontSize" Value="21"/>
+                                <Setter Property="LineHeight" Value="20"/>
                                 <Setter Property="LineStackingStrategy" Value="BlockLineHeight"/>
                                 <Setter Property="VerticalAlignment" Value="Center"/>
                                 <Setter Property="Foreground" Value="{ThemeResource VKHeaderTextBrush}"/>

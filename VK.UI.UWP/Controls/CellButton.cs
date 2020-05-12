@@ -80,6 +80,8 @@ namespace VK.VKUI.Controls {
             LayoutRoot = (Grid)GetTemplateChild(nameof(LayoutRoot));
             IconPresenter = (ContentPresenter)GetTemplateChild(nameof(IconPresenter));
             IndicatorPresenter = (ContentControl)GetTemplateChild(nameof(IndicatorPresenter));
+            ShowHideIcon();
+            CheckIsEnabled();
             long itid = RegisterPropertyChangedCallback(IconTemplateProperty, (a, b) => ShowHideIcon());
             long ieid = RegisterPropertyChangedCallback(IsEnabledProperty, (a, b) => CheckIsEnabled());
             Loaded += (a, b) => {
