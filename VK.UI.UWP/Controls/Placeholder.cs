@@ -41,7 +41,7 @@ namespace VK.VKUI.Controls {
         }
 
         public static readonly DependencyProperty ActionButtonStyleProperty =
-        DependencyProperty.Register(nameof(ActionButtonStyle), typeof(Style), typeof(Placeholder), new PropertyMetadata(Application.Current.Resources["VKButtonPrimaryLarge"]));
+        DependencyProperty.Register(nameof(ActionButtonStyle), typeof(Style), typeof(Placeholder), new PropertyMetadata(default(Style)));
 
         public Style ActionButtonStyle {
             get { return (Style)GetValue(ActionButtonStyleProperty); }
@@ -73,6 +73,9 @@ namespace VK.VKUI.Controls {
 
         protected override void OnApplyTemplate() {
             base.OnApplyTemplate();
+
+            if (GetValue(ActionButtonStyleProperty) == null)
+                SetValue(ActionButtonStyleProperty, Application.Current.Resources["VKButtonPrimaryLarge"]);
 
             IconPresenter = (ContentPresenter)GetTemplateChild(nameof(IconPresenter));
             HeaderTextBlock = (TextBlock)GetTemplateChild(nameof(HeaderTextBlock));
@@ -130,9 +133,7 @@ namespace VK.VKUI.Controls {
             object value = GetValue(ContentProperty);
             if (GetValue(ContentProperty) != null && value is string && ContentPresenter != null) {
                 DependencyObject dobj = VisualTreeHelper.GetChild(ContentPresenter, 0);
-                if (dobj is TextBlock tb) {
-                    tb.TextAlignment = TextAlignment.Center;
-                }
+                if (dobj is TextBlock tb) tb.TextAlignment = TextAlignment.Center;
             }
         }
 

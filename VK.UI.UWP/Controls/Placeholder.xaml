@@ -28,7 +28,7 @@
                                           Foreground="{ThemeResource VKTextPlaceholderBrush}">
                             </ContentPresenter>
                             <Button x:Name="ActionButton" Margin="0,24,0,0" HorizontalAlignment="Center"
-                                Style="{TemplateBinding ActionButtonStyle}" 
+                                Style="{TemplateBinding ActionButtonStyle}"
                                 Command="{TemplateBinding ActionButtonCommand}" 
                                 Content="{TemplateBinding ActionButtonText}"/>
                         </StackPanel>
