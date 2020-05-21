@@ -56,13 +56,12 @@ namespace VK.VKUI.Controls {
             HeaderLeft = (StackPanel)GetTemplateChild(nameof(HeaderLeft));
             HeaderRight = (StackPanel)GetTemplateChild(nameof(HeaderRight));
 
-            Loaded += (a, b) => {
-                FixMargin();
-                AddButtonsInStackPanel(HeaderLeft, _leftButtons);
-                AddButtonsInStackPanel(HeaderRight, _rightButtons);
-                LeftButtons.CollectionChanged += LeftButtons_CollectionChanged;
-                RightButtons.CollectionChanged += RightButtons_CollectionChanged;
-            };
+            FixMargin();
+            AddButtonsInStackPanel(HeaderLeft, _leftButtons);
+            AddButtonsInStackPanel(HeaderRight, _rightButtons);
+            LeftButtons.CollectionChanged += LeftButtons_CollectionChanged;
+            RightButtons.CollectionChanged += RightButtons_CollectionChanged;
+
             Unloaded += (a, b) => {
                 UnregisterPropertyChangedCallback(DetectNonSafeAreaProperty, dnsaid);
                 LeftButtons.CollectionChanged -= LeftButtons_CollectionChanged;

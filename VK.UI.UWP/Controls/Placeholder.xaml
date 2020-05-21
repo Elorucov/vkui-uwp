@@ -8,12 +8,11 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="local:Placeholder">
-                    <Border Padding="{TemplateBinding Padding}"
-                            VerticalAlignment="Center"
+                    <Border VerticalAlignment="{TemplateBinding VerticalAlignment}"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
-                        <StackPanel>
+                        <StackPanel VerticalAlignment="Center" Margin="{TemplateBinding Padding}">
                             <ContentPresenter x:Name="IconPresenter" HorizontalAlignment="Center" 
                                           Margin="0,0,0,12" Width="56" Height="56" 
                                           Foreground="{ThemeResource VKPlaceholderIconForegroundSecondaryBrush}" 
