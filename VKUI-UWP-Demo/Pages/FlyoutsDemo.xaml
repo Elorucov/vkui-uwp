@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <vkui:PageHeader Content="Всплывающие элементы">
             <vkui:PageHeader.LeftButtons>
-                <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28ArrowLeftOutline}" Click="GoBack"/>
+                <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28ArrowLeftOutline}" Text="Назад" Click="GoBack"/>
             </vkui:PageHeader.LeftButtons>
         </vkui:PageHeader>
         <ScrollViewer Grid.Row="1" MaxWidth="576">

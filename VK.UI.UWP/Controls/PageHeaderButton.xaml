@@ -14,6 +14,7 @@
         <Setter Property="FontWeight" Value="Normal" />
         <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}" />
         <Setter Property="UseSystemFocusVisuals" Value="True" />
+        <Setter Property="ToolTipService.Placement" Value="Bottom"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="local:PageHeaderButton">

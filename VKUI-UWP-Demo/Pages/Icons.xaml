@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
         <vkui:PageHeader Content="Иконки">
             <vkui:PageHeader.LeftButtons>
-                <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28ArrowLeftOutline}" Click="GoBack"/>
+                <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28ArrowLeftOutline}" Text="Назад" Click="GoBack"/>
             </vkui:PageHeader.LeftButtons>
         </vkui:PageHeader>
         <GridView x:Name="IconsGrid" Grid.Row="1" MaxWidth="576" SelectionMode="None" IsItemClickEnabled="True" ItemsSource="{Binding Source={StaticResource GroupedIcons}}" ItemClick="ShowIconInfo">

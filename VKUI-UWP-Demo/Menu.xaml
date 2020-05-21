@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <vkui:PageHeader Content="VKUI UWP Demo">
             <vkui:PageHeader.RightButtons>
-                <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28MoreHorizontal}" Click="ShowMoreMenu">
+                <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28MoreHorizontal}" Text="Тест подсказки" Click="ShowMoreMenu">
                 </vkui:PageHeaderButton>
             </vkui:PageHeader.RightButtons>
         </vkui:PageHeader>

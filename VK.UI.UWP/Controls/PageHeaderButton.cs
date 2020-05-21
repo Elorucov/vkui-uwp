@@ -20,13 +20,23 @@ namespace VK.VKUI.Controls {
     [TemplateVisualState(Name = ButtonStates.Pressed, GroupName = ButtonStates.Name)]
     [TemplateVisualState(Name = ButtonStates.Disabled, GroupName = ButtonStates.Name)]
     public sealed class PageHeaderButton : ButtonBase {
+        public static readonly DependencyProperty TextProperty =
+        DependencyProperty.Register(nameof(Text), typeof(string), typeof(PageHeaderButton), new PropertyMetadata(default(string)));
+
+        public string Text {
+            get { return (string)GetValue(TextProperty); }
+            set { SetValue(TextProperty, value); }
+        }
+
         public PageHeaderButton() {
             this.DefaultStyleKey = typeof(PageHeaderButton);
             RegisterPropertyChangedCallback(ContentProperty, (c, d) =>
             throw new ArgumentException("Please use ContentTemplate property instead of Content property.", nameof(Content)));
+            RegisterPropertyChangedCallback(ContentProperty, (c, d) => ToolTipService.SetToolTip(this, GetValue(d)));
             long ieid = RegisterPropertyChangedCallback(IsEnabledProperty, (a, b) => CheckIsEnabled());
 
             Loaded += (a, b) => {
+                ToolTipService.SetToolTip(this, GetValue(TextProperty));
                 CheckIsEnabled();
                 AddHandler(UIElement.PointerEnteredEvent, new PointerEventHandler(Entered), true);
                 AddHandler(UIElement.PointerExitedEvent, new PointerEventHandler(Exited), true);
