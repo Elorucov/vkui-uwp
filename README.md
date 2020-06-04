@@ -63,17 +63,15 @@
         ContentTemplate="{StaticResource Icon24Gift}"
         Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" />
 ```
-2. Во всех остальных местах:
+2. Использовать новый элемент управления ```VKIcon``` и прописать название иконки в свойстве Id:
 ``` xaml
-<ContentPresenter
-        Width="24"
-        Height="24"
-        ContentTemplate="{StaticResource Icon24Gift}"
-        Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" />
+<vkui:VKIcon
+      Id="Icon28MusicOutline"
+      Foreground="{ThemeResource VKButtonSecondaryForegroundBrush}" />
 ```
 
-Название ресурсов иконок имеют название в формате **Icon<размер><название>**. Например, ```Icon24Locate```,  ```Icon56MoneyTransferOutline```. Размер и название иконок вы можете узнать [тут](https://vkcom.github.io/icons "VK Icons").
-Рекомендуется задавать размер элемента, в котором вы размещаете иконку, такой же, как в иконке.
+Размер и название иконок вы можете узнать на странице "Иконки", либо [тут](https://vkcom.github.io/icons "VK Icons").
+Рекомендуется задавать размер элемента, в котором вы размещаете иконку, такой же, как в иконке. Если вы используете ```VKIcon``` для отображения иконок и не задаёте для него размеры, то размер будет задан автоматически в зависимости от иконки. 
 
 # Элементы управления
 Для использовании элементов управления пропишите в теге Page следующую строку:
@@ -99,11 +97,11 @@ xmlns:vkui="using:VK.UI.UWP.Controls"
 ``` xaml
 <vkui:PageHeader Content="Sample header">
     <vkui:PageHeader.LeftButtons>
-        <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28ArrowLeftOutline}"/>
+        <vkui:PageHeaderButton Icon="Icon28ArrowLeftOutline"/>
     </vkui:PageHeader.LeftButtons>
     <vkui:PageHeader.RightButtons>
-        <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28AddOutline}"/>
-        <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28MoreHorizontal}"/>
+        <vkui:PageHeaderButton Icon="Icon28AddOutline"/>
+        <vkui:PageHeaderButton Icon="Icon28MoreHorizontal"/>
     </vkui:PageHeader.RightButtons>
 </vkui:PageHeader>
 ```
@@ -112,7 +110,7 @@ xmlns:vkui="using:VK.UI.UWP.Controls"
 ## CellButton
 Кнопка, занимающая всю ширину и содержащая в себе иконку слева и текст за ней. Пример:
 ``` xaml
-<vkui:CellButton IconTemplate="{StaticResource Icon24SmileOutline}" Text="Иконки"/>
+<vkui:CellButton Icon="Icon24SmileOutline" Text="Иконки"/>
 ```
 *(тут должен быть скрин)*
 
@@ -120,6 +118,17 @@ xmlns:vkui="using:VK.UI.UWP.Controls"
 Прогресс-бар `¯\_(ツ)_ /¯`. Пример:
 ``` xaml
 <vkui:Progress Maximum="100" Value="50"/>
+```
+*(тут должен быть скрин)*
+
+## Placeholder
+Используется для каких-либо заглушек. Пример:
+``` xaml
+<vkui:Placeholder Margin="8,0"
+      Icon="Icon56UsersOutline" 
+      Header="Уведомления от сообществ" 
+      Content="Подключите сообщества, от которых Вы хотите получать уведомления" 
+      ActionButtonText="Подключить сообщества"/>
 ```
 *(тут должен быть скрин)*
 
