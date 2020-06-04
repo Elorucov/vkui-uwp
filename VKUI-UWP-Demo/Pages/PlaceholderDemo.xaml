@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
         <vkui:PageHeader Content="Placeholder">
             <vkui:PageHeader.LeftButtons>
-                <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28ArrowLeftOutline}" Text="Назад" Click="GoBack"/>
+                <vkui:PageHeaderButton Icon="Icon28ArrowLeftOutline" Text="Назад" Click="GoBack"/>
             </vkui:PageHeader.LeftButtons>
         </vkui:PageHeader>
         <ScrollViewer x:Name="First" Grid.Row="1" MaxWidth="576">
@@ -30,7 +30,7 @@
                         <Run FontWeight="SemiBold" FontFamily="Consolas">Content</Run> — контент.
                         <LineBreak/>
                         <LineBreak/>
-                        <Run FontWeight="SemiBold" FontFamily="Consolas">IconTemplate</Run> — иконка (желательно использовать иконки 56-го размера).
+                        <Run FontWeight="SemiBold" FontFamily="Consolas">Icon</Run> — иконка (желательно использовать иконки 56-го размера).
                         <LineBreak/>
                         <LineBreak/>
                         <Run FontWeight="SemiBold" FontFamily="Consolas">Header</Run> — Заголовок (между иконкой и контентом).
@@ -53,12 +53,12 @@
                     </TextBlock>
                 </StackPanel>
                 <vkui:Placeholder Margin="8,0" BorderBrush="{ThemeResource VKSeparatorCommonBrush}" BorderThickness="0,1,0,0"
-                                  IconTemplate="{StaticResource Icon56UsersOutline}" 
+                                  Icon="Icon56UsersOutline" 
                                   Header="Уведомления от сообществ" 
                                   Content="Подключите сообщества, от которых Вы хотите получать уведомления" 
                                   ActionButtonText="Подключить сообщества"/>
                 <vkui:Placeholder Margin="8,0" BorderBrush="{ThemeResource VKSeparatorCommonBrush}" BorderThickness="0,1,0,0"
-                                  IconTemplate="{StaticResource Icon56MentionOutline}" 
+                                  Icon="Icon56MentionOutline" 
                                   Content="Введите адрес страницы в поле поиска"/>
                 <vkui:Placeholder Margin="8,0" BorderBrush="{ThemeResource VKSeparatorCommonBrush}" BorderThickness="0,1,0,0"
                                   Content="Доступ запрещён"/>
@@ -71,7 +71,7 @@
         </ScrollViewer>
         <vkui:Placeholder x:Name="Second" VerticalAlignment="Stretch" 
                           Visibility="Collapsed" Grid.Row="1" MaxWidth="576"
-                          IconTemplate="{StaticResource Icon56MessageReadOutline}"
+                          Icon="Icon56MessageReadOutline"
                           ActionButtonText="Показать все сообщения"
                           ActionButtonStyle="{StaticResource VKButtonTertiaryLarge}">
             Нет непрочитанных сообщений

@@ -23,12 +23,12 @@ namespace VK.VKUI.Controls {
 
         #region Properties
 
-        public static readonly DependencyProperty IconTemplateProperty =
-        DependencyProperty.Register(nameof(IconTemplate), typeof(DataTemplate), typeof(CellButton), new PropertyMetadata(default(DataTemplate)));
+        public static readonly DependencyProperty IconProperty =
+        DependencyProperty.Register(nameof(Icon), typeof(VKIconName), typeof(CellButton), new PropertyMetadata(default(VKIconName)));
 
-        public DataTemplate IconTemplate {
-            get { return (DataTemplate)GetValue(IconTemplateProperty); }
-            set { SetValue(IconTemplateProperty, value); }
+        public VKIconName Icon {
+            get { return (VKIconName)GetValue(IconProperty); }
+            set { SetValue(IconProperty, value); }
         }
 
         public static readonly DependencyProperty IconBrushProperty =
@@ -82,7 +82,7 @@ namespace VK.VKUI.Controls {
             IndicatorPresenter = (ContentControl)GetTemplateChild(nameof(IndicatorPresenter));
             ShowHideIcon();
             CheckIsEnabled();
-            long itid = RegisterPropertyChangedCallback(IconTemplateProperty, (a, b) => ShowHideIcon());
+            long itid = RegisterPropertyChangedCallback(IconProperty, (a, b) => ShowHideIcon());
             long ieid = RegisterPropertyChangedCallback(IsEnabledProperty, (a, b) => CheckIsEnabled());
             Loaded += (a, b) => {
                 ShowHideIcon();
@@ -110,7 +110,10 @@ namespace VK.VKUI.Controls {
 
         private void ShowHideIcon() {
             if(IconPresenter != null)
-                IconPresenter.Visibility = IconTemplate == null ? Visibility.Collapsed : Visibility.Visible;
+                IconPresenter.Visibility = Icon == VKIconName.None ? Visibility.Collapsed : Visibility.Visible;
+            if (Icon != VKIconName.None) {
+                IconPresenter.ContentTemplate = VKUILibrary.GetIconTemplate(Icon);
+            }
         }
 
         private void CheckIsEnabled() {

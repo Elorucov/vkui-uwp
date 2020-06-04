@@ -50,7 +50,7 @@
                         </VisualStateManager.VisualStateGroups>
                         <Border x:Name="BorderControl" CornerRadius="8" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"/>
                         <Border x:Name="BackgroundOverlay" CornerRadius="8" />
-                        <ContentPresenter x:Name="ContentPresenter"
+                        <ContentPresenter x:Name="IconPresenter"
                             Content="{TemplateBinding Content}"
                             ContentTransitions="{TemplateBinding ContentTransitions}"
                             ContentTemplate="{TemplateBinding ContentTemplate}"

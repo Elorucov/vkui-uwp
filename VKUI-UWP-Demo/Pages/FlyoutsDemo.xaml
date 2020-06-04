@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <vkui:PageHeader Content="Всплывающие элементы">
             <vkui:PageHeader.LeftButtons>
-                <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28ArrowLeftOutline}" Text="Назад" Click="GoBack"/>
+                <vkui:PageHeaderButton Icon="Icon28ArrowLeftOutline" Text="Назад" Click="GoBack"/>
             </vkui:PageHeader.LeftButtons>
         </vkui:PageHeader>
         <ScrollViewer Grid.Row="1" MaxWidth="576">
@@ -60,10 +60,10 @@
                             <Button.Flyout>
                                 <vkuif:MenuFlyout>
                                     <vkuif:MenuFlyout.Items>
-                                        <vkui:CellButton IconTemplate="{StaticResource Icon28SearchOutline}" Text="Поиск"/>
-                                        <vkui:CellButton IconTemplate="{StaticResource Icon28FavoriteOutline}" Text="Избранные"/>
-                                        <vkui:CellButton IconTemplate="{StaticResource Icon28HelpOutline}" Text="Помощь"/>
-                                        <vkui:CellButton IconTemplate="{StaticResource Icon28SettingsOutline}" Text="Настройки"/>
+                                        <vkui:CellButton Icon="Icon28SearchOutline" Text="Поиск"/>
+                                        <vkui:CellButton Icon="Icon28FavoriteOutline" Text="Избранные"/>
+                                        <vkui:CellButton Icon="Icon28HelpOutline" Text="Помощь"/>
+                                        <vkui:CellButton Icon="Icon28SettingsOutline" Text="Настройки"/>
                                         <MenuFlyoutSeparator/>
                                         <RadioButton Content="Все" IsChecked="True"/>
                                         <RadioButton Content="Непрочитанные"/>

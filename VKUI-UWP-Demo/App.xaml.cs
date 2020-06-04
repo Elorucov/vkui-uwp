@@ -32,7 +32,7 @@ namespace VKUI_UWP_Demo
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-            DebugSettings.FailFastOnErrors = false;
+            // DebugSettings.FailFastOnErrors = false;
         }
 
         /// <summary>

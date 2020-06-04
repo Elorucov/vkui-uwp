@@ -20,10 +20,29 @@
         </Grid.RowDefinitions>
         <vkui:PageHeader Content="Иконки">
             <vkui:PageHeader.LeftButtons>
-                <vkui:PageHeaderButton ContentTemplate="{StaticResource Icon28ArrowLeftOutline}" Text="Назад" Click="GoBack"/>
+                <vkui:PageHeaderButton Icon="Icon28ArrowLeftOutline" Text="Назад" Click="GoBack"/>
             </vkui:PageHeader.LeftButtons>
         </vkui:PageHeader>
         <GridView x:Name="IconsGrid" Grid.Row="1" MaxWidth="576" SelectionMode="None" IsItemClickEnabled="True" ItemsSource="{Binding Source={StaticResource GroupedIcons}}" ItemClick="ShowIconInfo">
+            <GridView.Header>
+                <StackPanel Margin="12">
+                    <TextBlock TextWrapping="Wrap">
+                        Если Вам надо отобразить иконки в любых местах, Вы можете использовать элемент управления <Run FontFamily="Consolas" FontWeight="SemiBold">VKIcon</Run>. 
+                        Иконка задаётся свойством <Run FontFamily="Consolas" FontWeight="SemiBold">Id</Run>. 
+                        Если не задана одна из свойств <Run FontFamily="Consolas">Width</Run> или <Run FontFamily="Consolas">Height</Run>,
+                        то размер будет задан автоматически в зависимости от самой иконки.
+                    </TextBlock>
+                    <StackPanel Orientation="Horizontal" Margin="0,6">
+                        <vkui:VKIcon Margin="6" VerticalAlignment="Top" Id="Icon16Done"/>
+                        <vkui:VKIcon Margin="6" VerticalAlignment="Top" Id="Icon28LogoVkOutline"/>
+                        <vkui:VKIcon Margin="6" VerticalAlignment="Top" Id="Icon36LogoVk"/>
+                        <vkui:VKIcon Margin="6" VerticalAlignment="Top" Id="Icon56ServicesOutline"/>
+                    </StackPanel>
+                    <TextBlock TextWrapping="Wrap">
+                        Ниже — все иконки, которые есть в библиотеке. Нажмите на иконку, чтобы узнать её название.
+                    </TextBlock>
+                </StackPanel>
+            </GridView.Header>
             <GridView.ItemTemplate>
                 <DataTemplate x:DataType="local:IconItem">
                     <Grid Background="Transparent" ToolTipService.ToolTip="{x:Bind Name}" Width="{x:Bind Size}" Height="{x:Bind Size}">
@@ -35,7 +54,11 @@
                 <GroupStyle>
                     <GroupStyle.HeaderTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Size}"/>
+                            <TextBlock FontSize="14">
+                                <Run FontSize="17" Text="{Binding Size}"/> <Run FontSize="17" Text="px"/>
+                                
+                                (кол-во: <Run Text="{Binding Count}"/>)
+                            </TextBlock>
                         </DataTemplate>
                     </GroupStyle.HeaderTemplate>
                 </GroupStyle>

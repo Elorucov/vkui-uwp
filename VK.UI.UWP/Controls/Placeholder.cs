@@ -16,12 +16,12 @@ namespace VK.VKUI.Controls {
     public sealed class Placeholder : ContentControl {
         #region Properties
 
-        public static readonly DependencyProperty IconTemplateProperty =
-        DependencyProperty.Register(nameof(IconTemplate), typeof(DataTemplate), typeof(Placeholder), new PropertyMetadata(default(DataTemplate)));
+        public static readonly DependencyProperty IconProperty =
+        DependencyProperty.Register(nameof(Icon), typeof(VKIconName), typeof(CellButton), new PropertyMetadata(default(VKIconName)));
 
-        public DataTemplate IconTemplate {
-            get { return (DataTemplate)GetValue(IconTemplateProperty); }
-            set { SetValue(IconTemplateProperty, value); }
+        public VKIconName Icon {
+            get { return (VKIconName)GetValue(IconProperty); }
+            set { SetValue(IconProperty, value); }
         }
 
         public static readonly DependencyProperty HeaderProperty =
@@ -82,11 +82,11 @@ namespace VK.VKUI.Controls {
             ActionButton = (Button)GetTemplateChild(nameof(ActionButton));
             ContentPresenter = (ContentPresenter)GetTemplateChild(nameof(ContentPresenter));
             //
-            ChangeIconVisibility();
+            DrawIcon();
             ChangeHeaderVisibility();
             ChangeActionButtonVisibility();
             //
-            long ic = RegisterPropertyChangedCallback(IconTemplateProperty, (a, b) => ChangeIconVisibility());
+            long ic = RegisterPropertyChangedCallback(IconProperty, (a, b) => DrawIcon());
             long hc = RegisterPropertyChangedCallback(HeaderProperty, (a, b) => ChangeHeaderVisibility());
             long abc = RegisterPropertyChangedCallback(ActionButtonTextProperty, (a, b) => ChangeActionButtonVisibility());
             long cc = RegisterPropertyChangedCallback(ContentProperty, (a, b) => FixContentTextAlignment());
@@ -98,7 +98,7 @@ namespace VK.VKUI.Controls {
             Unloaded += (a, b) => {
                 ActionButton.Click -= InvokeActionButtonClickEvent;
                 ContentPresenter.Loaded -= ContentPresenter_Loaded;
-                UnregisterPropertyChangedCallback(IconTemplateProperty, ic);
+                UnregisterPropertyChangedCallback(IconProperty, ic);
                 UnregisterPropertyChangedCallback(HeaderProperty, hc);
                 UnregisterPropertyChangedCallback(ActionButtonTextProperty, abc);
                 UnregisterPropertyChangedCallback(ContentProperty, cc);
@@ -117,8 +117,10 @@ namespace VK.VKUI.Controls {
             FixContentTextAlignment();
         }
 
-        private void ChangeIconVisibility() {
-            IconPresenter.Visibility = GetValue(IconTemplateProperty) != null ? Visibility.Visible : Visibility.Collapsed;
+        private void DrawIcon() {
+            VKIconName name = (VKIconName)GetValue(IconProperty);
+            IconPresenter.Visibility = name != VKIconName.None ? Visibility.Visible : Visibility.Collapsed;
+            if (name != VKIconName.None) IconPresenter.ContentTemplate = VKUILibrary.GetIconTemplate(name);
         }
 
         private void ChangeHeaderVisibility() {

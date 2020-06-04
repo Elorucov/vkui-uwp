@@ -11,5 +11,6 @@
         <ResourceDictionary Source="ms-appx:///VK.VKUI/Controls/Placeholder.xaml"/>
         <ResourceDictionary Source="ms-appx:///VK.VKUI/Controls/Progress.xaml"/>
         <ResourceDictionary Source="ms-appx:///VK.VKUI/Controls/Spinner.xaml"/>
+        <ResourceDictionary Source="ms-appx:///VK.VKUI/Controls/VKIcon.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

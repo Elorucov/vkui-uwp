@@ -128,6 +128,8 @@
     <Compile Include="Controls\Placeholder.cs" />
     <Compile Include="Controls\Progress.cs" />
     <Compile Include="Controls\Spinner.cs" />
+    <Compile Include="Controls\VKIcon.cs" />
+    <Compile Include="Controls\VKIconName.cs" />
     <Compile Include="Flyouts\Flyout.cs" />
     <Compile Include="Flyouts\MenuFlyout.cs" />
     <Compile Include="Helpers\Shadow.cs" />
@@ -166,6 +168,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Spinner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\VKIcon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
