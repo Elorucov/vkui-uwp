@@ -29,7 +29,7 @@
                     <TextBlock TextWrapping="Wrap">
                         Если Вам надо отобразить иконки в любых местах, Вы можете использовать элемент управления <Run FontFamily="Consolas" FontWeight="SemiBold">VKIcon</Run>. 
                         Иконка задаётся свойством <Run FontFamily="Consolas" FontWeight="SemiBold">Id</Run>. 
-                        Если не задана одна из свойств <Run FontFamily="Consolas">Width</Run> или <Run FontFamily="Consolas">Height</Run>,
+                        Если не задано одно из свойств <Run FontFamily="Consolas">Width</Run> или <Run FontFamily="Consolas">Height</Run>,
                         то размер будет задан автоматически в зависимости от самой иконки.
                     </TextBlock>
                     <StackPanel Orientation="Horizontal" Margin="0,6">
