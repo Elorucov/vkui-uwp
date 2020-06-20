@@ -1697,7 +1697,7 @@
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <ContentPresenter x:Name="IconPresenter" Margin="12,10" Width="28" Height="28" Foreground="{TemplateBinding IconBrush}"/>
+                            <ContentPresenter x:Name="IconPresenter" Margin="12,10" Width="28" Height="28" Foreground="{TemplateBinding IconBrush}" ContentTemplate="{TemplateBinding IconTemplate}"/>
                             <TextBlock x:Name="Text" Grid.Column="1" Margin="0,12,16,14" FontSize="16" Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding Text}" TextTrimming="CharacterEllipsis"/>
                         </Grid>
                     </Grid>

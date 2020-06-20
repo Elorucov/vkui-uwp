@@ -24,11 +24,19 @@ namespace VK.VKUI.Controls {
         #region Properties
 
         public static readonly DependencyProperty IconProperty =
-        DependencyProperty.Register(nameof(Icon), typeof(VKIconName), typeof(CellButton), new PropertyMetadata(default(VKIconName)));
+        DependencyProperty.Register(nameof(Icon), typeof(VKIconName), typeof(CellButton), new PropertyMetadata(VKIconName.None));
 
         public VKIconName Icon {
             get { return (VKIconName)GetValue(IconProperty); }
             set { SetValue(IconProperty, value); }
+        }
+
+        public static readonly DependencyProperty IconTemplateProperty =
+        DependencyProperty.Register(nameof(IconTemplate), typeof(DataTemplate), typeof(CellButton), new PropertyMetadata(null));
+
+        public DataTemplate IconTemplate {
+            get { return (DataTemplate)GetValue(IconTemplateProperty); }
+            set { SetValue(IconTemplateProperty, value); }
         }
 
         public static readonly DependencyProperty IconBrushProperty =
@@ -108,12 +116,14 @@ namespace VK.VKUI.Controls {
 
         #region Internal
 
-        private void ShowHideIcon() {
-            if(IconPresenter != null)
+        internal void ShowHideIcon() {
+            if (IconPresenter != null) {
                 IconPresenter.Visibility = Icon == VKIconName.None ? Visibility.Collapsed : Visibility.Visible;
-            if (Icon != VKIconName.None) {
-                IconPresenter.ContentTemplate = VKUILibrary.GetIconTemplate(Icon);
+
+                if (Tag != null && Tag.ToString() == "debug") System.Diagnostics.Debug.WriteLine($"CellButton: icon id = {Icon}");
+                IconTemplate = Icon != VKIconName.None ? VKUILibrary.GetIconTemplate(Icon) : null;
             }
+            
         }
 
         private void CheckIsEnabled() {

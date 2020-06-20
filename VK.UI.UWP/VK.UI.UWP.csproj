@@ -32,7 +32,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <DefineConstants>DEBUG;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -130,6 +130,7 @@
     <Compile Include="Controls\Spinner.cs" />
     <Compile Include="Controls\VKIcon.cs" />
     <Compile Include="Controls\VKIconName.cs" />
+    <Compile Include="Converters\IconToDataTemplateConverter.cs" />
     <Compile Include="Flyouts\Flyout.cs" />
     <Compile Include="Flyouts\MenuFlyout.cs" />
     <Compile Include="Helpers\Shadow.cs" />

@@ -17,11 +17,19 @@ namespace VK.VKUI.Controls {
         #region Properties
 
         public static readonly DependencyProperty IconProperty =
-        DependencyProperty.Register(nameof(Icon), typeof(VKIconName), typeof(CellButton), new PropertyMetadata(default(VKIconName)));
+        DependencyProperty.Register(nameof(Icon), typeof(VKIconName), typeof(CellButton), new PropertyMetadata(VKIconName.None));
 
         public VKIconName Icon {
             get { return (VKIconName)GetValue(IconProperty); }
             set { SetValue(IconProperty, value); }
+        }
+
+        public static readonly DependencyProperty IconTemplateProperty =
+        DependencyProperty.Register(nameof(IconTemplate), typeof(DataTemplate), typeof(Placeholder), new PropertyMetadata(null));
+
+        public DataTemplate IconTemplate {
+            get { return (DataTemplate)GetValue(IconTemplateProperty); }
+            set { SetValue(IconTemplateProperty, value); }
         }
 
         public static readonly DependencyProperty HeaderProperty =
@@ -119,8 +127,9 @@ namespace VK.VKUI.Controls {
 
         private void DrawIcon() {
             VKIconName name = (VKIconName)GetValue(IconProperty);
+            if (Tag != null && Tag.ToString() == "debug") System.Diagnostics.Debug.WriteLine($"Placeholder: icon id = {name}");
             IconPresenter.Visibility = name != VKIconName.None ? Visibility.Visible : Visibility.Collapsed;
-            if (name != VKIconName.None) IconPresenter.ContentTemplate = VKUILibrary.GetIconTemplate(name);
+            IconTemplate = name != VKIconName.None ? VKUILibrary.GetIconTemplate(name) : null;
         }
 
         private void ChangeHeaderVisibility() {
