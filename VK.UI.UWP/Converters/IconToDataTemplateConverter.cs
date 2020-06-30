@@ -10,6 +10,7 @@ using Windows.UI.Xaml.Data;
 namespace VK.VKUI.Converters {
     public class IconToDataTemplateConverter : IValueConverter {
         public object Convert(object value, Type targetType, object parameter, string language) {
+            System.Diagnostics.Debug.WriteLine($"IconToDataTemplateConverter: value = {value}");
             if (value is VKIconName i && targetType == typeof(DataTemplate))
                 return i != VKIconName.None ? VKUILibrary.GetIconTemplate(i) : null;
             return null;

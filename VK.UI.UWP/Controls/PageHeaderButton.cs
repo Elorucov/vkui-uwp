@@ -38,9 +38,19 @@ namespace VK.VKUI.Controls {
 
         public PageHeaderButton() {
             this.DefaultStyleKey = typeof(PageHeaderButton);
+        }
+
+        #region Template elements
+
+        ContentPresenter IconPresenter;
+
+        protected override void OnApplyTemplate() {
+            base.OnApplyTemplate();
+            IconPresenter = (ContentPresenter)GetTemplateChild(nameof(IconPresenter));
+
             RegisterPropertyChangedCallback(TextProperty, (c, d) => ToolTipService.SetToolTip(this, GetValue(d)));
             long ieid = RegisterPropertyChangedCallback(IsEnabledProperty, (a, b) => CheckIsEnabled());
-            long iid = RegisterPropertyChangedCallback(IsEnabledProperty, (a, b) => DrawIcon((VKIconName)GetValue(b)));
+            long iid = RegisterPropertyChangedCallback(IconProperty, (a, b) => DrawIcon((VKIconName)GetValue(b)));
 
             Loaded += (a, b) => {
                 ToolTipService.SetToolTip(this, GetValue(TextProperty));
@@ -61,17 +71,8 @@ namespace VK.VKUI.Controls {
                 RemoveHandler(UIElement.KeyDownEvent, new KeyEventHandler(KbdDown));
                 RemoveHandler(UIElement.KeyUpEvent, new KeyEventHandler(KbdUp));
                 UnregisterPropertyChangedCallback(IsEnabledProperty, ieid);
-                UnregisterPropertyChangedCallback(IsEnabledProperty, iid);
+                UnregisterPropertyChangedCallback(IconProperty, iid);
             };
-        }
-
-        #region Template elements
-
-        ContentPresenter IconPresenter;
-
-        protected override void OnApplyTemplate() {
-            base.OnApplyTemplate();
-            IconPresenter = (ContentPresenter)GetTemplateChild(nameof(IconPresenter));
         }
 
         #endregion

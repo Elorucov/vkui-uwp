@@ -5,6 +5,7 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="ms-appx:///VK.VKUI/Controls/CellButton.xaml"/>
+        <ResourceDictionary Source="ms-appx:///VK.VKUI/Controls/Group.xaml"/>
         <ResourceDictionary Source="ms-appx:///VK.VKUI/Controls/FlyoutPresenter.xaml"/>
         <ResourceDictionary Source="ms-appx:///VK.VKUI/Controls/PageHeader.xaml"/>
         <ResourceDictionary Source="ms-appx:///VK.VKUI/Controls/PageHeaderButton.xaml"/>

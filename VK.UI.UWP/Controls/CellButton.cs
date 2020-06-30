@@ -118,10 +118,9 @@ namespace VK.VKUI.Controls {
 
         internal void ShowHideIcon() {
             if (IconPresenter != null) {
-                IconPresenter.Visibility = Icon == VKIconName.None ? Visibility.Collapsed : Visibility.Visible;
-
                 if (Tag != null && Tag.ToString() == "debug") System.Diagnostics.Debug.WriteLine($"CellButton: icon id = {Icon}");
-                IconTemplate = Icon != VKIconName.None ? VKUILibrary.GetIconTemplate(Icon) : null;
+                if (Icon != VKIconName.None) IconTemplate = VKUILibrary.GetIconTemplate(Icon);
+                IconPresenter.Visibility = IconTemplate == null ? Visibility.Collapsed : Visibility.Visible;
             }
             
         }

@@ -128,8 +128,8 @@ namespace VK.VKUI.Controls {
         private void DrawIcon() {
             VKIconName name = (VKIconName)GetValue(IconProperty);
             if (Tag != null && Tag.ToString() == "debug") System.Diagnostics.Debug.WriteLine($"Placeholder: icon id = {name}");
-            IconPresenter.Visibility = name != VKIconName.None ? Visibility.Visible : Visibility.Collapsed;
-            IconTemplate = name != VKIconName.None ? VKUILibrary.GetIconTemplate(name) : null;
+            if (name != VKIconName.None) IconTemplate = VKUILibrary.GetIconTemplate(Icon);
+            IconPresenter.Visibility = IconTemplate == null ? Visibility.Collapsed : Visibility.Visible;
         }
 
         private void ChangeHeaderVisibility() {
