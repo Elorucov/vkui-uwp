@@ -37,6 +37,11 @@
                 <vkui:Group Header="Header" Margin="8,0" Description="Lorem ipsum dolor sit amet">
                     <StackPanel>
                         <vkui:CellButton Padding="0" Icon="Icon28ChainOutline" Text="Test" Indicator="Enabled"/>
+                        <vkui:CellButton Padding="0" Icon="Icon28MoonOutline" Text="Dark mode">
+                            <vkui:CellButton.Indicator>
+                                <ToggleSwitch/>
+                            </vkui:CellButton.Indicator>
+                        </vkui:CellButton>
                         <vkui:CellButton Padding="0" Icon="Icon28HelpOutline" Text="Help"/>
                     </StackPanel>
                 </vkui:Group>

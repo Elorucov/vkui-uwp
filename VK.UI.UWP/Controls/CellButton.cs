@@ -90,8 +90,11 @@ namespace VK.VKUI.Controls {
             IndicatorPresenter = (ContentControl)GetTemplateChild(nameof(IndicatorPresenter));
             ShowHideIcon();
             CheckIsEnabled();
+            SetIndicatorTemplate();
             long itid = RegisterPropertyChangedCallback(IconProperty, (a, b) => ShowHideIcon());
             long ieid = RegisterPropertyChangedCallback(IsEnabledProperty, (a, b) => CheckIsEnabled());
+            long idid = RegisterPropertyChangedCallback(IndicatorProperty, (a, b) => SetIndicatorTemplate());
+            long idtid = RegisterPropertyChangedCallback(IndicatorTemplateProperty, (a, b) => SetIndicatorTemplate());
             Loaded += (a, b) => {
                 ShowHideIcon();
                 AddHandler(UIElement.PointerEnteredEvent, new PointerEventHandler(Entered), true);
@@ -100,6 +103,7 @@ namespace VK.VKUI.Controls {
                 AddHandler(UIElement.PointerReleasedEvent, new PointerEventHandler(Released), true);
                 AddHandler(UIElement.KeyDownEvent, new KeyEventHandler(KbdDown), true);
                 AddHandler(UIElement.KeyUpEvent, new KeyEventHandler(KbdUp), true);
+                Click += CellButton_Click;
             };
             Unloaded += (a, b) => {
                 RemoveHandler(UIElement.PointerEnteredEvent, new PointerEventHandler(Entered));
@@ -108,7 +112,10 @@ namespace VK.VKUI.Controls {
                 RemoveHandler(UIElement.PointerReleasedEvent, new PointerEventHandler(Released));
                 RemoveHandler(UIElement.KeyDownEvent, new KeyEventHandler(KbdDown));
                 RemoveHandler(UIElement.KeyUpEvent, new KeyEventHandler(KbdUp));
+                Click -= CellButton_Click;
                 UnregisterPropertyChangedCallback(IsEnabledProperty, ieid);
+                UnregisterPropertyChangedCallback(IndicatorProperty, idid);
+                UnregisterPropertyChangedCallback(IndicatorTemplateProperty, idtid);
             };
         }
 
@@ -127,6 +134,16 @@ namespace VK.VKUI.Controls {
 
         private void CheckIsEnabled() {
             VisualStateManager.GoToState(this, IsEnabled ? ButtonStates.Normal : ButtonStates.Disabled, true);
+        }
+
+        private void SetIndicatorTemplate() {
+            if (IndicatorPresenter != null) {
+                if (Indicator is string && IndicatorTemplate == null) {
+                    IndicatorTemplate = (ControlTemplate)Application.Current.Resources["CellButtonTextIndicatorTemplate"];
+                } else if (Indicator is ToggleSwitch ts && ts.Style == null) {
+                    ts.Style = (Style)Application.Current.Resources["CellButtonToggleIndicatorStyle"];
+                }
+            }
         }
 
         // States
@@ -166,6 +183,12 @@ namespace VK.VKUI.Controls {
 
         private void KbdUp(object sender, KeyRoutedEventArgs e) {
             VisualStateManager.GoToState(this, ButtonStates.Normal, true);
+        }
+
+        private void CellButton_Click(object sender, RoutedEventArgs e) {
+            if (Indicator is ToggleSwitch ts) {
+                ts.IsOn = !ts.IsOn;
+            }
         }
 
         #endregion
