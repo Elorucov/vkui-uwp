@@ -3,7 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:VK.VKUI.Controls">
     <Style TargetType="local:VKIcon">
-        <Setter Property="Foreground" Value="{ThemeResource VKAccentBrush}"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Template">

@@ -20,6 +20,7 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using VKUI_UWP_Demo.Utils;
 using VK.VKUI;
+using VK.VKUI.Controls;
 
 // Документацию по шаблону элемента "Пустая страница" см. по адресу https://go.microsoft.com/fwlink/?LinkId=234238
 

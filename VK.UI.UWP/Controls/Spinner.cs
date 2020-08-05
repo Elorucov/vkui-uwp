@@ -29,12 +29,17 @@ namespace VK.VKUI.Controls {
             base.OnApplyTemplate();
             SpinnerContainer = (ContentPresenter)GetTemplateChild(nameof(SpinnerContainer));
             SpinnerRotator = SpinnerContainer.RenderTransform as RotateTransform;
+            ShowSpinner(Math.Min(ActualWidth, ActualHeight));
             SizeChanged += OnSizeChanged;
-            Unloaded += (a, b) => SizeChanged -= OnSizeChanged;
+            Unloaded += (c, d) => SizeChanged -= OnSizeChanged;
         }
 
         private void OnSizeChanged(object sender, SizeChangedEventArgs e) {
             double s = Math.Min(e.NewSize.Width, e.NewSize.Height);
+            ShowSpinner(s);
+        }
+
+        private void ShowSpinner(double s) {
             double ss = GetSpinnerSize(s);
             SpinnerRotator.CenterX = ss / 2;
             SpinnerRotator.CenterY = ss / 2;
