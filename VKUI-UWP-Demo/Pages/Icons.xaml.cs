@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using VKUI_UWP_Demo.Utils;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -65,6 +67,8 @@ namespace VKUI_UWP_Demo.Pages {
         ObservableCollection<IconGroup> VKIcons = new ObservableCollection<IconGroup>();
 
         private void OnLoad(object sender, RoutedEventArgs e) {
+            GroupedIcons.Source = VKIcons;
+            int count = 0;
             ResourceDictionary iconsdict = App.Current.Resources.MergedDictionaries.Last();
             var q = (from i in iconsdict select i).ToList();
             foreach(var i in q) {
@@ -86,9 +90,10 @@ namespace VKUI_UWP_Demo.Pages {
                         if(idx < 0) idx = ~idx;
                         ig.Insert(idx, icon);
                     }
+                    count++;
                 }
             }
-            GroupedIcons.Source = VKIcons;
+            Debug.WriteLine($"Icons count: {count}");
         }
 
         private void GoBack(object sender, RoutedEventArgs e) {

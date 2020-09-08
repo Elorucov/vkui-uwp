@@ -23,7 +23,7 @@
                 <vkui:PageHeaderButton Icon="Icon28ArrowLeftOutline" Text="Назад" Click="GoBack"/>
             </vkui:PageHeader.LeftButtons>
         </vkui:PageHeader>
-        <GridView x:Name="IconsGrid" Grid.Row="1" MaxWidth="576" SelectionMode="None" IsItemClickEnabled="True" ItemsSource="{Binding Source={StaticResource GroupedIcons}}" ItemClick="ShowIconInfo">
+        <GridView x:Name="IconsGrid" Grid.Row="1" MaxWidth="960" SelectionMode="None" IsItemClickEnabled="True" ItemsSource="{Binding Source={StaticResource GroupedIcons}}" ItemClick="ShowIconInfo">
             <GridView.Header>
                 <StackPanel Margin="12">
                     <TextBlock TextWrapping="Wrap">
