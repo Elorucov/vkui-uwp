@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("VKontakte")]
 [assembly: AssemblyProduct("VK.VKUI")]
-[assembly: AssemblyCopyright("Copyright © 2019 - 2020 Elorucov")]
+[assembly: AssemblyCopyright("Copyright © 2019 - 2020 ELOR")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -24,6 +24,6 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.10.25.0")]
-[assembly: AssemblyFileVersion("1.10.25.0")]
+[assembly: AssemblyVersion("1.11.27.0")]
+[assembly: AssemblyFileVersion("1.11.27.0")]
 [assembly: ComVisible(false)]
