@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.UI.Core;
@@ -61,8 +62,9 @@ namespace VK.VKUI.Controls {
                 AddHandler(UIElement.PointerReleasedEvent, new PointerEventHandler(Released), true);
                 AddHandler(UIElement.KeyDownEvent, new KeyEventHandler(KbdDown), true);
                 AddHandler(UIElement.KeyUpEvent, new KeyEventHandler(KbdUp), true);
-                DrawIcon((VKIconName)GetValue(IconProperty));
+                DrawIcon(Icon);
             };
+            LayoutUpdated += PageHeaderButton_LayoutUpdated;
             Unloaded += (a, b) => {
                 RemoveHandler(UIElement.PointerEnteredEvent, new PointerEventHandler(Entered));
                 RemoveHandler(UIElement.PointerExitedEvent, new PointerEventHandler(Exited));
@@ -72,6 +74,7 @@ namespace VK.VKUI.Controls {
                 RemoveHandler(UIElement.KeyUpEvent, new KeyEventHandler(KbdUp));
                 UnregisterPropertyChangedCallback(IsEnabledProperty, ieid);
                 UnregisterPropertyChangedCallback(IconProperty, iid);
+                LayoutUpdated -= PageHeaderButton_LayoutUpdated;
             };
         }
 
@@ -83,7 +86,12 @@ namespace VK.VKUI.Controls {
             VisualStateManager.GoToState(this, IsEnabled ? ButtonStates.Normal : ButtonStates.Disabled, true);
         }
 
+        private void PageHeaderButton_LayoutUpdated(object sender, object e) {
+            DrawIcon(Icon);
+        }
+
         private void DrawIcon(VKIconName iconName) {
+            Debug.WriteLine($"PageHeaderButton: drawing {iconName}");
             IconPresenter.ContentTemplate = VKUILibrary.GetIconTemplate(iconName);
         }
 
