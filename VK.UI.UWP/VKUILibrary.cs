@@ -16,7 +16,9 @@ namespace VK.VKUI {
         }
 
         public static DataTemplate GetIconTemplate(VKIconName iconName) {
-            return (DataTemplate)Application.Current.Resources[iconName.ToString()];
+            var resources = Application.Current.Resources;
+            if (resources.ContainsKey(iconName.ToString())) return (DataTemplate)resources[iconName.ToString()];
+            return null;
         }
     }
 }
