@@ -64,7 +64,7 @@ namespace VKUI_UWP_Demo
 
             if (e.PrelaunchActivated == false)
             {
-                ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(320, 480));
+                ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(360, 480));
 
                 if (rootFrame.Content == null)
                 {

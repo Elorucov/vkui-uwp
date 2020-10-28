@@ -17,7 +17,7 @@ namespace VK.VKUI.Controls {
         #region Properties
 
         public static readonly DependencyProperty IconProperty =
-        DependencyProperty.Register(nameof(Icon), typeof(VKIconName), typeof(CellButton), new PropertyMetadata(VKIconName.None));
+        DependencyProperty.Register(nameof(Icon), typeof(VKIconName), typeof(Placeholder), new PropertyMetadata(VKIconName.None));
 
         public VKIconName Icon {
             get { return (VKIconName)GetValue(IconProperty); }

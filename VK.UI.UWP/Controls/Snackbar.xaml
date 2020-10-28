@@ -1,0 +1,84 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VK.VKUI.Controls">
+    <DataTemplate x:Key="SnackBarActionButtonContentTemplate">
+        <TextBlock Foreground="{ThemeResource VKAccentBrush}" Text="{Binding}" FontSize="14" FontWeight="SemiBold" LineHeight="17" LineStackingStrategy="BlockLineHeight"/>
+    </DataTemplate>
+
+    <Style TargetType="local:Snackbar">
+        <Setter Property="Background" Value="{ThemeResource VKModalCardBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{ThemeResource VKTextPrimaryBrush}"/>
+        <Setter Property="BeforeIconBackground" Value="{ThemeResource VKAccentBrush}"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:Snackbar">
+                    <Grid x:Name="Root" Visibility="Collapsed">
+                        <Rectangle x:Name="ShadowRect" Fill="{TemplateBinding Background}" RadiusX="8" RadiusY="8"
+                                   HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                   MinHeight="56" MaxWidth="540"/>
+                        <Grid x:Name="SnackBarRoot" Background="{TemplateBinding Background}"
+                          HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                          MinHeight="56" MaxWidth="540" CornerRadius="8" Padding="16,12">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Before -->
+                            <Border x:Name="BeforeIconContainer" Grid.Column="0" VerticalAlignment="Center" Margin="-4,0,12,0" Width="24" Height="24" CornerRadius="12" Background="{TemplateBinding BeforeIconBackground}">
+                                <ContentPresenter x:Name="BeforeIconPresenter" Width="14" Height="14" Foreground="White"/>
+                            </Border>
+                            <Ellipse x:Name="BeforeAva" Grid.Column="0" VerticalAlignment="Center" Margin="-4,0,12,0" Width="24" Height="24">
+                                <Ellipse.Fill>
+                                    <ImageBrush Stretch="UniformToFill">
+                                        <ImageBrush.ImageSource>
+                                            <BitmapImage x:Name="BeforeAvaBitmapImage" DecodePixelType="Logical" DecodePixelWidth="24" DecodePixelHeight="24" UriSource="{TemplateBinding BeforeAvatar}"/>
+                                        </ImageBrush.ImageSource>
+                                    </ImageBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+
+                            <!-- TODO: need panel like flex-box -->
+                            <Grid x:Name="ContentContainer" VerticalAlignment="Center" Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel x:Name="Presenter" Grid.ColumnSpan="1">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                          Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Height="30"
+                                          Foreground="{TemplateBinding Foreground}" FontSize="15" LineHeight="19" LineStackingStrategy="BlockLineHeight" TextWrapping="Wrap"/>
+                                    <HyperlinkButton x:Name="ActionButtonForVertical" Grid.Column="1" 
+                                             VerticalAlignment="Center" Margin="0,2,0,-6"
+                                             Content="{TemplateBinding ActionText}" ContentTemplate="{StaticResource SnackBarActionButtonContentTemplate}"/>
+                                </StackPanel>
+                                <HyperlinkButton x:Name="ActionButtonForHorizontal" Grid.Column="1" 
+                                             VerticalAlignment="Center" Padding="16,0" Margin="-16,0" Height="30"
+                                             Content="{TemplateBinding ActionText}" ContentTemplate="{StaticResource SnackBarActionButtonContentTemplate}"/>
+                            </Grid>
+
+                            <!-- After -->
+                            <!--<Border x:Name="AfterIconContainer" Grid.Column="2" VerticalAlignment="Center" Margin="12,0,-4,0" Width="24" Height="24" CornerRadius="12" Background="{TemplateBinding AfterIconBackground}">
+                                <ContentPresenter x:Name="AfterIconPresenter" Width="14" Height="14" Foreground="White"/>
+                            </Border>-->
+                            <Ellipse x:Name="AfterAva" Grid.Column="2" VerticalAlignment="Center" Margin="12,0,-4,0" Width="32" Height="32">
+                                <Ellipse.Fill>
+                                    <ImageBrush Stretch="UniformToFill">
+                                        <ImageBrush.ImageSource>
+                                            <BitmapImage x:Name="AfterAvaBitmapImage" DecodePixelType="Logical" DecodePixelWidth="32" DecodePixelHeight="32" UriSource="{TemplateBinding AfterAvatar}"/>
+                                        </ImageBrush.ImageSource>
+                                    </ImageBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

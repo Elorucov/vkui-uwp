@@ -1,0 +1,81 @@
+﻿<Page
+    x:Class="VKUI_UWP_Demo.Pages.SnackbarDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VKUI_UWP_Demo.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vkui="using:VK.VKUI.Controls"
+    mc:Ignorable="d">
+
+    <Grid x:Name="Root">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <vkui:PageHeader Content="Snackbar">
+            <vkui:PageHeader.LeftButtons>
+                <vkui:PageHeaderButton Icon="Icon28ArrowLeftOutline" Text="Назад" Click="GoBack"/>
+            </vkui:PageHeader.LeftButtons>
+        </vkui:PageHeader>
+        <ScrollViewer Grid.Row="1" MaxWidth="576">
+            <StackPanel Margin="8">
+                <StackPanel x:Name="Info" Margin="8,0" Padding="0,4,0,8">
+                    <TextBlock Margin="0,0,0,8" TextWrapping="Wrap">
+                        Элемент для отображения уведомлений. 
+                        Для отображения вызовите метод Show(durationInMs), где durationInMs — время в миллисекундах, после истечения которого уведомление закроется. 
+                        (не менее 1000)
+                        <LineBreak/>
+                        Поддерживает только значения Top и Bottom (по умолчанию) для свойства VerticalAlignment, остальные вызовут исключение. 
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Bold>Свойства:</Bold>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run FontWeight="SemiBold" FontFamily="Consolas">Orientation</Run> — Положение Action-кнопки. <LineBreak/>
+                        Horizontal (по умолчанию) — в правой части уведомления, Vertical — под текстом.
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run FontWeight="SemiBold" FontFamily="Consolas">Content</Run> — текст уведомления.
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run FontWeight="SemiBold" FontFamily="Consolas">BeforeIcon</Run> — Иконка, отображаемая в левой части уведомления. <LineBreak/>
+                        Обратите внимание: иконка всегда отображается в белом цвете.
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run FontWeight="SemiBold" FontFamily="Consolas">BeforeIconBackground</Run> — Фон под иконкой, принимает только SolidColorBrush.
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run FontWeight="SemiBold" FontFamily="Consolas">BeforeAvatar</Run> — Uri картинки, отображаемая в левой части уведомления. Имеет размер 24x24px.<LineBreak/>
+                        Обратите внимание: если одновременно задать свойства BeforeAvatar и BeforeIcon, последнее не будет отображаться.
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run FontWeight="SemiBold" FontFamily="Consolas">AfterAvatar</Run> — Uri картинки, отображаемая в правой части уведомления. Имеет размер 32x32px.<LineBreak/>
+                        Обратите внимание: если задать свойство AfterAvatar, Action-кнопка будет отображаться только под текстом и свойство Orientation будет проигнорировано.
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run FontWeight="SemiBold" FontFamily="Consolas">ActionText</Run> — Текст Action-кнопки.
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run FontWeight="SemiBold" FontFamily="Consolas">Dismissed</Run> — Событие, которое будет выполнено при закрытии уведомления. 
+                        Второй параметр будет иметь значение true, если уведомление было закрыто нажатием на Action-кнопку.
+                        <LineBreak/>
+                    </TextBlock>
+                </StackPanel>
+                <vkui:CellButton Text="Простое уведомление с иконкой" Click="Demo1_Click"/>
+                <vkui:CellButton Text="Уведомление с action-кнопкой" Click="Demo2_Click"/>
+                <vkui:CellButton Text="Длинный текст (Orientation = Vertical)" Click="Demo3_Click"/>
+                <vkui:CellButton Text="Уведомление с аватаркой" Click="Demo4_Click"/>
+                <vkui:CellButton Text="Сверху и аватаркой слева" Click="Demo5_Click"/>
+                <vkui:CellButton Text="Слева и с фиксированной шириной" Click="Demo6_Click"/>
+                <TextBlock x:Name="State" Margin="8,4" TextWrapping="Wrap"/>
+            </StackPanel>
+        </ScrollViewer>
+        <vkui:Snackbar x:Name="Demo1" Grid.Row="1" BeforeIcon="Icon28DoneOutline" Content="Уведомления включены" Dismissed="Demo1_Dismissed"/>
+        <vkui:Snackbar x:Name="Demo2" Grid.Row="1" BeforeIconBackground="Orange" BeforeIcon="Icon28Favorite" Content="Ссылка сохранена в закладки" ActionText="Добавить метку" Dismissed="Demo2_Dismissed"/>
+        <vkui:Snackbar x:Name="Demo3" Grid.Row="1" BeforeIconBackground="Orange" BeforeIcon="Icon28Favorite" Orientation="Vertical" Content="Ссылка сохранена в закладки. Все отметки «Нравится» переместились в новости под вкладкой «Понравилось»" ActionText="Подробнее" Dismissed="Demo3_Dismissed"/>
+        <vkui:Snackbar x:Name="Demo4" Grid.Row="1" AfterAvatar="ms-appx:///Assets/SampleAvatars/elor.jpg" Content="Отправлено Эльчину Оруджеву" ActionText="Отменить" Dismissed="Demo4_Dismissed"/>
+        <vkui:Snackbar x:Name="Demo5" Grid.Row="1" BeforeAvatar="ms-appx:///Assets/SampleAvatars/flyink.jpg" Content="10-секундное уведомление от бота после нажатия на Callback-кнопку." VerticalAlignment="Top" Dismissed="Demo5_Dismissed"/>
+        <vkui:Snackbar x:Name="Demo6" Grid.Row="1" Width="352" HorizontalAlignment="Left" BeforeIconBackground="Orange" BeforeIcon="Icon28Favorite" Content="Ссылка сохранена в закладки" ActionText="Добавить метку" Dismissed="Demo6_Dismissed"/>
+    </Grid>
+</Page>

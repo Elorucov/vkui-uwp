@@ -151,6 +151,9 @@
     <Compile Include="Pages\PlaceholderDemo.xaml.cs">
       <DependentUpon>PlaceholderDemo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SnackbarDemo.xaml.cs">
+      <DependentUpon>SnackbarDemo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Extensions.cs" />
   </ItemGroup>
@@ -161,6 +164,8 @@
     <None Include="VKUI-UWP-Demo_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\SampleAvatars\elor.jpg" />
+    <Content Include="Assets\SampleAvatars\flyink.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -196,6 +201,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PlaceholderDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SnackbarDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

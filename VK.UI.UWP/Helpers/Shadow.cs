@@ -19,7 +19,7 @@ namespace VK.VKUI.Helpers {
             _visual.Offset = new Vector3(0, 0, 0);
 
             DropShadow _shadow = compositor.CreateDropShadow();
-            _shadow.Offset = new Vector3(0, blurRadius / 4.0f, 0);
+            _shadow.Offset = new Vector3(0, 0, 0);
             _shadow.BlurRadius = blurRadius;
             _shadow.Color = Colors.Black;
             _shadow.Opacity = opacity;
