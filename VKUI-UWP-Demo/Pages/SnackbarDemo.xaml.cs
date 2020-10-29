@@ -69,7 +69,7 @@ namespace VKUI_UWP_Demo.Pages {
         }
 
         private void Demo4_Dismissed(object sender, bool e) {
-            State.Text = e ? "Сообщение Эльчину было отменено" : "Четвёртое уведомление скрыто";
+            State.Text = e ? "Сообщение Эльчину было отменено, и ему теперь грустно..." : "Четвёртое уведомление скрыто";
         }
 
         private void Demo5_Dismissed(object sender, bool e) {

@@ -49,9 +49,9 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <StackPanel x:Name="Presenter" Grid.ColumnSpan="1">
-                                    <ContentPresenter VerticalAlignment="Center"
-                                          Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Height="30"
+                                <StackPanel x:Name="Presenter" Grid.ColumnSpan="1" VerticalAlignment="Center">
+                                    <ContentPresenter VerticalContentAlignment="Center"
+                                          Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"
                                           Foreground="{TemplateBinding Foreground}" FontSize="15" LineHeight="19" LineStackingStrategy="BlockLineHeight" TextWrapping="Wrap"/>
                                     <HyperlinkButton x:Name="ActionButtonForVertical" Grid.Column="1" 
                                              VerticalAlignment="Center" Margin="0,2,0,-6"

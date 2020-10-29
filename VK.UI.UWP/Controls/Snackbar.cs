@@ -152,6 +152,7 @@ namespace VK.VKUI.Controls {
                 Dismissed?.Invoke(this, true);
             };
             SnackBarRoot.LayoutUpdated += (a, b) => {
+                ShadowRect.Width = SnackBarRoot.RenderSize.Width;
                 ShadowRect.Height = SnackBarRoot.RenderSize.Height;
                 Shadow.Draw(SnackBarRoot, ShadowRect, 24, 0.24f);
             };
