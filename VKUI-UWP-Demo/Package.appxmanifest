@@ -8,8 +8,8 @@
 
   <Identity
     Name="45d903ca-14b4-45ff-86f2-477d4bfef4cf"
-    Publisher="CN=Elorucov"
-    Version="1.0.0.0" />
+    Publisher="CN=ELOR"
+    Version="1.13.39.0" />
 
   <mp:PhoneIdentity PhoneProductId="45d903ca-14b4-45ff-86f2-477d4bfef4cf" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 

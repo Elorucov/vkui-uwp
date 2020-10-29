@@ -9,7 +9,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Media;
 
-namespace VK.VKUI.Flyouts {
+namespace VK.VKUI.Popups {
     public class Flyout : FlyoutBase {
         public static readonly DependencyProperty ContentProperty =
         DependencyProperty.Register(nameof(Content), typeof(FrameworkElement), typeof(Flyout), new PropertyMetadata(default(FrameworkElement)));

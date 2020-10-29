@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vkui="using:VK.VKUI.Controls"
-    xmlns:vkuif="using:VK.VKUI.Flyouts"
+    xmlns:vkuif="using:VK.VKUI.Popups"
     mc:Ignorable="d">
 
     <Grid>

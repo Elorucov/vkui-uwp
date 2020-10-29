@@ -128,14 +128,16 @@
     <Compile Include="Controls\PageHeaderButton.cs" />
     <Compile Include="Controls\Placeholder.cs" />
     <Compile Include="Controls\Progress.cs" />
+    <Compile Include="Controls\ScreenSpinnerPresenter.cs" />
     <Compile Include="Controls\Snackbar.cs" />
     <Compile Include="Controls\Spinner.cs" />
     <Compile Include="Controls\VKIcon.cs" />
     <Compile Include="Controls\VKIconName.cs" />
     <Compile Include="Converters\IconToDataTemplateConverter.cs" />
-    <Compile Include="Flyouts\Flyout.cs" />
-    <Compile Include="Flyouts\MenuFlyout.cs" />
+    <Compile Include="Popups\Flyout.cs" />
+    <Compile Include="Popups\MenuFlyout.cs" />
     <Compile Include="Helpers\Shadow.cs" />
+    <Compile Include="Popups\ScreenSpinner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VKUILibrary.cs" />
     <EmbeddedResource Include="Properties\VK.VKUI.rd.xml" />
@@ -171,6 +173,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Progress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ScreenSpinnerPresenter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

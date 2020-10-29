@@ -1,0 +1,35 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VK.VKUI.Controls">
+    <Style TargetType="local:ScreenSpinnerPresenter">
+        <Setter Property="Background" Value="{ThemeResource VKModalCardBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{ThemeResource VKIconOutlineSecondaryBrush}"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="TabFocusNavigation" Value="Local"/>
+        <Setter Property="TabNavigation" Value="Local"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:ScreenSpinnerPresenter">
+                    <Grid x:Name="InvisibleLayer" Background="Transparent" Canvas.ZIndex="1000">
+                        <Rectangle x:Name="ShadowBig" Fill="{TemplateBinding Background}"
+                                   Width="88" Height="88" RadiusX="10" RadiusY="10"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <!-- На что только не пойдёшь, чтобы тень выглядела так же, как и в самой VKUI... -->
+                        <Rectangle x:Name="ShadowSmall" Fill="{TemplateBinding Background}"
+                                   Width="88" Height="88" RadiusX="10" RadiusY="10"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Border x:Name="Container" Background="{TemplateBinding Background}"
+                            Width="88" Height="88" CornerRadius="10"
+                            HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <local:Spinner Width="44" Height="44" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <!-- Необходимо убрать фокус со страницы -->
+                        <Button x:Name="FocusableButton" Width="0" Height="0" Background="Transparent" BorderThickness="0"
+                                UseSystemFocusVisuals="False"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

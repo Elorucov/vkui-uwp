@@ -9,7 +9,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 
-namespace VK.VKUI.Flyouts {
+namespace VK.VKUI.Popups {
     public class MenuFlyout : FlyoutBase {
         public ObservableCollection<Control> Items { get; set; } = new ObservableCollection<Control>();
 

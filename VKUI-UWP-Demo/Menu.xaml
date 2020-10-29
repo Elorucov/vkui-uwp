@@ -44,6 +44,7 @@
                         <vkui:CellButton Padding="0" Icon="Icon24Filter" Text="Group" Tag="13" Click="OpenPage" />
                         <vkui:CellButton Padding="0" Icon="Icon24Filter" Text="PageHeader" Tag="11" Click="OpenPage" />
                         <vkui:CellButton Padding="0" Icon="Icon24Filter" Text="Placeholder" Tag="12" Click="OpenPage" />
+                        <vkui:CellButton Padding="0" Icon="Icon24Filter" Text="ScreenSpinner" Tag="15" Click="OpenPage" />
                         <vkui:CellButton Padding="0" Icon="Icon24Filter" Text="Snackbar" Tag="14" Click="OpenPage" />
                     </StackPanel>
                 </vkui:Group>
