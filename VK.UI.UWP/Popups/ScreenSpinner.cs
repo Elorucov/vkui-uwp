@@ -35,17 +35,23 @@ namespace VK.VKUI.Popups {
 
                 // Execute task
                 await Task.Delay(500);
-                await task.ConfigureAwait(true);
+                try {
+                    await task.ConfigureAwait(true);
+                } catch { }
 
                 // Close popup and return result
                 currentlyDisplayedInWindows.Remove(Window.Current);
                 popup.IsOpen = false;
                 popup.Child = null;
 
-                if (task is Task<T> otask) {
-                    return otask.Result;
+                if (!task.IsFaulted) {
+                    if (task is Task<T> otask) {
+                        return otask.Result;
+                    } else {
+                        return default;
+                    }
                 } else {
-                    return default;
+                    throw task.Exception;
                 }
             } else {
                 throw new Exception("ScreenSpinner in this window is already showing.");

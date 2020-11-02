@@ -33,6 +33,7 @@
                 </StackPanel>
                 <Button Style="{StaticResource VKButtonSecondaryLarge}" Margin="8,4" Content="Выполнить 3-секундную задачу" Click="Demo1_Click"/>
                 <Button Style="{StaticResource VKButtonSecondaryLarge}" Margin="8,4" Content="1-секундная задача с результатом" Click="Demo2_Click"/>
+                <Button Style="{StaticResource VKButtonSecondaryLarge}" Margin="8,4" Content="Throw exception after 1 sec." Click="Demo3_Click"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

@@ -44,6 +44,15 @@ namespace VKUI_UWP_Demo.Pages {
             await new MessageDialog(result, "Результат").ShowAsync();
         }
 
+        private async void Demo3_Click(object sender, RoutedEventArgs e) {
+            ScreenSpinner ss = new ScreenSpinner();
+            try {
+                await ss.ShowAsync(Demo3());
+            } catch (Exception ex) {
+                await new MessageDialog($"HResult: 0x{ex.HResult.ToString("x8")}\n{ex.Message}", "Exception info").ShowAsync();
+            }
+        }
+
         private async Task Demo1() {
             await Task.Delay(3000);
         }
@@ -51,6 +60,11 @@ namespace VKUI_UWP_Demo.Pages {
         private async Task<string> Demo2(int data) {
             await Task.Delay(1000);
             return $"Ваше число — {data}";
+        }
+
+        private async Task Demo3() {
+            await Task.Delay(1000);
+            throw new Exception("Some exception.");
         }
     }
 }
