@@ -139,6 +139,8 @@ namespace VK.VKUI.Controls {
 
             long bic = RegisterPropertyChangedCallback(BeforeIconProperty, (a, b) => DrawIcon(BeforeIconContainer, BeforeIcon, BeforeIconPresenter));
             //long aic = RegisterPropertyChangedCallback(AfterIconProperty, (a, b) => DrawIcon(AfterIconContainer, AfterIcon, AfterIconPresenter));
+            long bac = RegisterPropertyChangedCallback(BeforeAvatarProperty, (a, b) => Render());
+            long aac = RegisterPropertyChangedCallback(AfterAvatarProperty, (a, b) => Render());
             long oc = RegisterPropertyChangedCallback(OrientationProperty, (a, b) => Render());
             long atc = RegisterPropertyChangedCallback(ActionTextProperty, (a, b) => Render());
             long hac = RegisterPropertyChangedCallback(HorizontalAlignmentProperty, (a, b) => Render());
@@ -165,6 +167,8 @@ namespace VK.VKUI.Controls {
             Unloaded += (a, b) => {
                 UnregisterPropertyChangedCallback(BeforeIconProperty, bic);
                 //UnregisterPropertyChangedCallback(AfterIconProperty, aic);
+                UnregisterPropertyChangedCallback(BeforeAvatarProperty, bac);
+                UnregisterPropertyChangedCallback(AfterAvatarProperty, aac);
                 UnregisterPropertyChangedCallback(OrientationProperty, oc);
                 UnregisterPropertyChangedCallback(ActionTextProperty, atc);
                 UnregisterPropertyChangedCallback(HorizontalAlignmentProperty, hac);
