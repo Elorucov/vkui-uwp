@@ -69,7 +69,7 @@ namespace VKUI_UWP_Demo.Pages {
         private void OnLoad(object sender, RoutedEventArgs e) {
             GroupedIcons.Source = VKIcons;
             int count = 0;
-            ResourceDictionary iconsdict = App.Current.Resources.MergedDictionaries.Last();
+            ResourceDictionary iconsdict = App.Current.Resources.MergedDictionaries[3];
             var q = (from i in iconsdict select i).ToList();
             foreach(var i in q) {
                 if (i.Key is string k && k.Length > 6 && k.Substring(0, 4) == "Icon" && i.Value is DataTemplate v) {

@@ -12,7 +12,7 @@
                     <Grid x:Name="LayoutRoot" Height="52" Background="{TemplateBinding Background}">
                         <Grid.Resources>
                             <Style x:Key="PageHeaderContentStyle" TargetType="ContentPresenter">
-                                <Setter Property="FontFamily" Value="ms-appx:///VK.VKUI/Fonts/TT/DemiBold.otf#TT Commons"/>
+                                <Setter Property="FontFamily" Value="{StaticResource VKSansDisplayBold}"/>
                                 <Setter Property="FontSize" Value="21"/>
                                 <Setter Property="LineHeight" Value="20"/>
                                 <Setter Property="LineStackingStrategy" Value="BlockLineHeight"/>

@@ -10,8 +10,9 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="ms-appx:///VK.VKUI/VKPalette.xaml"/>
                 <ResourceDictionary Source="ms-appx:///VK.VKUI/VKScheme.xaml"/>
-                <ResourceDictionary Source="ms-appx:///VK.VKUI/VKControlStyles.xaml"/>
+                <ResourceDictionary Source="ms-appx:///VK.VKUI/VKTypography.xaml"/>
                 <ResourceDictionary Source="ms-appx:///VK.VKUI/VKIcons.xaml"/>
+                <ResourceDictionary Source="ms-appx:///VK.VKUI/VKControlStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <Style TargetType="vkui:PageHeader">

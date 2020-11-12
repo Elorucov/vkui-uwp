@@ -1,0 +1,58 @@
+﻿<Page
+    x:Class="VKUI_UWP_Demo.Pages.Typography"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VKUI_UWP_Demo.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vkui="using:VK.VKUI.Controls"
+    mc:Ignorable="d">
+
+    <Grid x:Name="Root">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <vkui:PageHeader Content="Typography">
+            <vkui:PageHeader.LeftButtons>
+                <vkui:PageHeaderButton Icon="Icon28ArrowLeftOutline" Text="Назад" Click="GoBack"/>
+            </vkui:PageHeader.LeftButtons>
+        </vkui:PageHeader>
+        <ScrollViewer Grid.Row="1" MaxWidth="576">
+            <StackPanel Margin="16">
+                <TextBlock FontFamily="{StaticResource VKSansDisplayBold}" FontSize="20" Text="VK Sans Display Bold"/>
+                <TextBlock Margin="0,8,0,0" FontFamily="{StaticResource VKSansDisplayRegular}" FontSize="20" Text="VK Sans Display Regular"/>
+                <TextBlock Margin="0,16,0,0" Style="{StaticResource VKTitle1}" FontWeight="Normal" Text="VKTitle1 Normal"/>
+                <TextBlock Style="{StaticResource VKTitle1}" FontWeight="SemiBold" Text="VKTitle1 SemiBold"/>
+                <TextBlock Style="{StaticResource VKTitle1}" FontWeight="Bold" Text="VKTitle1 Bold"/>
+                <TextBlock Margin="0,8,0,0" Style="{StaticResource VKTitle2}" FontWeight="Normal" Text="VKTitle2 Normal"/>
+                <TextBlock Style="{StaticResource VKTitle2}" FontWeight="SemiBold" Text="VKTitle2 SemiBold"/>
+                <TextBlock Style="{StaticResource VKTitle2}" FontWeight="Bold" Text="VKTitle2 Bold"/>
+                <TextBlock Margin="0,8,0,0" Style="{StaticResource VKTitle3}" FontWeight="Normal" Text="VKTitle3 Normal"/>
+                <TextBlock Style="{StaticResource VKTitle3}" FontWeight="SemiBold" Text="VKTitle3 SemiBold"/>
+                <TextBlock Style="{StaticResource VKTitle3}" FontWeight="Bold" Text="VKTitle3 Bold"/>
+                <TextBlock Margin="0,8,0,0" Style="{StaticResource VKHeadline}" FontWeight="Normal" Text="VKHeadline Normal"/>
+                <TextBlock Style="{StaticResource VKHeadline}" FontWeight="SemiBold" Text="VKHeadline SemiBold"/>
+                <TextBlock Style="{StaticResource VKHeadline}" FontWeight="Bold" Text="VKHeadline Bold"/>
+                <TextBlock Margin="0,8,0,0" Style="{StaticResource VKText}" FontWeight="Normal" Text="VKText Normal"/>
+                <TextBlock Style="{StaticResource VKText}" FontWeight="SemiBold" Text="VKText SemiBold"/>
+                <TextBlock Style="{StaticResource VKText}" FontWeight="Bold" Text="VKText Bold"/>
+                <TextBlock Margin="0,8,0,0" Style="{StaticResource VKSubhead}" FontWeight="Normal" Text="VKSubhead Normal"/>
+                <TextBlock Style="{StaticResource VKSubhead}" FontWeight="SemiBold" Text="VKSubhead SemiBold"/>
+                <TextBlock Style="{StaticResource VKSubhead}" FontWeight="Bold" Text="VKSubhead Bold"/>
+                <TextBlock Margin="0,8,0,0" Style="{StaticResource VKCaption1}" FontWeight="Normal" Text="VKCaption1 Normal"/>
+                <TextBlock Style="{StaticResource VKCaption1}" FontWeight="SemiBold" Text="VKCaption1 SemiBold"/>
+                <TextBlock Style="{StaticResource VKCaption1}" FontWeight="Bold" Text="VKCaption1 Bold"/>
+                <TextBlock Margin="0,8,0,0" Style="{StaticResource VKCaption2}" FontWeight="Normal" Text="VKCaption2 Normal"/>
+                <TextBlock Style="{StaticResource VKCaption2}" FontWeight="SemiBold" Text="VKCaption2 SemiBold"/>
+                <TextBlock Style="{StaticResource VKCaption2}" FontWeight="Bold" Text="VKCaption2 Bold"/>
+                <TextBlock Margin="0,8,0,0" Style="{StaticResource VKCaption3}" FontWeight="Normal" Text="VKCaption3 Normal"/>
+                <TextBlock Style="{StaticResource VKCaption3}" FontWeight="SemiBold" Text="VKCaption3 SemiBold"/>
+                <TextBlock Style="{StaticResource VKCaption3}" FontWeight="Bold" Text="VKCaption3 Bold"/>
+                <TextBlock Margin="0,8,0,0" Style="{StaticResource VKCaption4}" FontWeight="Normal" Text="VKCaption4 Normal"/>
+                <TextBlock Style="{StaticResource VKCaption4}" FontWeight="SemiBold" Text="VKCaption4 SemiBold"/>
+                <TextBlock Style="{StaticResource VKCaption4}" FontWeight="Bold" Text="VKCaption4 Bold"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

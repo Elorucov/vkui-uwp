@@ -37,6 +37,7 @@
                         <vkui:CellButton Padding="0" Icon="Icon24Info" Text="Как подключить" Tag="https://github.com/Elorucov/vkui-uwp/blob/master/README.md" Click="OpenLink" />
                         <vkui:CellButton Padding="0" Icon="Icon24Smile" Text="Иконки" Tag="1" Click="OpenPage" />
                         <vkui:CellButton Padding="0" Icon="Icon24Filter" Text="Всплывающие элементы" Tag="3" Click="OpenPage" />
+                        <vkui:CellButton Padding="0" Icon="Icon24TextOutline" Text="Типографика" Tag="4" Click="OpenPage" />
                     </StackPanel>
                 </vkui:Group>
                 <vkui:Group x:Name="Controls" Margin="8,0" Header="Элементы управления">

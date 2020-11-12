@@ -63,6 +63,7 @@ namespace VKUI_UWP_Demo {
             switch(id) {
                 case 1: page = typeof(Pages.Icons); break;
                 case 3: page = typeof(Pages.FlyoutsDemo); break;
+                case 4: page = typeof(Pages.Typography); break;
                 case 11: page = typeof(Pages.PageHeaderDemo); break;
                 case 12: page = typeof(Pages.PlaceholderDemo); break;
                 case 13: page = typeof(Pages.GroupDemo); break;
