@@ -92,6 +92,7 @@ namespace VK.VKUI.Controls {
         public bool IsShowing { get; private set; } = false;
         public event EventHandler<bool> Dismissed; // bool — dismissed when Action button clicked.
         DispatcherTimer timer = new DispatcherTimer();
+        double nonXamlDuration = -1;
 
         #endregion
 
@@ -173,6 +174,10 @@ namespace VK.VKUI.Controls {
                 UnregisterPropertyChangedCallback(ActionTextProperty, atc);
                 UnregisterPropertyChangedCallback(HorizontalAlignmentProperty, hac);
             };
+            if (nonXamlDuration >= 0) {
+                Show(nonXamlDuration);
+                nonXamlDuration = -1;
+            }
         }
 
         #endregion
@@ -186,17 +191,21 @@ namespace VK.VKUI.Controls {
 
             if (IsShowing) return;
 
-            IsShowing = true;
+            if (Root == null) {
+                nonXamlDuration = durationInMs;
+                ApplyTemplate();
+            } else {
+                IsShowing = true;
+                Root.Opacity = 0; // 🤷‍♂️
+                Root.Visibility = Visibility.Visible;
+                await Task.Delay(1);
+                Root.Opacity = 1; // 🤷‍♂️
+                Animate(Windows.UI.Composition.AnimationDirection.Normal);
 
-            Root.Opacity = 0; // 🤷‍♂️
-            Root.Visibility = Visibility.Visible;
-            await Task.Delay(1);
-            Root.Opacity = 1; // 🤷‍♂️
-            Animate(Windows.UI.Composition.AnimationDirection.Normal);
-
-            // Start timer;
-            timer.Interval = TimeSpan.FromMilliseconds(durationInMs);
-            timer.Start();
+                // Start timer;
+                timer.Interval = TimeSpan.FromMilliseconds(durationInMs);
+                timer.Start();
+            }
         }
 
         public async void Dismiss() {

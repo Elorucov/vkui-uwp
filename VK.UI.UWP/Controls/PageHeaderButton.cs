@@ -48,6 +48,7 @@ namespace VK.VKUI.Controls {
         protected override void OnApplyTemplate() {
             base.OnApplyTemplate();
             IconPresenter = (ContentPresenter)GetTemplateChild(nameof(IconPresenter));
+            IconPresenter.Loaded += IconPresenter_Loaded;
 
             RegisterPropertyChangedCallback(TextProperty, (c, d) => ToolTipService.SetToolTip(this, GetValue(d)));
             long ieid = RegisterPropertyChangedCallback(IsEnabledProperty, (a, b) => CheckIsEnabled());
@@ -64,8 +65,8 @@ namespace VK.VKUI.Controls {
                 AddHandler(UIElement.KeyUpEvent, new KeyEventHandler(KbdUp), true);
                 DrawIcon(Icon);
             };
-            LayoutUpdated += PageHeaderButton_LayoutUpdated;
             Unloaded += (a, b) => {
+                IconPresenter.Loaded -= IconPresenter_Loaded;
                 RemoveHandler(UIElement.PointerEnteredEvent, new PointerEventHandler(Entered));
                 RemoveHandler(UIElement.PointerExitedEvent, new PointerEventHandler(Exited));
                 RemoveHandler(UIElement.PointerPressedEvent, new PointerEventHandler(Pressed));
@@ -74,7 +75,6 @@ namespace VK.VKUI.Controls {
                 RemoveHandler(UIElement.KeyUpEvent, new KeyEventHandler(KbdUp));
                 UnregisterPropertyChangedCallback(IsEnabledProperty, ieid);
                 UnregisterPropertyChangedCallback(IconProperty, iid);
-                LayoutUpdated -= PageHeaderButton_LayoutUpdated;
             };
         }
 
@@ -86,7 +86,7 @@ namespace VK.VKUI.Controls {
             VisualStateManager.GoToState(this, IsEnabled ? ButtonStates.Normal : ButtonStates.Disabled, true);
         }
 
-        private void PageHeaderButton_LayoutUpdated(object sender, object e) {
+        private void IconPresenter_Loaded(object sender, RoutedEventArgs e) {
             DrawIcon(Icon);
         }
 

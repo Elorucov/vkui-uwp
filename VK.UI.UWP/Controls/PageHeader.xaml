@@ -15,7 +15,7 @@
                                 <Setter Property="FontFamily" Value="{StaticResource VKSansDisplayBold}"/>
                                 <Setter Property="FontSize" Value="22"/>
                                 <Setter Property="LineHeight" Value="20"/>
-                                <Setter Property="Margin" Value="0,-4,0,0"/>
+                                <Setter Property="Margin" Value="0,-2,0,0"/>
                                 <Setter Property="LineStackingStrategy" Value="BlockLineHeight"/>
                                 <Setter Property="VerticalAlignment" Value="Center"/>
                                 <Setter Property="Foreground" Value="{ThemeResource VKHeaderTextBrush}"/>

@@ -11,7 +11,7 @@
     <AssemblyName>VK.VKUI</AssemblyName>
     <DefaultLanguage>ru-RU</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.15063.0</TargetPlatformVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.16299.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.15063.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -226,15 +226,15 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="WindowsMobile, Version=10.0.15063.0">
-      <Name>Windows Mobile Extensions for the UWP</Name>
-    </SDKReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Fonts\VKSansDisplay\Bold.otf" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Fonts\VKSansDisplay\Regular.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="WindowsMobile, Version=10.0.16299.0">
+      <Name>Windows Mobile Extensions for the UWP</Name>
+    </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
