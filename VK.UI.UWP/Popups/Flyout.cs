@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.UI;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Media;
 
 namespace VK.VKUI.Popups {
     public class Flyout : FlyoutBase {
@@ -19,12 +12,22 @@ namespace VK.VKUI.Popups {
             set { SetValue(ContentProperty, value); }
         }
 
+        public static readonly DependencyProperty PresenterStyleProperty =
+        DependencyProperty.Register(nameof(PresenterStyle), typeof(Style), typeof(Flyout), new PropertyMetadata(default(FrameworkElement)));
+
+        public Style PresenterStyle {
+            get { return (Style)GetValue(PresenterStyleProperty); }
+            set { SetValue(PresenterStyleProperty, value); }
+        }
+
         public Flyout() { }
 
         protected override Control CreatePresenter() {
             Controls.FlyoutPresenter fp = new Controls.FlyoutPresenter {
                 Content = Content
             };
+            if (PresenterStyle != null) fp.Style = PresenterStyle;
+            RegisterPropertyChangedCallback(PresenterStyleProperty, (a, b) => { fp.Style = (Style)GetValue(b); });
             return fp;
         }
     }
