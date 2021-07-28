@@ -42,6 +42,7 @@
                 </vkui:Group>
                 <vkui:Group x:Name="Controls" Margin="8,0" Header="Элементы управления">
                     <StackPanel>
+                        <vkui:CellButton Padding="0" Icon="Icon24Filter" Text="Alert" Tag="16" Click="OpenPage" />
                         <vkui:CellButton Padding="0" Icon="Icon24Filter" Text="Group" Tag="13" Click="OpenPage" />
                         <vkui:CellButton Padding="0" Icon="Icon24Filter" Text="PageHeader" Tag="11" Click="OpenPage" />
                         <vkui:CellButton Padding="0" Icon="Icon24Filter" Text="Placeholder" Tag="12" Click="OpenPage" />
