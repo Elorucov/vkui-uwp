@@ -40,11 +40,27 @@ namespace VKUI_UWP_Demo.Pages {
         private async void Demo2_Click(object sender, RoutedEventArgs e) {
             Alert alert = new Alert {
                 Header = "Ошибка",
-                Text = "Вы попытались загрузить более одной однотипной страницы в секунду. Вернитесь назад и повторите попытку.",
-                PrimaryButtonText = "ОК"
+                Text = "Вы попытались загрузить более одной однотипной страницы в секунду. Вернитесь назад и повторите попытку."
             };
             AlertButton result = await alert.ShowAsync();
             Result.Text = $"Clicked button: {result}.";
+        }
+
+        private async void Demo3_Click(object sender, RoutedEventArgs e) {
+            TextBox tb = new TextBox {
+                Style = (Style)Application.Current.Resources["VKTextBox"],
+                TextWrapping = TextWrapping.Wrap,
+                Margin = new Thickness(0, 8, 0, 0)
+            };
+
+            Alert alert = new Alert {
+                Header = "Введите что-нибудь",
+                PrimaryButtonText = "Отправить",
+                SecondaryButtonText = "Отмена",
+                Content = tb
+            };
+            AlertButton result = await alert.ShowAsync();
+            Result.Text = $"Clicked button: {result}. Text: {tb.Text}.";
         }
     }
 }

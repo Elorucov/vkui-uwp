@@ -34,7 +34,7 @@ namespace VK.VKUI.Popups {
                 Resize(new Size(Window.Current.Bounds.Width, Window.Current.Bounds.Height), popup, ssp);
 
                 // Execute task
-                await Task.Delay(500);
+                await Task.Delay(100);
                 try {
                     await task.ConfigureAwait(true);
                 } catch { }

@@ -36,8 +36,10 @@
                         <LineBreak/><Run FontWeight="SemiBold" FontFamily="Consolas">SecondaryButtonText</Run> — текст для вторичной кнопки.
                         <LineBreak/>
                         <LineBreak/>Если один из свойств <Run FontFamily="Consolas">PrimaryButtonText</Run>
-                        или <Run FontFamily="Consolas">SecondaryButtonText</Run> является null,
-                        то соответствующая ему кнопка не будет отображаться.
+                        или <Run FontFamily="Consolas">SecondaryButtonText</Run> значение является null,
+                        то соответствующая ему кнопка не будет отображаться. А если у всех кнопок значение null,
+                        то Alert сам отобразит кнопку "ОК".
+                        <LineBreak/>При закрытии Alert кнопкой Esc метод ShowAsync вернёт <Run FontFamily="Consolas">AlertButton.None</Run>.
                         <LineBreak/>
                         <LineBreak/>Для элемента внутри <Run FontFamily="Consolas">Content</Run>
                         рекомендуется прописать отступ сверху на 8px.
@@ -47,7 +49,8 @@
                     </TextBlock>
                 </StackPanel>
                 <Button Style="{StaticResource VKButtonSecondaryLarge}" Margin="8,4" Content="С чекбоксом в Content" Click="Demo1_Click"/>
-                <Button Style="{StaticResource VKButtonSecondaryLarge}" Margin="8,4" Content="С одной кнопкой" Click="Demo2_Click"/>
+                <Button Style="{StaticResource VKButtonSecondaryLarge}" Margin="8,4" Content="Без значений PrimaryButtonText и SecondaryButtonText" Click="Demo2_Click"/>
+                <Button Style="{StaticResource VKButtonSecondaryLarge}" Margin="8,4" Content="Без значения Text, но с Content" Click="Demo3_Click"/>
                 <TextBlock x:Name="Result" Margin="8,4"/>
             </StackPanel>
         </ScrollViewer>

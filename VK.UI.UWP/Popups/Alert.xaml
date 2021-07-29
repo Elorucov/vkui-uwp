@@ -25,7 +25,7 @@
                                                LineStackingStrategy="BlockLineHeight"
                                                Foreground="{ThemeResource VKTextPrimaryBrush}" Margin="0,0,0,8"
                                                Text="{TemplateBinding Header}"/>
-                                <TextBlock x:Name="SubheaderText" TextWrapping="Wrap"
+                                <TextBlock x:Name="AlertText" TextWrapping="Wrap"
                                                FontSize="16" LineHeight="20"
                                                LineStackingStrategy="BlockLineHeight"
                                                Foreground="{ThemeResource VKTextSecondaryBrush}"

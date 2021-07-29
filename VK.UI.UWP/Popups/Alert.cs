@@ -23,7 +23,7 @@ namespace VK.VKUI.Popups {
         }
 
         AlertButton Result;
-        SpinLock Lock = new SpinLock();
+        ManualResetEventSlim mres = new ManualResetEventSlim();
 
         #region Properties
 
@@ -69,6 +69,7 @@ namespace VK.VKUI.Popups {
         Rectangle ShadowBig;
         Rectangle ShadowSmall;
         Grid AlertContainer;
+        TextBlock AlertText;
         Button PrimaryButton;
         Button SecondaryButton;
 
@@ -79,8 +80,11 @@ namespace VK.VKUI.Popups {
             ShadowBig = (Rectangle)GetTemplateChild(nameof(ShadowBig));
             ShadowSmall = (Rectangle)GetTemplateChild(nameof(ShadowSmall));
             AlertContainer = (Grid)GetTemplateChild(nameof(AlertContainer));
+            AlertText = (TextBlock)GetTemplateChild(nameof(AlertText));
             PrimaryButton = (Button)GetTemplateChild(nameof(PrimaryButton));
             SecondaryButton = (Button)GetTemplateChild(nameof(SecondaryButton));
+
+            long tid = RegisterPropertyChangedCallback(TextProperty, (a, b) => CheckText());
 
             long pbid = RegisterPropertyChangedCallback(PrimaryButtonTextProperty, 
                 (a, b) => CheckButton(PrimaryButton, (string)GetValue(b)));
@@ -101,6 +105,7 @@ namespace VK.VKUI.Popups {
                 InvisibleLayer.LayoutUpdated -= InvisibleLayer_LayoutUpdated;
                 Window.Current.SizeChanged -= OnSizeChanged;
 
+                UnregisterPropertyChangedCallback(TextProperty, tid);
                 UnregisterPropertyChangedCallback(PrimaryButtonTextProperty, pbid);
                 UnregisterPropertyChangedCallback(SecondaryButtonTextProperty, sbid);
             };
@@ -133,17 +138,14 @@ namespace VK.VKUI.Popups {
 
             popup.IsOpen = true;
 
-            bool lockTaken = false;
-            Lock.Enter(ref lockTaken);
-
-            while (Lock.IsHeld) {
-                await Task.Yield();
-            }
+            await Task.Factory.StartNew(() => {
+                mres.Wait();
+            }).ConfigureAwait(true);
 
             Animate(Windows.UI.Composition.AnimationDirection.Reverse, 170);
             await Task.Delay(170);
             popup.IsOpen = false;
-
+            mres.Dispose();
             return Result;
         }
 
@@ -152,18 +154,36 @@ namespace VK.VKUI.Popups {
         #region Private methods
 
         private void Close(AlertButton button) {
+            Window.Current.CoreWindow.KeyUp -= CheckPressedButton;
             Result = button;
-            Lock.Exit();
+            mres.Set();
+        }
+
+        private void CheckText() {
+            AlertText.Visibility = String.IsNullOrEmpty(Text) ? Visibility.Collapsed : Visibility.Visible;
         }
 
         private void CheckButton(Button button, string text) {
             button.Visibility = String.IsNullOrEmpty(text) ? Visibility.Collapsed : Visibility.Visible;
+
+            // Не должно же быть так, чтобы ни одна кнопка не отображалась...
+            if (String.IsNullOrEmpty(PrimaryButtonText) && String.IsNullOrEmpty(SecondaryButtonText)) {
+                PrimaryButtonText = "OK";
+            }
         }
 
         private void OnLoaded(object sender, RoutedEventArgs e) {
-            CheckButton(PrimaryButton, (string)GetValue(PrimaryButtonTextProperty));
-            CheckButton(SecondaryButton, (string)GetValue(SecondaryButtonTextProperty));
+            CheckText();
+            CheckButton(PrimaryButton, PrimaryButtonText);
+            CheckButton(SecondaryButton, SecondaryButtonText);
+
             Animate(Windows.UI.Composition.AnimationDirection.Normal, 250);
+            PrimaryButton.Focus(FocusState.Programmatic);
+            Window.Current.CoreWindow.KeyUp += CheckPressedButton;
+        }
+
+        private void CheckPressedButton(CoreWindow sender, KeyEventArgs args) {
+            if (args.VirtualKey == Windows.System.VirtualKey.Escape) Close(AlertButton.None);
         }
 
         private void InvisibleLayer_LayoutUpdated(object sender, object e) {
