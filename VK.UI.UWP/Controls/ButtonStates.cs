@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VK.VKUI.Controls {
+﻿namespace VK.VKUI.Controls {
     static class ButtonStates {
         internal const string Name = "CommonStates";
         internal const string Normal = "Normal";

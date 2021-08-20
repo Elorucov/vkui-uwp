@@ -150,6 +150,9 @@
     <Compile Include="Pages\GroupDemo.xaml.cs">
       <DependentUpon>GroupDemo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\HeaderDemo.xaml.cs">
+      <DependentUpon>HeaderDemo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Icons.xaml.cs">
       <DependentUpon>Icons.xaml</DependentUpon>
     </Compile>
@@ -207,6 +210,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\GroupDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\HeaderDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -121,6 +121,8 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Controls\Header.cs" />
+    <Compile Include="Controls\HeaderStates.cs" />
     <Compile Include="Popups\Alert.cs" />
     <Compile Include="Controls\ButtonStates.cs" />
     <Compile Include="Controls\CellButton.cs" />
@@ -150,6 +152,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\Header.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Popups\Alert.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

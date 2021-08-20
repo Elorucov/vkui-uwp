@@ -1,0 +1,41 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VK.VKUI.Controls">
+    <Style TargetType="local:Header">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:Header">
+                    <Border Background="{TemplateBinding Background}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="ModeStates">
+                                <VisualState x:Name="Primary">
+                                </VisualState>
+                                <VisualState x:Name="Secondary">
+                                    <VisualState.Setters>
+                                        <Setter Target="HeaderText.Style" Value="{StaticResource VKCaption1}"/>
+                                        <Setter Target="HeaderText.Foreground" Value="{ThemeResource VKTextSecondaryBrush}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Tertiary">
+                                    <VisualState.Setters>
+                                        <Setter Target="HeaderText.Style" Value="{StaticResource VKHeadline}"/>
+                                        <Setter Target="HeaderText.Foreground" Value="{ThemeResource VKTextSecondaryBrush}"/>
+                                        <Setter Target="HeaderText.Margin" Value="0,11,0,9"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid Margin="16,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="HeaderText" Margin="0,15,0,9" TextTrimming="CharacterEllipsis" TextWrapping="{TemplateBinding TextWrapping}" FontWeight="SemiBold" Foreground="{ThemeResource VKTextPrimaryBrush}" Style="{StaticResource VKHeadline}"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

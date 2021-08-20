@@ -70,6 +70,7 @@ namespace VKUI_UWP_Demo {
                 case 14: page = typeof(Pages.SnackbarDemo); break;
                 case 15: page = typeof(Pages.ScreenSpinnerDemo); break;
                 case 16: page = typeof(Pages.AlertDemo); break;
+                case 17: page = typeof(Pages.HeaderDemo); break;
             }
             Frame.Navigate(page, null, new DrillInNavigationTransitionInfo());
         }
