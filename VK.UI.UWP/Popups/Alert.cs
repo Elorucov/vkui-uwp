@@ -204,8 +204,8 @@ namespace VK.VKUI.Popups {
             ShadowSmall.Width = AlertContainer.ActualWidth;
             ShadowSmall.Height = AlertContainer.ActualHeight;
 
-            Shadow.Draw(AlertContainer, ShadowBig, 96, 0.16f);
-            Shadow.Draw(AlertContainer, ShadowSmall, 2, 0.12f);
+            VK.VKUI.Helpers.Shadow.Draw(AlertContainer, ShadowBig, 96, 0.16f);
+            VK.VKUI.Helpers.Shadow.Draw(AlertContainer, ShadowSmall, 2, 0.12f);
         }
 
         private void Animate(Windows.UI.Composition.AnimationDirection direction, int duration) {

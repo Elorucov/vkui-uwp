@@ -157,7 +157,7 @@ namespace VK.VKUI.Controls {
             SnackBarRoot.LayoutUpdated += (a, b) => {
                 ShadowRect.Width = SnackBarRoot.RenderSize.Width;
                 ShadowRect.Height = SnackBarRoot.RenderSize.Height;
-                Shadow.Draw(SnackBarRoot, ShadowRect, 24, 0.24f);
+                VK.VKUI.Helpers.Shadow.Draw(SnackBarRoot, ShadowRect, 24, 0.24f);
             };
             SnackBarRoot.SizeChanged += (a, b) => Render();
             Loaded += (a, b) => {

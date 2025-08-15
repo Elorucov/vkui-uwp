@@ -36,7 +36,7 @@ namespace VK.VKUI.Controls {
         #region Internal
 
         private void DrawShadow() {
-            Shadow.Draw(PresenterRoot, PresenterShadow, 22, 0.2f);
+            VK.VKUI.Helpers.Shadow.Draw(PresenterRoot, PresenterShadow, 22, 0.2f);
         }
 
         #endregion

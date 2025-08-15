@@ -39,8 +39,8 @@ namespace VK.VKUI.Controls {
             FocusableButton = (Button)GetTemplateChild(nameof(FocusableButton));
 
             Container.LayoutUpdated += (a, b) => {
-                Shadow.Draw(Container, ShadowBig, 96, 0.16f);
-                Shadow.Draw(Container, ShadowSmall, 2, 0.12f);
+                VK.VKUI.Helpers.Shadow.Draw(Container, ShadowBig, 96, 0.16f);
+                VK.VKUI.Helpers.Shadow.Draw(Container, ShadowSmall, 2, 0.12f);
             };
 
             Animate(Windows.UI.Composition.AnimationDirection.Normal);
