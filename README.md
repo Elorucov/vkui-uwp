@@ -149,7 +149,8 @@ Alert alert = new Alert
     SecondaryButtonText = "Отмена",
     Content = cb
 };
-AlertButton result = await alert.ShowAsync();```
+AlertButton result = await alert.ShowAsync();
+```
 
 ### Snackbar
 Элемент для отображения уведомлений.
