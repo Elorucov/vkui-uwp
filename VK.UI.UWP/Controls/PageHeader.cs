@@ -1,24 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.Diagnostics;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel.Core;
 using Windows.System.Profile;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Documents;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 
 // The Templated Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234235
 
-namespace VK.VKUI.Controls {
-    public sealed class PageHeader : ContentControl {
+namespace VK.VKUI.Controls
+{
+    public sealed class PageHeader : ContentControl
+    {
         #region Properties
 
         long dnsaid = 0;
@@ -26,7 +19,8 @@ namespace VK.VKUI.Controls {
         public static readonly DependencyProperty DetectNonSafeAreaProperty =
         DependencyProperty.Register(nameof(DetectNonSafeArea), typeof(bool), typeof(PageHeader), new PropertyMetadata(default(bool)));
 
-        public bool DetectNonSafeArea {
+        public bool DetectNonSafeArea
+        {
             get { return (bool)GetValue(DetectNonSafeAreaProperty); }
             set { SetValue(DetectNonSafeAreaProperty, value); }
         }
@@ -39,7 +33,8 @@ namespace VK.VKUI.Controls {
 
         #endregion
 
-        public PageHeader() {
+        public PageHeader()
+        {
             this.DefaultStyleKey = typeof(PageHeader);
             dnsaid = RegisterPropertyChangedCallback(DetectNonSafeAreaProperty, FixMarginCallback);
         }
@@ -50,7 +45,8 @@ namespace VK.VKUI.Controls {
         StackPanel HeaderLeft;
         StackPanel HeaderRight;
 
-        protected override void OnApplyTemplate() {
+        protected override void OnApplyTemplate()
+        {
             base.OnApplyTemplate();
             LayoutRoot = (Grid)GetTemplateChild(nameof(LayoutRoot));
             HeaderLeft = (StackPanel)GetTemplateChild(nameof(HeaderLeft));
@@ -62,7 +58,8 @@ namespace VK.VKUI.Controls {
             LeftButtons.CollectionChanged += LeftButtons_CollectionChanged;
             RightButtons.CollectionChanged += RightButtons_CollectionChanged;
 
-            Unloaded += (a, b) => {
+            Unloaded += (a, b) =>
+            {
                 UnregisterPropertyChangedCallback(DetectNonSafeAreaProperty, dnsaid);
                 LeftButtons.CollectionChanged -= LeftButtons_CollectionChanged;
                 RightButtons.CollectionChanged -= RightButtons_CollectionChanged;
@@ -75,26 +72,32 @@ namespace VK.VKUI.Controls {
         #region Internal
 
         // Margin for non-safe areas
-        private void FixMarginCallback(DependencyObject sender, DependencyProperty dp) {
+        private void FixMarginCallback(DependencyObject sender, DependencyProperty dp)
+        {
             cachedDetectNonSafeArea = (bool)GetValue(dp);
             FixMargin();
         }
 
-        private void TitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args) {
+        private void TitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
+        {
             bool isTabletMode = UIViewSettings.GetForCurrentView().UserInteractionMode == UserInteractionMode.Touch;
             FixMargin(isTabletMode ? 0 : sender.Height);
         }
 
-        private void View_VisibleBoundsChanged(ApplicationView sender, object args) {
+        private void View_VisibleBoundsChanged(ApplicationView sender, object args)
+        {
             FixMargin(sender.VisibleBounds.Top);
         }
 
-        private void FixMargin(double margin = 0) {
-            if(LayoutRoot == null) return;
+        private void FixMargin(double margin = 0)
+        {
+            if (LayoutRoot == null) return;
             CoreApplicationViewTitleBar titleBar = null;
             ApplicationView view = ApplicationView.GetForCurrentView();
-            if(cachedDetectNonSafeArea) {
-                switch(AnalyticsInfo.VersionInfo.DeviceFamily) {
+            if (cachedDetectNonSafeArea)
+            {
+                switch (AnalyticsInfo.VersionInfo.DeviceFamily)
+                {
                     case "Windows.Desktop":
                         titleBar = CoreApplication.GetCurrentView().TitleBar;
                         margin = titleBar.Height;
@@ -105,10 +108,13 @@ namespace VK.VKUI.Controls {
                         view.VisibleBoundsChanged += View_VisibleBoundsChanged;
                         break;
                 }
-            } else {
-                switch(AnalyticsInfo.VersionInfo.DeviceFamily) {
+            }
+            else
+            {
+                switch (AnalyticsInfo.VersionInfo.DeviceFamily)
+                {
                     case "Windows.Desktop":
-                        if(titleBar != null) titleBar.LayoutMetricsChanged -= TitleBar_LayoutMetricsChanged;
+                        if (titleBar != null) titleBar.LayoutMetricsChanged -= TitleBar_LayoutMetricsChanged;
                         break;
                     case "Windows.Mobile":
                         view.VisibleBoundsChanged -= View_VisibleBoundsChanged;
@@ -120,17 +126,21 @@ namespace VK.VKUI.Controls {
 
         // Buttons
 
-        private void LeftButtons_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e) {
+        private void LeftButtons_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
             AddButtonsInStackPanel(HeaderLeft, _leftButtons);
         }
 
-        private void RightButtons_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e) {
+        private void RightButtons_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
             AddButtonsInStackPanel(HeaderRight, _rightButtons);
         }
 
-        private void AddButtonsInStackPanel(StackPanel panel, ObservableCollection<PageHeaderButton> buttons) {
+        private void AddButtonsInStackPanel(StackPanel panel, ObservableCollection<PageHeaderButton> buttons)
+        {
             panel.Children.Clear();
-            foreach(PageHeaderButton button in buttons) {
+            foreach (PageHeaderButton button in buttons)
+            {
                 panel.Children.Add(button);
             }
         }

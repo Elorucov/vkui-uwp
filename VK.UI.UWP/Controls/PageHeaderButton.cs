@@ -1,30 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
+﻿using System.Diagnostics;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Documents;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 
 // The Templated Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234235
 
-namespace VK.VKUI.Controls {
+namespace VK.VKUI.Controls
+{
 
     [TemplateVisualState(Name = ButtonStates.Normal, GroupName = ButtonStates.Name)]
     [TemplateVisualState(Name = ButtonStates.PointerOver, GroupName = ButtonStates.Name)]
     [TemplateVisualState(Name = ButtonStates.Pressed, GroupName = ButtonStates.Name)]
     [TemplateVisualState(Name = ButtonStates.Disabled, GroupName = ButtonStates.Name)]
-    public sealed class PageHeaderButton : ButtonBase {
+    public sealed class PageHeaderButton : ButtonBase
+    {
         public static readonly DependencyProperty IconProperty =
             DependencyProperty.Register(nameof(Icon), typeof(VKIconName), typeof(CellButton), new PropertyMetadata(default(VKIconName)));
 
-        public VKIconName Icon {
+        public VKIconName Icon
+        {
             get { return (VKIconName)GetValue(IconProperty); }
             set { SetValue(IconProperty, value); }
         }
@@ -32,12 +28,14 @@ namespace VK.VKUI.Controls {
         public static readonly DependencyProperty TextProperty =
         DependencyProperty.Register(nameof(Text), typeof(string), typeof(PageHeaderButton), new PropertyMetadata(default(string)));
 
-        public string Text {
+        public string Text
+        {
             get { return (string)GetValue(TextProperty); }
             set { SetValue(TextProperty, value); }
         }
 
-        public PageHeaderButton() {
+        public PageHeaderButton()
+        {
             this.DefaultStyleKey = typeof(PageHeaderButton);
         }
 
@@ -45,7 +43,8 @@ namespace VK.VKUI.Controls {
 
         ContentPresenter IconPresenter;
 
-        protected override void OnApplyTemplate() {
+        protected override void OnApplyTemplate()
+        {
             base.OnApplyTemplate();
             IconPresenter = (ContentPresenter)GetTemplateChild(nameof(IconPresenter));
             IconPresenter.Loaded += IconPresenter_Loaded;
@@ -54,7 +53,8 @@ namespace VK.VKUI.Controls {
             long ieid = RegisterPropertyChangedCallback(IsEnabledProperty, (a, b) => CheckIsEnabled());
             long iid = RegisterPropertyChangedCallback(IconProperty, (a, b) => DrawIcon((VKIconName)GetValue(b)));
 
-            Loaded += (a, b) => {
+            Loaded += (a, b) =>
+            {
                 ToolTipService.SetToolTip(this, GetValue(TextProperty));
                 CheckIsEnabled();
                 AddHandler(UIElement.PointerEnteredEvent, new PointerEventHandler(Entered), true);
@@ -65,7 +65,8 @@ namespace VK.VKUI.Controls {
                 AddHandler(UIElement.KeyUpEvent, new KeyEventHandler(KbdUp), true);
                 DrawIcon(Icon);
             };
-            Unloaded += (a, b) => {
+            Unloaded += (a, b) =>
+            {
                 IconPresenter.Loaded -= IconPresenter_Loaded;
                 RemoveHandler(UIElement.PointerEnteredEvent, new PointerEventHandler(Entered));
                 RemoveHandler(UIElement.PointerExitedEvent, new PointerEventHandler(Exited));
@@ -82,15 +83,18 @@ namespace VK.VKUI.Controls {
 
         #region Internal
 
-        private void CheckIsEnabled() {
+        private void CheckIsEnabled()
+        {
             VisualStateManager.GoToState(this, IsEnabled ? ButtonStates.Normal : ButtonStates.Disabled, true);
         }
 
-        private void IconPresenter_Loaded(object sender, RoutedEventArgs e) {
+        private void IconPresenter_Loaded(object sender, RoutedEventArgs e)
+        {
             DrawIcon(Icon);
         }
 
-        private void DrawIcon(VKIconName iconName) {
+        private void DrawIcon(VKIconName iconName)
+        {
             Debug.WriteLine($"PageHeaderButton: drawing {iconName}");
             IconPresenter.ContentTemplate = VKUILibrary.GetIconTemplate(iconName);
         }
@@ -100,37 +104,43 @@ namespace VK.VKUI.Controls {
         bool isPressing = false;
         bool isPointerOver = false;
 
-        private void Entered(object sender, PointerRoutedEventArgs e) {
-            if(!IsEnabled) return;
+        private void Entered(object sender, PointerRoutedEventArgs e)
+        {
+            if (!IsEnabled) return;
             isPointerOver = true;
             VisualStateManager.GoToState(this, isPressing ? ButtonStates.Pressed : ButtonStates.PointerOver, true);
             Window.Current.CoreWindow.PointerCursor = new CoreCursor(CoreCursorType.Hand, 0);
         }
 
-        private void Exited(object sender, PointerRoutedEventArgs e) {
-            if(!IsEnabled) return;
+        private void Exited(object sender, PointerRoutedEventArgs e)
+        {
+            if (!IsEnabled) return;
             isPointerOver = false;
             VisualStateManager.GoToState(this, ButtonStates.Normal, true);
             Window.Current.CoreWindow.PointerCursor = new CoreCursor(CoreCursorType.Arrow, 0);
         }
 
-        private void Pressed(object sender, PointerRoutedEventArgs e) {
-            if(!IsEnabled) return;
+        private void Pressed(object sender, PointerRoutedEventArgs e)
+        {
+            if (!IsEnabled) return;
             isPressing = true;
             VisualStateManager.GoToState(this, ButtonStates.Pressed, true);
         }
 
-        private void Released(object sender, PointerRoutedEventArgs e) {
+        private void Released(object sender, PointerRoutedEventArgs e)
+        {
             isPressing = false;
             VisualStateManager.GoToState(this, isPointerOver ? ButtonStates.PointerOver : ButtonStates.Normal, true);
         }
 
-        private void KbdDown(object sender, KeyRoutedEventArgs e) {
+        private void KbdDown(object sender, KeyRoutedEventArgs e)
+        {
             if (e.Key == Windows.System.VirtualKey.Enter || e.Key == Windows.System.VirtualKey.Space)
                 VisualStateManager.GoToState(this, ButtonStates.Pressed, true);
         }
 
-        private void KbdUp(object sender, KeyRoutedEventArgs e) {
+        private void KbdUp(object sender, KeyRoutedEventArgs e)
+        {
             VisualStateManager.GoToState(this, ButtonStates.Normal, true);
         }
 

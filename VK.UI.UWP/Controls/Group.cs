@@ -1,24 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Documents;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 
 // The Templated Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234235
 
-namespace VK.VKUI.Controls {
-    public sealed class Group : ContentControl {
+namespace VK.VKUI.Controls
+{
+    public sealed class Group : ContentControl
+    {
         #region Properties
 
         public static readonly DependencyProperty HeaderProperty =
         DependencyProperty.Register(nameof(Header), typeof(string), typeof(Group), new PropertyMetadata(default(string)));
 
-        public string Header {
+        public string Header
+        {
             get { return (string)GetValue(HeaderProperty); }
             set { SetValue(HeaderProperty, value); }
         }
@@ -26,19 +22,22 @@ namespace VK.VKUI.Controls {
         public static readonly DependencyProperty DescriptionProperty =
         DependencyProperty.Register(nameof(Description), typeof(string), typeof(Group), new PropertyMetadata(default(string)));
 
-        public string Description {
+        public string Description
+        {
             get { return (string)GetValue(DescriptionProperty); }
             set { SetValue(DescriptionProperty, value); }
         }
 
         #endregion
 
-        public Group() {
+        public Group()
+        {
             this.DefaultStyleKey = typeof(Group);
             long hid = RegisterPropertyChangedCallback(HeaderProperty, (a, b) => SetText(GroupHeader, (string)GetValue(b)));
             long did = RegisterPropertyChangedCallback(DescriptionProperty, (a, b) => SetText(GroupDescription, (string)GetValue(b)));
 
-            Unloaded += (a, b) => {
+            Unloaded += (a, b) =>
+            {
                 UnregisterPropertyChangedCallback(HeaderProperty, hid);
                 UnregisterPropertyChangedCallback(DescriptionProperty, did);
             };
@@ -49,7 +48,8 @@ namespace VK.VKUI.Controls {
         TextBlock GroupHeader;
         TextBlock GroupDescription;
 
-        protected override void OnApplyTemplate() {
+        protected override void OnApplyTemplate()
+        {
             base.OnApplyTemplate();
             GroupHeader = (TextBlock)GetTemplateChild(nameof(GroupHeader));
             GroupDescription = (TextBlock)GetTemplateChild(nameof(GroupDescription));
@@ -57,12 +57,16 @@ namespace VK.VKUI.Controls {
             SetText(GroupDescription, (string)GetValue(DescriptionProperty));
         }
 
-        private void SetText(TextBlock tb, string v) {
+        private void SetText(TextBlock tb, string v)
+        {
             if (tb == null) return;
             tb.Visibility = String.IsNullOrEmpty(v) ? Visibility.Collapsed : Visibility.Visible;
-            if (!String.IsNullOrEmpty(v)) {
+            if (!String.IsNullOrEmpty(v))
+            {
                 tb.Text = tb.Name == nameof(GroupHeader) ? v.ToUpperInvariant() : v;
-            } else {
+            }
+            else
+            {
                 tb.Text = String.Empty;
             }
         }

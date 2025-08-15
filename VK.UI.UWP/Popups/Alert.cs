@@ -2,8 +2,6 @@
 using System.Numerics;
 using System.Threading;
 using System.Threading.Tasks;
-using VK.VKUI.Helpers;
-using VK.VKUI.Popups;
 using Windows.UI.Composition;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
@@ -14,11 +12,14 @@ using Windows.UI.Xaml.Shapes;
 
 // The Templated Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234235
 
-namespace VK.VKUI.Popups {
+namespace VK.VKUI.Popups
+{
     public enum AlertButton { None, Primary, Secondary }
 
-    public sealed class Alert : ContentControl {
-        public Alert() {
+    public sealed class Alert : ContentControl
+    {
+        public Alert()
+        {
             DefaultStyleKey = typeof(Alert);
         }
 
@@ -30,7 +31,8 @@ namespace VK.VKUI.Popups {
         public static readonly DependencyProperty HeaderProperty =
         DependencyProperty.Register(nameof(Header), typeof(string), typeof(Alert), new PropertyMetadata(default(string)));
 
-        public string Header {
+        public string Header
+        {
             get { return (string)GetValue(HeaderProperty); }
             set { SetValue(HeaderProperty, value); }
         }
@@ -38,7 +40,8 @@ namespace VK.VKUI.Popups {
         public static readonly DependencyProperty TextProperty =
         DependencyProperty.Register(nameof(Text), typeof(string), typeof(Alert), new PropertyMetadata(default(string)));
 
-        public string Text {
+        public string Text
+        {
             get { return (string)GetValue(TextProperty); }
             set { SetValue(TextProperty, value); }
         }
@@ -46,7 +49,8 @@ namespace VK.VKUI.Popups {
         public static readonly DependencyProperty PrimaryButtonTextProperty =
         DependencyProperty.Register(nameof(PrimaryButtonText), typeof(string), typeof(Alert), new PropertyMetadata(default(string)));
 
-        public string PrimaryButtonText {
+        public string PrimaryButtonText
+        {
             get { return (string)GetValue(PrimaryButtonTextProperty); }
             set { SetValue(PrimaryButtonTextProperty, value); }
         }
@@ -54,7 +58,8 @@ namespace VK.VKUI.Popups {
         public static readonly DependencyProperty SecondaryButtonTextProperty =
         DependencyProperty.Register(nameof(SecondaryButtonText), typeof(string), typeof(Alert), new PropertyMetadata(default(string)));
 
-        public string SecondaryButtonText {
+        public string SecondaryButtonText
+        {
             get { return (string)GetValue(SecondaryButtonTextProperty); }
             set { SetValue(SecondaryButtonTextProperty, value); }
         }
@@ -73,7 +78,8 @@ namespace VK.VKUI.Popups {
         Button PrimaryButton;
         Button SecondaryButton;
 
-        protected override void OnApplyTemplate() {
+        protected override void OnApplyTemplate()
+        {
             base.OnApplyTemplate();
 
             InvisibleLayer = (Grid)GetTemplateChild(nameof(InvisibleLayer));
@@ -86,10 +92,10 @@ namespace VK.VKUI.Popups {
 
             long tid = RegisterPropertyChangedCallback(TextProperty, (a, b) => CheckText());
 
-            long pbid = RegisterPropertyChangedCallback(PrimaryButtonTextProperty, 
+            long pbid = RegisterPropertyChangedCallback(PrimaryButtonTextProperty,
                 (a, b) => CheckButton(PrimaryButton, (string)GetValue(b)));
 
-            long sbid = RegisterPropertyChangedCallback(SecondaryButtonTextProperty, 
+            long sbid = RegisterPropertyChangedCallback(SecondaryButtonTextProperty,
                 (a, b) => CheckButton(SecondaryButton, (string)GetValue(b)));
 
             PrimaryButton.Click += PrimaryButtonClicked;
@@ -98,7 +104,8 @@ namespace VK.VKUI.Popups {
             InvisibleLayer.LayoutUpdated += InvisibleLayer_LayoutUpdated;
             Window.Current.SizeChanged += OnSizeChanged;
 
-            Unloaded += (a, b) => {
+            Unloaded += (a, b) =>
+            {
                 PrimaryButton.Click -= PrimaryButtonClicked;
                 SecondaryButton.Click -= SecondaryButtonClicked;
                 Loaded -= OnLoaded;
@@ -115,11 +122,13 @@ namespace VK.VKUI.Popups {
 
         #region Buttons events
 
-        private void PrimaryButtonClicked(object sender, RoutedEventArgs e) {
+        private void PrimaryButtonClicked(object sender, RoutedEventArgs e)
+        {
             Close(AlertButton.Primary);
         }
 
-        private void SecondaryButtonClicked(object sender, RoutedEventArgs e) {
+        private void SecondaryButtonClicked(object sender, RoutedEventArgs e)
+        {
             Close(AlertButton.Secondary);
         }
 
@@ -127,7 +136,8 @@ namespace VK.VKUI.Popups {
 
         #region Public methods
 
-        public async Task<AlertButton> ShowAsync() {
+        public async Task<AlertButton> ShowAsync()
+        {
             popup = new Popup();
             popup.Child = this;
 
@@ -138,7 +148,8 @@ namespace VK.VKUI.Popups {
 
             popup.IsOpen = true;
 
-            await Task.Factory.StartNew(() => {
+            await Task.Factory.StartNew(() =>
+            {
                 mres.Wait();
             }).ConfigureAwait(true);
 
@@ -153,26 +164,31 @@ namespace VK.VKUI.Popups {
 
         #region Private methods
 
-        private void Close(AlertButton button) {
+        private void Close(AlertButton button)
+        {
             Window.Current.CoreWindow.KeyUp -= CheckPressedButton;
             Result = button;
             mres.Set();
         }
 
-        private void CheckText() {
+        private void CheckText()
+        {
             AlertText.Visibility = String.IsNullOrEmpty(Text) ? Visibility.Collapsed : Visibility.Visible;
         }
 
-        private void CheckButton(Button button, string text) {
+        private void CheckButton(Button button, string text)
+        {
             button.Visibility = String.IsNullOrEmpty(text) ? Visibility.Collapsed : Visibility.Visible;
 
             // Не должно же быть так, чтобы ни одна кнопка не отображалась...
-            if (String.IsNullOrEmpty(PrimaryButtonText) && String.IsNullOrEmpty(SecondaryButtonText)) {
+            if (String.IsNullOrEmpty(PrimaryButtonText) && String.IsNullOrEmpty(SecondaryButtonText))
+            {
                 PrimaryButtonText = "OK";
             }
         }
 
-        private void OnLoaded(object sender, RoutedEventArgs e) {
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
             CheckText();
             CheckButton(PrimaryButton, PrimaryButtonText);
             CheckButton(SecondaryButton, SecondaryButtonText);
@@ -182,22 +198,26 @@ namespace VK.VKUI.Popups {
             Window.Current.CoreWindow.KeyUp += CheckPressedButton;
         }
 
-        private void CheckPressedButton(CoreWindow sender, KeyEventArgs args) {
+        private void CheckPressedButton(CoreWindow sender, KeyEventArgs args)
+        {
             if (args.VirtualKey == Windows.System.VirtualKey.Escape) Close(AlertButton.None);
         }
 
-        private void InvisibleLayer_LayoutUpdated(object sender, object e) {
+        private void InvisibleLayer_LayoutUpdated(object sender, object e)
+        {
             DrawShadow();
         }
 
-        private void OnSizeChanged(object sender, WindowSizeChangedEventArgs e) {
+        private void OnSizeChanged(object sender, WindowSizeChangedEventArgs e)
+        {
             popup.Width = e.Size.Width;
             popup.Height = e.Size.Height;
             Width = e.Size.Width;
             Height = e.Size.Height;
         }
 
-        private void DrawShadow() {
+        private void DrawShadow()
+        {
             ShadowBig.Width = AlertContainer.ActualWidth;
             ShadowBig.Height = AlertContainer.ActualHeight;
 
@@ -208,7 +228,8 @@ namespace VK.VKUI.Popups {
             VK.VKUI.Helpers.Shadow.Draw(AlertContainer, ShadowSmall, 2, 0.12f);
         }
 
-        private void Animate(Windows.UI.Composition.AnimationDirection direction, int duration) {
+        private void Animate(Windows.UI.Composition.AnimationDirection direction, int duration)
+        {
             ElementCompositionPreview.SetIsTranslationEnabled(InvisibleLayer, true);
             Visual dvisual = ElementCompositionPreview.GetElementVisual(InvisibleLayer);
             Compositor dcompositor = dvisual.Compositor;

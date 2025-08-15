@@ -1,54 +1,52 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Threading.Tasks;
 using VKUI_UWP_Demo.Utils;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // Документацию по шаблону элемента "Пустая страница" см. по адресу https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace VKUI_UWP_Demo.Pages {
-    class IconGroup : ObservableCollection<IconItem>, IComparable {
+namespace VKUI_UWP_Demo.Pages
+{
+    class IconGroup : ObservableCollection<IconItem>, IComparable
+    {
         public double Size { get; private set; }
 
-        public IconGroup(double size, ObservableCollection<IconItem> icons) : base(icons) {
+        public IconGroup(double size, ObservableCollection<IconItem> icons) : base(icons)
+        {
             Size = size;
         }
 
-        public int CompareTo(object obj) {
-            if(obj is IconGroup ig) {
+        public int CompareTo(object obj)
+        {
+            if (obj is IconGroup ig)
+            {
                 return Size.CompareTo(ig.Size);
             }
             throw new InvalidOperationException("No comparable TKey.");
         }
     }
 
-    class IconItem : IComparable {
+    class IconItem : IComparable
+    {
         public DataTemplate IconTemplate { get; private set; }
         public double Size { get; private set; }
         public string Name { get; private set; }
 
-        public IconItem(DataTemplate icon, double size, string name) {
+        public IconItem(DataTemplate icon, double size, string name)
+        {
             IconTemplate = icon;
             Size = size;
             Name = name;
         }
 
-        public int CompareTo(object obj) {
-            if(obj is IconItem ii) {
+        public int CompareTo(object obj)
+        {
+            if (obj is IconItem ii)
+            {
                 return Name.CompareTo(ii.Name);
             }
             throw new InvalidOperationException("No comparable TKey.");
@@ -58,36 +56,44 @@ namespace VKUI_UWP_Demo.Pages {
     /// <summary>
     /// Пустая страница, которую можно использовать саму по себе или для перехода внутри фрейма.
     /// </summary>
-    public sealed partial class Icons : Page {
-        public Icons() {
+    public sealed partial class Icons : Page
+    {
+        public Icons()
+        {
             this.InitializeComponent();
             this.InitNavigationTransition();
         }
 
         ObservableCollection<IconGroup> VKIcons = new ObservableCollection<IconGroup>();
 
-        private void OnLoad(object sender, RoutedEventArgs e) {
+        private void OnLoad(object sender, RoutedEventArgs e)
+        {
             GroupedIcons.Source = VKIcons;
             int count = 0;
             ResourceDictionary iconsdict = App.Current.Resources.MergedDictionaries[3];
             var q = (from i in iconsdict select i).ToList();
-            foreach(var i in q) {
-                if (i.Key is string k && k.Length > 6 && k.Substring(0, 4) == "Icon" && i.Value is DataTemplate v) {
+            foreach (var i in q)
+            {
+                if (i.Key is string k && k.Length > 6 && k.Substring(0, 4) == "Icon" && i.Value is DataTemplate v)
+                {
                     double s = 0;
-                    if(!Double.TryParse(k.Substring(4, 2), out s)) return;
+                    if (!Double.TryParse(k.Substring(4, 2), out s)) return;
 
                     IconItem icon = new IconItem(v, s, k);
 
                     var gq = from g in VKIcons where g.Size == s select g;
-                    if(gq.Count() == 0) {
+                    if (gq.Count() == 0)
+                    {
                         IconGroup ig = new IconGroup(s, new ObservableCollection<IconItem> { icon });
                         int idx = VKIcons.ToList().BinarySearch(ig);
-                        if(idx < 0) idx = ~idx;
+                        if (idx < 0) idx = ~idx;
                         VKIcons.Insert(idx, ig);
-                    } else if(gq.Count() == 1) {
+                    }
+                    else if (gq.Count() == 1)
+                    {
                         IconGroup ig = gq.First();
                         int idx = ig.ToList().BinarySearch(icon);
-                        if(idx < 0) idx = ~idx;
+                        if (idx < 0) idx = ~idx;
                         ig.Insert(idx, icon);
                     }
                     count++;
@@ -96,11 +102,13 @@ namespace VKUI_UWP_Demo.Pages {
             Debug.WriteLine($"Icons count: {count}");
         }
 
-        private void GoBack(object sender, RoutedEventArgs e) {
+        private void GoBack(object sender, RoutedEventArgs e)
+        {
             Frame.GoBack();
         }
 
-        private async void ShowIconInfo(object sender, ItemClickEventArgs e) {
+        private async void ShowIconInfo(object sender, ItemClickEventArgs e)
+        {
             IconItem icon = e.ClickedItem as IconItem;
             await new MessageDialog("", icon.Name).ShowAsync();
         }

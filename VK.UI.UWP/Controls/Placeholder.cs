@@ -1,25 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Documents;
-using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 
 // The Templated Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234235
 
-namespace VK.VKUI.Controls {
-    public sealed class Placeholder : ContentControl {
+namespace VK.VKUI.Controls
+{
+    public sealed class Placeholder : ContentControl
+    {
         #region Properties
 
         public static readonly DependencyProperty IconProperty =
         DependencyProperty.Register(nameof(Icon), typeof(VKIconName), typeof(Placeholder), new PropertyMetadata(VKIconName.None));
 
-        public VKIconName Icon {
+        public VKIconName Icon
+        {
             get { return (VKIconName)GetValue(IconProperty); }
             set { SetValue(IconProperty, value); }
         }
@@ -27,7 +23,8 @@ namespace VK.VKUI.Controls {
         public static readonly DependencyProperty IconTemplateProperty =
         DependencyProperty.Register(nameof(IconTemplate), typeof(DataTemplate), typeof(Placeholder), new PropertyMetadata(null));
 
-        public DataTemplate IconTemplate {
+        public DataTemplate IconTemplate
+        {
             get { return (DataTemplate)GetValue(IconTemplateProperty); }
             set { SetValue(IconTemplateProperty, value); }
         }
@@ -35,7 +32,8 @@ namespace VK.VKUI.Controls {
         public static readonly DependencyProperty HeaderProperty =
         DependencyProperty.Register(nameof(Header), typeof(string), typeof(Placeholder), new PropertyMetadata(default(string)));
 
-        public string Header {
+        public string Header
+        {
             get { return (string)GetValue(HeaderProperty); }
             set { SetValue(HeaderProperty, value); }
         }
@@ -43,7 +41,8 @@ namespace VK.VKUI.Controls {
         public static readonly DependencyProperty ActionButtonTextProperty =
         DependencyProperty.Register(nameof(ActionButtonText), typeof(string), typeof(Placeholder), new PropertyMetadata(default(string)));
 
-        public string ActionButtonText {
+        public string ActionButtonText
+        {
             get { return (string)GetValue(ActionButtonTextProperty); }
             set { SetValue(ActionButtonTextProperty, value); }
         }
@@ -51,7 +50,8 @@ namespace VK.VKUI.Controls {
         public static readonly DependencyProperty ActionButtonStyleProperty =
         DependencyProperty.Register(nameof(ActionButtonStyle), typeof(Style), typeof(Placeholder), new PropertyMetadata(default(Style)));
 
-        public Style ActionButtonStyle {
+        public Style ActionButtonStyle
+        {
             get { return (Style)GetValue(ActionButtonStyleProperty); }
             set { SetValue(ActionButtonStyleProperty, value); }
         }
@@ -59,7 +59,8 @@ namespace VK.VKUI.Controls {
         public static readonly DependencyProperty ActionButtonCommandProperty =
         DependencyProperty.Register(nameof(ActionButtonCommand), typeof(ICommand), typeof(Placeholder), new PropertyMetadata(default(ICommand)));
 
-        public ICommand ActionButtonCommand {
+        public ICommand ActionButtonCommand
+        {
             get { return (ICommand)GetValue(ActionButtonCommandProperty); }
             set { SetValue(ActionButtonCommandProperty, value); }
         }
@@ -68,7 +69,8 @@ namespace VK.VKUI.Controls {
 
         #endregion
 
-        public Placeholder() {
+        public Placeholder()
+        {
             this.DefaultStyleKey = typeof(Placeholder);
         }
 
@@ -79,7 +81,8 @@ namespace VK.VKUI.Controls {
         ContentPresenter ContentPresenter;
         Button ActionButton;
 
-        protected override void OnApplyTemplate() {
+        protected override void OnApplyTemplate()
+        {
             base.OnApplyTemplate();
 
             if (GetValue(ActionButtonStyleProperty) == null)
@@ -99,11 +102,13 @@ namespace VK.VKUI.Controls {
             long abc = RegisterPropertyChangedCallback(ActionButtonTextProperty, (a, b) => ChangeActionButtonVisibility());
             long cc = RegisterPropertyChangedCallback(ContentProperty, (a, b) => FixContentTextAlignment());
 
-            Loaded += (a, b) => {
+            Loaded += (a, b) =>
+            {
                 ActionButton.Click += InvokeActionButtonClickEvent;
                 ContentPresenter.Loaded += ContentPresenter_Loaded;
             };
-            Unloaded += (a, b) => {
+            Unloaded += (a, b) =>
+            {
                 ActionButton.Click -= InvokeActionButtonClickEvent;
                 ContentPresenter.Loaded -= ContentPresenter_Loaded;
                 UnregisterPropertyChangedCallback(IconProperty, ic);
@@ -117,32 +122,39 @@ namespace VK.VKUI.Controls {
 
         #region Internal
 
-        private void InvokeActionButtonClickEvent(object sender, RoutedEventArgs e) {
+        private void InvokeActionButtonClickEvent(object sender, RoutedEventArgs e)
+        {
             ActionButtonClick?.Invoke(this, e);
         }
 
-        private void ContentPresenter_Loaded(object sender, RoutedEventArgs e) {
+        private void ContentPresenter_Loaded(object sender, RoutedEventArgs e)
+        {
             FixContentTextAlignment();
         }
 
-        private void DrawIcon() {
+        private void DrawIcon()
+        {
             VKIconName name = (VKIconName)GetValue(IconProperty);
             if (Tag != null && Tag.ToString() == "debug") System.Diagnostics.Debug.WriteLine($"Placeholder: icon id = {name}");
             if (name != VKIconName.None) IconTemplate = VKUILibrary.GetIconTemplate(Icon);
             IconPresenter.Visibility = IconTemplate == null ? Visibility.Collapsed : Visibility.Visible;
         }
 
-        private void ChangeHeaderVisibility() {
+        private void ChangeHeaderVisibility()
+        {
             HeaderTextBlock.Visibility = GetValue(HeaderProperty) != null ? Visibility.Visible : Visibility.Collapsed;
         }
 
-        private void ChangeActionButtonVisibility() {
+        private void ChangeActionButtonVisibility()
+        {
             ActionButton.Visibility = GetValue(ActionButtonTextProperty) != null ? Visibility.Visible : Visibility.Collapsed;
         }
 
-        private void FixContentTextAlignment() {
+        private void FixContentTextAlignment()
+        {
             object value = GetValue(ContentProperty);
-            if (GetValue(ContentProperty) != null && value is string && ContentPresenter != null) {
+            if (GetValue(ContentProperty) != null && value is string && ContentPresenter != null)
+            {
                 DependencyObject dobj = VisualTreeHelper.GetChild(ContentPresenter, 0);
                 if (dobj is TextBlock tb) tb.TextAlignment = TextAlignment.Center;
             }

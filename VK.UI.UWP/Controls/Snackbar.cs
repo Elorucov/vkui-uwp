@@ -1,34 +1,28 @@
-﻿using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Numerics;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
-using VK.VKUI.Helpers;
 using Windows.UI.Composition;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Documents;
 using Windows.UI.Xaml.Hosting;
-using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Shapes;
 
 // The Templated Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234235
 
-namespace VK.VKUI.Controls {
-    public sealed class Snackbar : ContentControl {
+namespace VK.VKUI.Controls
+{
+    public sealed class Snackbar : ContentControl
+    {
 
         #region Properties and events
 
         public static readonly DependencyProperty BeforeIconProperty =
         DependencyProperty.Register(nameof(BeforeIcon), typeof(VKIconName), typeof(Snackbar), new PropertyMetadata(VKIconName.None));
 
-        public VKIconName BeforeIcon {
+        public VKIconName BeforeIcon
+        {
             get { return (VKIconName)GetValue(BeforeIconProperty); }
             set { SetValue(BeforeIconProperty, value); }
         }
@@ -36,7 +30,8 @@ namespace VK.VKUI.Controls {
         public static readonly DependencyProperty BeforeIconBackgroundProperty =
         DependencyProperty.Register(nameof(BeforeIconBackground), typeof(SolidColorBrush), typeof(Snackbar), new PropertyMetadata(default(SolidColorBrush)));
 
-        public SolidColorBrush BeforeIconBackground {
+        public SolidColorBrush BeforeIconBackground
+        {
             get { return (SolidColorBrush)GetValue(BeforeIconBackgroundProperty); }
             set { SetValue(BeforeIconBackgroundProperty, value); }
         }
@@ -44,7 +39,8 @@ namespace VK.VKUI.Controls {
         public static readonly DependencyProperty BeforeAvatarProperty =
         DependencyProperty.Register(nameof(BeforeAvatar), typeof(Uri), typeof(Snackbar), new PropertyMetadata(null));
 
-        public Uri BeforeAvatar {
+        public Uri BeforeAvatar
+        {
             get { return (Uri)GetValue(BeforeAvatarProperty); }
             set { SetValue(BeforeAvatarProperty, value); }
         }
@@ -68,7 +64,8 @@ namespace VK.VKUI.Controls {
         public static readonly DependencyProperty AfterAvatarProperty =
         DependencyProperty.Register(nameof(AfterAvatar), typeof(Uri), typeof(Snackbar), new PropertyMetadata(null));
 
-        public Uri AfterAvatar {
+        public Uri AfterAvatar
+        {
             get { return (Uri)GetValue(AfterAvatarProperty); }
             set { SetValue(AfterAvatarProperty, value); }
         }
@@ -76,7 +73,8 @@ namespace VK.VKUI.Controls {
         public static readonly DependencyProperty ActionTextProperty =
         DependencyProperty.Register(nameof(ActionText), typeof(string), typeof(Snackbar), new PropertyMetadata(null));
 
-        public string ActionText {
+        public string ActionText
+        {
             get { return (string)GetValue(ActionTextProperty); }
             set { SetValue(ActionTextProperty, value); }
         }
@@ -84,7 +82,8 @@ namespace VK.VKUI.Controls {
         public static readonly DependencyProperty OrientationProperty =
         DependencyProperty.Register(nameof(Orientation), typeof(Orientation), typeof(Snackbar), new PropertyMetadata(Orientation.Horizontal));
 
-        public Orientation Orientation {
+        public Orientation Orientation
+        {
             get { return (Orientation)GetValue(OrientationProperty); }
             set { SetValue(OrientationProperty, value); }
         }
@@ -96,9 +95,11 @@ namespace VK.VKUI.Controls {
 
         #endregion
 
-        public Snackbar() {
+        public Snackbar()
+        {
             this.DefaultStyleKey = typeof(Snackbar);
-            timer.Tick += (a, b) => {
+            timer.Tick += (a, b) =>
+            {
                 Dismiss();
                 Dismissed?.Invoke(this, false);
             };
@@ -121,7 +122,8 @@ namespace VK.VKUI.Controls {
         HyperlinkButton ActionButtonForHorizontal;
         HyperlinkButton ActionButtonForVertical;
 
-        protected override void OnApplyTemplate() {
+        protected override void OnApplyTemplate()
+        {
             base.OnApplyTemplate();
             Root = (Grid)GetTemplateChild(nameof(Root));
             ShadowRect = (Rectangle)GetTemplateChild(nameof(ShadowRect));
@@ -146,26 +148,31 @@ namespace VK.VKUI.Controls {
             long atc = RegisterPropertyChangedCallback(ActionTextProperty, (a, b) => Render());
             long hac = RegisterPropertyChangedCallback(HorizontalAlignmentProperty, (a, b) => Render());
 
-            ActionButtonForHorizontal.Click += (a, b) => {
+            ActionButtonForHorizontal.Click += (a, b) =>
+            {
                 Dismiss();
                 Dismissed?.Invoke(this, true);
             };
-            ActionButtonForVertical.Click += (a, b) => {
+            ActionButtonForVertical.Click += (a, b) =>
+            {
                 Dismiss();
                 Dismissed?.Invoke(this, true);
             };
-            SnackBarRoot.LayoutUpdated += (a, b) => {
+            SnackBarRoot.LayoutUpdated += (a, b) =>
+            {
                 ShadowRect.Width = SnackBarRoot.RenderSize.Width;
                 ShadowRect.Height = SnackBarRoot.RenderSize.Height;
                 VK.VKUI.Helpers.Shadow.Draw(SnackBarRoot, ShadowRect, 24, 0.24f);
             };
             SnackBarRoot.SizeChanged += (a, b) => Render();
-            Loaded += (a, b) => {
+            Loaded += (a, b) =>
+            {
                 DrawIcon(BeforeIconContainer, BeforeIcon, BeforeIconPresenter);
                 //DrawIcon(AfterIconContainer, AfterIcon, AfterIconPresenter);
                 Render();
             };
-            Unloaded += (a, b) => {
+            Unloaded += (a, b) =>
+            {
                 UnregisterPropertyChangedCallback(BeforeIconProperty, bic);
                 //UnregisterPropertyChangedCallback(AfterIconProperty, aic);
                 UnregisterPropertyChangedCallback(BeforeAvatarProperty, bac);
@@ -174,7 +181,8 @@ namespace VK.VKUI.Controls {
                 UnregisterPropertyChangedCallback(ActionTextProperty, atc);
                 UnregisterPropertyChangedCallback(HorizontalAlignmentProperty, hac);
             };
-            if (nonXamlDuration >= 0) {
+            if (nonXamlDuration >= 0)
+            {
                 Show(nonXamlDuration);
                 nonXamlDuration = -1;
             }
@@ -184,17 +192,22 @@ namespace VK.VKUI.Controls {
 
         #region Public methods
 
-        public async void Show(double durationInMs = 4000) {
-            if (durationInMs < 1000) {
+        public async void Show(double durationInMs = 4000)
+        {
+            if (durationInMs < 1000)
+            {
                 throw new ArgumentException("Value must be higher than 1000", nameof(durationInMs));
             }
 
             if (IsShowing) return;
 
-            if (Root == null) {
+            if (Root == null)
+            {
                 nonXamlDuration = durationInMs;
                 ApplyTemplate();
-            } else {
+            }
+            else
+            {
                 IsShowing = true;
                 Root.Opacity = 0; // 🤷‍♂️
                 Root.Visibility = Visibility.Visible;
@@ -208,7 +221,8 @@ namespace VK.VKUI.Controls {
             }
         }
 
-        public async void Dismiss() {
+        public async void Dismiss()
+        {
             timer.Stop();
             Animate(Windows.UI.Composition.AnimationDirection.Reverse);
             await Task.Delay(250);
@@ -220,26 +234,34 @@ namespace VK.VKUI.Controls {
 
         #region Private
 
-        private void DrawIcon(Border parent, VKIconName icon, ContentPresenter iconPresenter) {
+        private void DrawIcon(Border parent, VKIconName icon, ContentPresenter iconPresenter)
+        {
             if (icon != VKIconName.None) iconPresenter.ContentTemplate = VKUILibrary.GetIconTemplate(icon);
             parent.Visibility = icon == VKIconName.None ? Visibility.Collapsed : Visibility.Visible;
         }
 
-        private void Render() {
+        private void Render()
+        {
             // Avatars has a high priority than Icons
-            if (BeforeAvatar != null) {
+            if (BeforeAvatar != null)
+            {
                 BeforeAva.Visibility = Visibility.Visible;
                 BeforeAvaBitmapImage.UriSource = BeforeAvatar;
                 BeforeIconContainer.Visibility = Visibility.Collapsed;
-            } else {
+            }
+            else
+            {
                 BeforeAva.Visibility = Visibility.Collapsed;
                 BeforeIconContainer.Visibility = BeforeIcon == VKIconName.None ? Visibility.Collapsed : Visibility.Visible;
             }
 
-            if (AfterAvatar != null) {
+            if (AfterAvatar != null)
+            {
                 AfterAva.Visibility = Visibility.Visible;
                 AfterAvaBitmapImage.UriSource = AfterAvatar;
-            } else {
+            }
+            else
+            {
                 AfterAva.Visibility = Visibility.Collapsed;
             }
 
@@ -258,7 +280,8 @@ namespace VK.VKUI.Controls {
 
         #region Animations
 
-        private void Animate(Windows.UI.Composition.AnimationDirection direction) {
+        private void Animate(Windows.UI.Composition.AnimationDirection direction)
+        {
             double height = Root.ActualHeight + Root.Margin.Top + Root.Margin.Bottom;
 
             ElementCompositionPreview.SetIsTranslationEnabled(Root, true);

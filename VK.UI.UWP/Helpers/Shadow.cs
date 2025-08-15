@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
+﻿using System.Numerics;
 using Windows.UI;
 using Windows.UI.Composition;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Hosting;
 using Windows.UI.Xaml.Shapes;
 
-namespace VK.VKUI.Helpers {
-    internal class Shadow {
-        public static void Draw(UIElement control, Rectangle shadowRectangle, float blurRadius, float opacity) {
+namespace VK.VKUI.Helpers
+{
+    internal class Shadow
+    {
+        public static void Draw(UIElement control, Rectangle shadowRectangle, float blurRadius, float opacity)
+        {
             var compositor = ElementCompositionPreview.GetElementVisual(control).Compositor;
             SpriteVisual _visual = (SpriteVisual)ElementCompositionPreview.GetElementChildVisual(shadowRectangle);
-            if (_visual == null) {
+            if (_visual == null)
+            {
                 _visual = compositor.CreateSpriteVisual();
                 ElementCompositionPreview.SetElementChildVisual(shadowRectangle, _visual);
             }

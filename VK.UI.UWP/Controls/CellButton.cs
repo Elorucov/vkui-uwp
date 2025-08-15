@@ -1,32 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.UI.Core;
+﻿using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Documents;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 
 // The Templated Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234235
 
-namespace VK.VKUI.Controls {
+namespace VK.VKUI.Controls
+{
 
     [TemplateVisualState(Name = ButtonStates.Normal, GroupName = ButtonStates.Name)]
     [TemplateVisualState(Name = ButtonStates.PointerOver, GroupName = ButtonStates.Name)]
     [TemplateVisualState(Name = ButtonStates.Pressed, GroupName = ButtonStates.Name)]
     [TemplateVisualState(Name = ButtonStates.Disabled, GroupName = ButtonStates.Name)]
-    public sealed class CellButton : ButtonBase {
+    public sealed class CellButton : ButtonBase
+    {
 
         #region Properties
 
         public static readonly DependencyProperty IconProperty =
         DependencyProperty.Register(nameof(Icon), typeof(VKIconName), typeof(CellButton), new PropertyMetadata(VKIconName.None));
 
-        public VKIconName Icon {
+        public VKIconName Icon
+        {
             get { return (VKIconName)GetValue(IconProperty); }
             set { SetValue(IconProperty, value); }
         }
@@ -34,7 +31,8 @@ namespace VK.VKUI.Controls {
         public static readonly DependencyProperty IconTemplateProperty =
         DependencyProperty.Register(nameof(IconTemplate), typeof(DataTemplate), typeof(CellButton), new PropertyMetadata(null));
 
-        public DataTemplate IconTemplate {
+        public DataTemplate IconTemplate
+        {
             get { return (DataTemplate)GetValue(IconTemplateProperty); }
             set { SetValue(IconTemplateProperty, value); }
         }
@@ -42,7 +40,8 @@ namespace VK.VKUI.Controls {
         public static readonly DependencyProperty IconBrushProperty =
         DependencyProperty.Register(nameof(IconBrush), typeof(Brush), typeof(CellButton), new PropertyMetadata(default(Brush)));
 
-        public Brush IconBrush {
+        public Brush IconBrush
+        {
             get { return (Brush)GetValue(IconBrushProperty); }
             set { SetValue(IconBrushProperty, value); }
         }
@@ -50,7 +49,8 @@ namespace VK.VKUI.Controls {
         public static readonly DependencyProperty TextProperty =
         DependencyProperty.Register(nameof(Text), typeof(string), typeof(CellButton), new PropertyMetadata(default(string)));
 
-        public string Text {
+        public string Text
+        {
             get { return (string)GetValue(TextProperty); }
             set { SetValue(TextProperty, value); }
         }
@@ -58,7 +58,8 @@ namespace VK.VKUI.Controls {
         public static readonly DependencyProperty IndicatorProperty =
         DependencyProperty.Register(nameof(Indicator), typeof(object), typeof(CellButton), new PropertyMetadata(default(object)));
 
-        public object Indicator {
+        public object Indicator
+        {
             get { return (object)GetValue(IndicatorProperty); }
             set { SetValue(IndicatorProperty, value); }
         }
@@ -66,14 +67,16 @@ namespace VK.VKUI.Controls {
         public static readonly DependencyProperty IndicatorTemplateProperty =
         DependencyProperty.Register(nameof(IndicatorTemplate), typeof(ControlTemplate), typeof(CellButton), new PropertyMetadata(default(ControlTemplate)));
 
-        public ControlTemplate IndicatorTemplate {
+        public ControlTemplate IndicatorTemplate
+        {
             get { return (ControlTemplate)GetValue(IndicatorTemplateProperty); }
             set { SetValue(IndicatorTemplateProperty, value); }
         }
 
         #endregion
 
-        public CellButton() {
+        public CellButton()
+        {
             this.DefaultStyleKey = typeof(CellButton);
         }
 
@@ -83,7 +86,8 @@ namespace VK.VKUI.Controls {
         ContentPresenter IconPresenter;
         ContentControl IndicatorPresenter;
 
-        protected override void OnApplyTemplate() {
+        protected override void OnApplyTemplate()
+        {
             base.OnApplyTemplate();
             LayoutRoot = (Grid)GetTemplateChild(nameof(LayoutRoot));
             IconPresenter = (ContentPresenter)GetTemplateChild(nameof(IconPresenter));
@@ -95,7 +99,8 @@ namespace VK.VKUI.Controls {
             long ieid = RegisterPropertyChangedCallback(IsEnabledProperty, (a, b) => CheckIsEnabled());
             long idid = RegisterPropertyChangedCallback(IndicatorProperty, (a, b) => SetIndicatorTemplate());
             long idtid = RegisterPropertyChangedCallback(IndicatorTemplateProperty, (a, b) => SetIndicatorTemplate());
-            Loaded += (a, b) => {
+            Loaded += (a, b) =>
+            {
                 ShowHideIcon();
                 AddHandler(UIElement.PointerEnteredEvent, new PointerEventHandler(Entered), true);
                 AddHandler(UIElement.PointerExitedEvent, new PointerEventHandler(Exited), true);
@@ -105,7 +110,8 @@ namespace VK.VKUI.Controls {
                 AddHandler(UIElement.KeyUpEvent, new KeyEventHandler(KbdUp), true);
                 Click += CellButton_Click;
             };
-            Unloaded += (a, b) => {
+            Unloaded += (a, b) =>
+            {
                 RemoveHandler(UIElement.PointerEnteredEvent, new PointerEventHandler(Entered));
                 RemoveHandler(UIElement.PointerExitedEvent, new PointerEventHandler(Exited));
                 RemoveHandler(UIElement.PointerPressedEvent, new PointerEventHandler(Pressed));
@@ -123,24 +129,32 @@ namespace VK.VKUI.Controls {
 
         #region Internal
 
-        internal void ShowHideIcon() {
-            if (IconPresenter != null) {
+        internal void ShowHideIcon()
+        {
+            if (IconPresenter != null)
+            {
                 if (Tag != null && Tag.ToString() == "debug") System.Diagnostics.Debug.WriteLine($"CellButton: icon id = {Icon}");
                 if (Icon != VKIconName.None) IconTemplate = VKUILibrary.GetIconTemplate(Icon);
                 IconPresenter.Visibility = IconTemplate == null ? Visibility.Collapsed : Visibility.Visible;
             }
-            
+
         }
 
-        private void CheckIsEnabled() {
+        private void CheckIsEnabled()
+        {
             VisualStateManager.GoToState(this, IsEnabled ? ButtonStates.Normal : ButtonStates.Disabled, true);
         }
 
-        private void SetIndicatorTemplate() {
-            if (IndicatorPresenter != null) {
-                if (Indicator is string && IndicatorTemplate == null) {
+        private void SetIndicatorTemplate()
+        {
+            if (IndicatorPresenter != null)
+            {
+                if (Indicator is string && IndicatorTemplate == null)
+                {
                     IndicatorTemplate = (ControlTemplate)Application.Current.Resources["CellButtonTextIndicatorTemplate"];
-                } else if (Indicator is ToggleSwitch ts && ts.Style == null) {
+                }
+                else if (Indicator is ToggleSwitch ts && ts.Style == null)
+                {
                     ts.Style = (Style)Application.Current.Resources["CellButtonToggleIndicatorStyle"];
                 }
             }
@@ -151,42 +165,50 @@ namespace VK.VKUI.Controls {
         bool isPressing = false;
         bool isPointerOver = false;
 
-        private void Entered(object sender, PointerRoutedEventArgs e) {
-            if(!IsEnabled) return;
+        private void Entered(object sender, PointerRoutedEventArgs e)
+        {
+            if (!IsEnabled) return;
             isPointerOver = true;
             VisualStateManager.GoToState(this, isPressing ? ButtonStates.Pressed : ButtonStates.PointerOver, true);
             Window.Current.CoreWindow.PointerCursor = new CoreCursor(Windows.UI.Core.CoreCursorType.Hand, 0);
         }
 
-        private void Exited(object sender, PointerRoutedEventArgs e) {
-            if(!IsEnabled) return;
+        private void Exited(object sender, PointerRoutedEventArgs e)
+        {
+            if (!IsEnabled) return;
             isPointerOver = false;
             VisualStateManager.GoToState(this, ButtonStates.Normal, true);
             Window.Current.CoreWindow.PointerCursor = new CoreCursor(Windows.UI.Core.CoreCursorType.Arrow, 0);
         }
 
-        private void Pressed(object sender, PointerRoutedEventArgs e) {
-            if(!IsEnabled) return;
+        private void Pressed(object sender, PointerRoutedEventArgs e)
+        {
+            if (!IsEnabled) return;
             isPressing = true;
             VisualStateManager.GoToState(this, ButtonStates.Pressed, true);
         }
 
-        private void Released(object sender, PointerRoutedEventArgs e) {
+        private void Released(object sender, PointerRoutedEventArgs e)
+        {
             isPressing = false;
             VisualStateManager.GoToState(this, isPointerOver ? ButtonStates.PointerOver : ButtonStates.Normal, true);
         }
 
-        private void KbdDown(object sender, KeyRoutedEventArgs e) {
-            if(e.Key == Windows.System.VirtualKey.Enter || e.Key == Windows.System.VirtualKey.Space)
+        private void KbdDown(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Enter || e.Key == Windows.System.VirtualKey.Space)
                 VisualStateManager.GoToState(this, ButtonStates.Pressed, true);
         }
 
-        private void KbdUp(object sender, KeyRoutedEventArgs e) {
+        private void KbdUp(object sender, KeyRoutedEventArgs e)
+        {
             VisualStateManager.GoToState(this, ButtonStates.Normal, true);
         }
 
-        private void CellButton_Click(object sender, RoutedEventArgs e) {
-            if (Indicator is ToggleSwitch ts) {
+        private void CellButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Indicator is ToggleSwitch ts)
+            {
                 ts.IsOn = !ts.IsOn;
             }
         }

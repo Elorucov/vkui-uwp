@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VK.VKUI.Controls {
-    public enum VKIconName {
+﻿namespace VK.VKUI.Controls
+{
+    public enum VKIconName
+    {
         None,
         Icon12Cancel,
         Icon12Dropdown,
