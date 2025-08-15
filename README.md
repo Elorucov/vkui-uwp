@@ -146,8 +146,7 @@ Alert alert = new Alert
     Header = "Удаление сообщения",
     Text = "Вы уверены, что хотите удалить это сообщение?",
     PrimaryButtonText = "Удалить",
-    SecondaryButtonText = "Отмена",
-    Content = cb
+    SecondaryButtonText = "Отмена"
 };
 AlertButton result = await alert.ShowAsync();
 ```
